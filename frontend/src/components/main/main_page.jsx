@@ -1,14 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class MainPage extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1> Account-a-Buddy </h1>
-                <div> Catchphrase </div>
-                <div> Description </div>
-                <button>Get Started</button>
+            <div className="main">
+                <div className="catchphrase"> Catchphrase </div>
+                <div className="subtext"> Description </div>
+                <Link to={`/signup`}>Get Started</Link>
             </div>
         );
     }
