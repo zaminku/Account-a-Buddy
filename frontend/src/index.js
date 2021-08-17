@@ -2,6 +2,8 @@ import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
+import axios from "axios";
+
 
 // We set this up in the last section
 import configureStore from './store/store';
@@ -15,6 +17,8 @@ import { setAuthToken } from './util/session_api_util';
 // We have not created this action yet, but will do so in the next step
 import { logout } from './actions/session_actions';
 
+
+window.axios = axios;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
