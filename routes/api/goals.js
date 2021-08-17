@@ -13,8 +13,8 @@ const testing_goals = [
     }
 ];
 
-router.get('/', (req, res, next) => {
-    const goalId = req.params.pid;
+router.get('/:gid', (req, res, next) => {
+    const goalId = req.params.gid;
     const goal = testing_goals.find( g => {
         return g.id === goalId;
     });
