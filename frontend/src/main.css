@@ -3,5 +3,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 50vh;
+    min-height: 30vh;
+    margin-top: 20vh;
+    padding-bottom: 20vh;
+}
+
+.catchphrase {
+    font-size: 5vw;
+    font-weight: 700px;
+}
+
+pre{
+    padding: 10px;
+    /* background-color: orange; */
+}
+
+.subtext{
+    font-size: 2vh;
+}
+
+body{
+    background-image: url("./placeholder.jpg");
+    background-color:orange;
 }

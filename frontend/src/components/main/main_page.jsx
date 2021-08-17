@@ -6,9 +6,9 @@ class MainPage extends React.Component {
     render() {
         return (
             <div className="main">
-                <div className="catchphrase"> Catchphrase </div>
-                <div className="subtext"> Description </div>
-                <Link to={`/signup`}>Get Started</Link>
+                <div className="catchphrase"> Help Me <pre/> Help You </div>
+                <div className="subtext"> Stay accountable for your goals with like-minded people </div>
+                <Link className="getstarted" to={`/signup`}>Get Started Here</Link>
             </div>
         );
     }
