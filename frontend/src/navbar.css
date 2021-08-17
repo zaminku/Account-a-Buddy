@@ -1,0 +1,14 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh;
+    font-size: 1vw
+}
+
+.navbar-right a{
+    padding-right: 3vw;
+}
+
+.logo{
+    font-size: 1.25vw;
+}
