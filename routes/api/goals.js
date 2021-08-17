@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json({ nogoalsfound: 'No goals found' }));
 });
 
-router.get('/user/:userId', (req, res) => {
+router.get('/users/:userId', (req, res) => {
     Goal.find({author: req.params.userId})
         .sort({date: -1 })
         .then(goals => res.json(goals))
@@ -85,12 +85,12 @@ router.post('/',
   router.delete('/:goalId', (req, res) => {
       Goal.deleteOne({_id: req.params.goalId},
         error => {
-            if (err) {
-                return err
+            if (error) {
+                return error
             }
         });
 
-        res.redirect('/');
+        res.redirect('/api/goals');
   })
 
 
