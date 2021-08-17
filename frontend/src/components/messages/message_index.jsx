@@ -7,11 +7,22 @@ class MessageIndex extends React.Component{
 
     constructor(props){
         super(props)
+        this.state = {
+            body: ''
+        }
+
         this.sendSocketIO = this.sendSocketIO.bind(this)
+        this.update = this.update.bind(this)
     }
 
     sendSocketIO(){
-        socket.emit("message", "demo")
+        socket.emit("message", this.state.body)
+    }
+
+    update(e){
+        this.setState({
+            body: e.target.value
+        })
     }
 
     render(){
@@ -28,8 +39,11 @@ class MessageIndex extends React.Component{
                 <h3><i className="fas fa-users"></i> Users</h3>
                 <ul id="users"></ul>
                 </div>
+
                 <div className="chat-messages"></div>
+                
             </main>
+
                 <div className="chat-form-container">
                     <form id="chat-form">
                     <input
@@ -38,6 +52,7 @@ class MessageIndex extends React.Component{
                         placeholder="Enter Message"
                         required
                         autoComplete="off"
+                        onChange={e=>this.update(e)}
                     />
                     <button className="btn" onClick={this.sendSocketIO}><i className="fas fa-paper-plane"></i> Send</button>
                     </form>
