@@ -6,7 +6,6 @@ const users = require("./routes/api/users");
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
-// You can now delete our 'Hello World' route
 app.use(passport.initialize());
 require('./config/passport')(passport);
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             email: '',
-            handle: '',
+            username: '',
             password: '',
             password2: '',
             errors: {}
@@ -34,7 +35,7 @@ class SignupForm extends React.Component {
         e.preventDefault();
         let user = {
             email: this.state.email,
-            handle: this.state.handle,
+            username: this.state.username,
             password: this.state.password,
             password2: this.state.password2
         };
@@ -54,9 +55,19 @@ class SignupForm extends React.Component {
         );
     }
 
+    otherForm() {
+        return (
+            <div>
+                <div>Already have an account?</div>
+                <Link to={'/login'}>Login</Link>
+            </div>
+        )
+    }
+
     render() {
         return (
             <div className="signup-form-container">
+                <h1>Sign Up</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup-form">
                         <br />
@@ -67,9 +78,9 @@ class SignupForm extends React.Component {
                         />
                         <br />
                         <input type="text"
-                            value={this.state.handle}
-                            onChange={this.update('handle')}
-                            placeholder="Handle"
+                            value={this.state.username}
+                            onChange={this.update('username')}
+                            placeholder="Username"
                         />
                         <br />
                         <input type="password"
@@ -84,8 +95,9 @@ class SignupForm extends React.Component {
                             placeholder="Confirm Password"
                         />
                         <br />
-                        <input type="submit" value="Submit" />
                         {this.renderErrors()}
+                        <input type="submit" value="Submit" />
+                        {this.otherForm()}
                     </div>
                 </form>
             </div>

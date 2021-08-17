@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -15,10 +16,10 @@ class LoginForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
     }
 
-    // Once the user has been authenticated, redirect to the Tweets page
+    // Once the user has been authenticated, redirect to the Goals page
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
-            this.props.history.push('/tweets');
+            this.props.history.push('/goals');
         }
 
         // Set or clear errors
@@ -41,7 +42,7 @@ class LoginForm extends React.Component {
             password: this.state.password
         };
 
-        this.props.login(user);
+        this.props.login(user)
     }
 
     // Render the session errors if there are any
@@ -57,10 +58,20 @@ class LoginForm extends React.Component {
         );
     }
 
+    otherForm() {
+        return(
+            <div>
+                <div>Don't have an account?</div>
+                <Link to={'/signup'}>Signup</Link>
+            </div>
+        )
+    }
+
     render() {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
+                    <h1>Sign In</h1>
                     <div>
                         <input type="text"
                             value={this.state.username}
@@ -74,8 +85,9 @@ class LoginForm extends React.Component {
                             placeholder="Password"
                         />
                         <br />
-                        <input type="submit" value="Submit" />
                         {this.renderErrors()}
+                        <input type="submit" value="Submit" />
+                        {this.otherForm()}
                     </div>
                 </form>
             </div>
