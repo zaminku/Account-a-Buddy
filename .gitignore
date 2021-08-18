@@ -1,2 +1,5 @@
-/config
+/config/keys_dev.js
+/config/keys.js
+/config/passport.js
 /node_modules
+/public/assets
