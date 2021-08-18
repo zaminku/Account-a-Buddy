@@ -8,11 +8,6 @@ const goals = require('./routes/api/goals');
 const messages = require('./routes/api/messages');
 
 const bodyParser = require('body-parser');
-<<<<<<< HEAD
-=======
-const path = require('path');
-
->>>>>>> main
 app.use(passport.initialize());
 require('./config/passport')(passport);
 
@@ -56,7 +51,7 @@ io.on("connection", socket=>{
     })
 })
 
-server.listen(port, ()=> console.log(`PORT2 is on ${port}`))
+server.listen(port, ()=> console.log(`PORT is on ${port}`))
 
 // Test end -------------------------------
 
