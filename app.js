@@ -7,11 +7,10 @@ const passport = require('passport');
 const goals = require('./routes/api/goals');
 
 const bodyParser = require('body-parser');
-// You can now delete our 'Hello World' route
 app.use(passport.initialize());
 require('./config/passport')(passport);
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use('/api/users', users);
@@ -19,7 +18,35 @@ app.use('/api/goals', goals);
 
 const port = process.env.PORT || 5000;
 
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+// app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+// Test code ------------------------------
+
+const path = require("path")
+const http = require("http")
+const socketio = require("socket.io")
+
+const server = http.createServer(app)
+const io = socketio(server, {
+    cors: {
+      origin: '*',
+    }
+  });
+  
+app.use(express.static(path.join(__dirname,"./frontend/public")))
+
+io.on("connection", socket=>{
+    console.log("Connected.........")
+
+    socket.on("message", data => {
+      console.log(data)
+    })
+})
+
+const port2 = 5001 || process.env.PORT
+server.listen(port, ()=> console.log(`PORT2 is on ${port}`))
+
+// Test end -------------------------------
 
 mongoose
     .connect(db, { useNewUrlParser: true })
