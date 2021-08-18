@@ -4,9 +4,9 @@ export const fetchGoals = () => (
   axios.get(`/api/goals/`)
 );
 
-// export const fetchUserGoal = userId => (
-//     axios.get(`/api/goals/users/${userId}`)
-// );
+export const fetchUserGoals = userId => (
+    axios.get(`/api/goals/users/${userId}`)
+);
 
 export const fetchGoal = goalId => (
   axios.get(`/api/goals/${goalId}`)

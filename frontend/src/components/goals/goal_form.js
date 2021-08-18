@@ -1,5 +1,6 @@
 import React from "react";
 
+
 class GoalForm extends React.Component {
     constructor(props) {
         super(props);
@@ -17,6 +18,10 @@ class GoalForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.createGoal(this.state)
+            // .then(res => console.log(res))
+
+
         // this.props.createGoal(this.state)  -- call it the proper name
             // .then(() => {
             //     return this.props.history.push(``) -- push to a goal show path

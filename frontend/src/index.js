@@ -17,7 +17,7 @@ import { setAuthToken } from './util/session_api_util';
 // We have not created this action yet, but will do so in the next step
 import { logout } from './actions/session_actions';
 
-import {fetchGoals, fetchGoal, createGoal, updateGoal, deleteGoal} from './util/goal_api_util';
+import {fetchGoals, fetchUserGoals, fetchGoal, createGoal, updateGoal, deleteGoal} from './actions/goal_actions';
 // window.fetchGoals = fetchGoals;
 // window.fetchGoal = fetchGoal;
 // window.createGoal = createGoal;
@@ -60,8 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // testing
   window.dispatch = store.dispatch;
+  window.getState = store.getState;
   
   window.fetchGoals = fetchGoals;
+  window.fetchUserGoals = fetchUserGoals;
   window.fetchGoal = fetchGoal;
   window.createGoal = createGoal;
   window.updateGoal = updateGoal;
