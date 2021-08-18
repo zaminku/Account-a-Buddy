@@ -13,7 +13,7 @@ export const fetchGoal = goalId => (
 );
 
 export const createGoal = newGoal => (
-  axios.goal(`/api/goals/`, newGoal)
+  axios.post(`/api/goals/`, newGoal)
 );
 
 export const updateGoal = goal => (
@@ -21,5 +21,5 @@ export const updateGoal = goal => (
 );
 
 export const deleteGoal = goalId => (
-  axios.delete(`/api/goals/delete/${goalId}`)
+  axios.delete(`/api/goals/${goalId}`)
 );
