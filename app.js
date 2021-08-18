@@ -14,6 +14,7 @@ require('./config/passport')(passport);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// routes are made here
 app.use('/api/users', users);
 app.use('/api/goals', goals);
 app.use('/api/messages', messages)
@@ -38,14 +39,13 @@ const io = socketio(server, {
 app.use(express.static(path.join(__dirname,"./frontend/public")))
 
 io.on("connection", socket=>{
-    console.log("Connected.........")
+    console.log(".......Connected.........")
 
     socket.on("message", data => {
       console.log(data)
     })
 })
 
-const port2 = 5001 || process.env.PORT
 server.listen(port, ()=> console.log(`PORT2 is on ${port}`))
 
 // Test end -------------------------------
