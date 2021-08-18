@@ -32,6 +32,9 @@ class MessageIndex extends React.Component{
 
     componentDidMount(){
         this.props.fetchMessages()
+        socket.on("message", data=>{
+            console.log("socket is working")
+        })
     }
 
     componentDidUpdate(){
@@ -39,7 +42,6 @@ class MessageIndex extends React.Component{
     }
 
     render(){
-        console.log(this.props)
         const allMessages = this.props.messages.map(message => {
             return (
                 <div className="message-credentials" key={message.id}>
@@ -76,7 +78,6 @@ class MessageIndex extends React.Component{
                         id="msg"
                         type="text"
                         placeholder="Enter Message"
-                        required
                         autoComplete="off"
                         onChange={e=>this.update(e)}
                         value={this.state.message}
