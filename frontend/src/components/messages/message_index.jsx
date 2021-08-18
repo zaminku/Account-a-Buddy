@@ -8,7 +8,8 @@ class MessageIndex extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            body: ''
+            username: 'demo',
+            message: ''
         }
 
         this.sendSocketIO = this.sendSocketIO.bind(this)
@@ -16,12 +17,13 @@ class MessageIndex extends React.Component{
     }
 
     sendSocketIO(){
-        socket.emit("message", this.state.body)
+        socket.emit("message", this.state.message)
+        this.props.addMessage(this.state)
     }
 
     update(e){
         this.setState({
-            body: e.target.value
+            message: e.target.value
         })
     }
 
