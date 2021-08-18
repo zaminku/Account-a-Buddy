@@ -7,6 +7,7 @@ import MainPage from './main/main_page.jsx';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import MessageIndexContainer from './messages/message_index_container';
+// import ChatPageContainer from './messages/chat_page_container';
 
 const App = () => (
     <div>

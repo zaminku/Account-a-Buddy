@@ -39,9 +39,14 @@ const io = socketio(server, {
 app.use(express.static(path.join(__dirname,"./frontend/public")))
 
 io.on("connection", socket=>{
+  
+    // const id = socket.handshake.query.id
+    // socket.join(id)
+
     console.log(".......Connected.........")
 
     socket.on("message", data => {
+      // socket.broadcast.to(data.recipient).emit('receive-message', data.message)
       console.log(data)
     })
 })

@@ -3,6 +3,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 
+// TEST CODE vvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+// auto css styling
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+// =====================================
+
 // We set this up in the last section
 import configureStore from './store/store';
 
