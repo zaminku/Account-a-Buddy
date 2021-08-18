@@ -30,7 +30,6 @@ router.get('/:goalId', (req, res) => {
         );
 });
 
-
 router.post('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {

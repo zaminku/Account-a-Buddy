@@ -5,6 +5,13 @@ import Root from './components/root';
 import axios from "axios";
 
 
+// TEST CODE vvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+// auto css styling
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+// =====================================
+
 // We set this up in the last section
 import configureStore from './store/store';
 
