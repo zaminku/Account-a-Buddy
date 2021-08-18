@@ -7,6 +7,7 @@ import MainPage from './main/main_page.jsx';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import GoalIndexContainer from './goals/goal_index_container';
+import GoalFormContainer from './goals/goal_form_container';
 
 const App = () => (
     <div>
@@ -16,6 +17,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/goals" component={GoalIndexContainer}/>
+            <ProtectedRoute exact path="/goals/new" component={GoalFormContainer}/>
         </Switch>
     </div>
 );
