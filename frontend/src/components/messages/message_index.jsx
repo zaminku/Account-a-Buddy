@@ -8,7 +8,7 @@ class MessageIndex extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            username: 'demo',
+            username: this.props.user.username,
             message: ''
         }
 
@@ -42,6 +42,7 @@ class MessageIndex extends React.Component{
     }
 
     render(){
+        console.log(this.props)
         const allMessages = this.props.messages.map(message => {
             return (
                 <div className="message-credentials" key={message.id}>

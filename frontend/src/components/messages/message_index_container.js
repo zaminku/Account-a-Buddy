@@ -6,7 +6,7 @@ import { addMessage, fetchMessages, fetchMessage } from '../../actions/message_a
 const mSTP = (state) => {
     return({
         messages: Object.values(state.messages),
-        currentUserId: state.session.id
+        user: state.session.user
     })
 }
 
