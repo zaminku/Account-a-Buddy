@@ -2,6 +2,8 @@ import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
+import axios from "axios";
+
 
 // TEST CODE vvvvvvvvvvvvvvvvvvvvvvvvvvv
 
@@ -22,6 +24,14 @@ import { setAuthToken } from './util/session_api_util';
 // We have not created this action yet, but will do so in the next step
 import { logout } from './actions/session_actions';
 
+import {fetchGoals, fetchGoal, createGoal, updateGoal, deleteGoal} from './util/goal_api_util';
+// window.fetchGoals = fetchGoals;
+// window.fetchGoal = fetchGoal;
+// window.createGoal = createGoal;
+// window.updateGoal = updateGoal;
+// window.deleteGoal = deleteGoal;
+
+window.axios = axios;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -55,5 +65,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render our root component and pass in the store as a prop
   const root = document.getElementById('root');
 
+  // testing
+  window.dispatch = store.dispatch;
+  
+  window.fetchGoals = fetchGoals;
+  window.fetchGoal = fetchGoal;
+  window.createGoal = createGoal;
+  window.updateGoal = updateGoal;
+  window.deleteGoal = deleteGoal;
+  
   ReactDOM.render(<Root store={store} />, root);
+  
 });
+
+
+// testing in console log: fetchGoals().then(res => console.log(res))
