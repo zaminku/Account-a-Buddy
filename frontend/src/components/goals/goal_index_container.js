@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { fetchUserGoal } from '../../actions/goal_actions';
+import { fetchUserGoals } from '../../actions/goal_actions';
 import GoalIndex from "./goal_index";
 
 const mSTP = state => ({
@@ -8,7 +8,7 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    fetchUserGoal: userId => dispatch(fetchUserGoal(userId))
+    fetchUserGoals: userId => dispatch(fetchUserGoals(userId))
 })
 
 export default connect(mSTP, mDTP)(GoalIndex);

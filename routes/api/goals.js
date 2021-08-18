@@ -83,13 +83,21 @@ router.post('/',
   );
 
   router.delete('/:goalId', (req, res) => {
-      Goal.deleteOne({_id: req.params.goalId},
-        error => {
-            if (error) {
-                return error
-            }
-        });
+    //   Goal.deleteOne({_id: req.params.goalId},
+    //     error => {
+    //         if (error) {
+    //             return error
+    //         }
+    //     });
 
+    //     res.redirect('/api/goals');
+
+        passport.authenticate("jwt", { session: false }),
+        async (req, res) => {
+            await db.collection("goals").deleteOne({ _id: ObjectID(req.params.id) });
+            res.json("deleted");
+        }
+        
         res.redirect('/api/goals');
   })
 
