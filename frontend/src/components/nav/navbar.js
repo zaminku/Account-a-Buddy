@@ -19,7 +19,7 @@ class NavBar extends React.Component {
             return (
                 <div className="navbar-right">
                     <Link to={'/profile'}>Profile</Link>
-                    <Link to={'/messages'}>Messages</Link>
+                    <Link to={'/chat'}>Messages</Link>
                     <Link to={'/goals'}>Goals</Link>
                     <button onClick={this.logoutUser}>Logout</button>
                 </div>
@@ -27,7 +27,6 @@ class NavBar extends React.Component {
         } else {
             return (
                 <div className="navbar-right">
-
                     <Link to={'/signup'}>Signup</Link>
                     <Link to={'/login'}>Login</Link>
                 </div>
