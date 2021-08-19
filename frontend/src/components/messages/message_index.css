@@ -23,7 +23,7 @@
     overflow-x: hidden;
     border-radius: 15px;
     box-shadow: 0px 0px 10px 1px #fde5d6;
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
 
 .chat-page #msg {
