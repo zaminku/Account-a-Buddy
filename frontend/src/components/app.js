@@ -15,12 +15,12 @@ const App = () => (
     <div>
         <NavBarContainer />
         <Switch>
-            <Route path="/chat" component={MessageIndexContainer}/>
             <AuthRoute exact path="/" component={MainPage} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/goals" component={GoalIndexContainer}/>
             <ProtectedRoute exact path="/goals/new" component={GoalFormContainer}/>
+            <ProtectedRoute path="/chat" component={MessageIndexContainer}/>
         </Switch>
     </div>
 );

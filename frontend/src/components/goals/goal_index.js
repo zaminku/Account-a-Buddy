@@ -15,6 +15,10 @@ class Goal extends React.Component {
     this.props.fetchUserGoals(this.props.currentUser.id);
   }
 
+  componentWillUnmount() {
+    this.props.clearGoals();
+  }
+
   // componentWillReceiveProps(newState) {
   //   this.setState({ goals: newState.goals });
   // }
