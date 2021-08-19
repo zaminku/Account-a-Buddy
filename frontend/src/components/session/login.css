@@ -1,20 +1,22 @@
 .container {
-    width: 100vh;
     height: 100vh;
+    width: 100vw;
     font-family: 'Martel', serif;
     background-color: #fde5d6;
+    /* background-color: #ccd5d2; */
     color: #698ea2;
-    /* color: #152935; */
+    /* color: #152935;
+    color: #e4a576; */
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .card {
     width: 350px;
     height: 500px;
     box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
-
 }
 
 .inner-box {
@@ -23,9 +25,14 @@
     height: 100%;
 }
 
-.card-front {
+.card-front, .card-back {
     position: absolute;
     width: 100%;
     height:100%;
-
+    background-position: center;
+    background-size: cover;
+    /* background-color: #fde5d6; */
+    padding: 55px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
 }
