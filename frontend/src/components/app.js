@@ -9,11 +9,15 @@ import SignupFormContainer from './session/signup_form_container';
 import MessageIndexContainer from './messages/message_index_container';
 // import ChatPageContainer from './messages/chat_page_container';
 import GoalIndexContainer from './goals/goal_index_container'
+import AboutPage from './about/about_page'
+import ContactPage from './contact/contact_us';
 
 const App = () => (
     <div>
         <NavBarContainer />
         <Switch>
+            <Route path="/about" component={AboutPage}/>
+            <Route path="/contact" component={ContactPage}/>
             <Route path="/chat" component={MessageIndexContainer}/>
             <AuthRoute exact path="/" component={MainPage} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
