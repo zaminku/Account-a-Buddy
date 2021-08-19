@@ -1,17 +1,38 @@
-import React from "react";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import GoalBox from './goal_box';
 
-class GoalIndex extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+class Goal extends React.Component {
+  constructor(props) {
+    super(props);
 
-    render() {
-        return(
-            <div>
-                <h1>Goals Index</h1>
-            </div>
-        )
+    // this.state = {
+    //   goals: []
+    // }
+  }
+
+  componentWillMount() {
+    this.props.fetchUserGoals(this.props.currentUser.id);
+  }
+
+  // componentWillReceiveProps(newState) {
+  //   this.setState({ goals: newState.goals });
+  // }
+
+  render() {
+    if (this.props.goals.length === 0) {
+      return (<div>No goals have been written yet.</div>)
+    } else {
+      return (
+        <div>
+          <h1>All Goals</h1>
+          {this.props.goals.map(goal => (
+            <GoalBox key={goal._id} title={goal.title} description={goal.description}/>
+          ))}
+        </div>
+      );
     }
+  }
 }
 
-export default GoalIndex;
+export default withRouter(Goal);
