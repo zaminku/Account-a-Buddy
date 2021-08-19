@@ -1,8 +1,7 @@
+
+
 .team{
     display: flex;
-    /* flex-wrap: wrap; */
-    padding: 1vw;
-    margin: 1vw;
 }
 
 .github{
@@ -15,21 +14,17 @@
     height: 8vh;
 }
 
-.team>a{
-    margin:100px;
-}
-
 .contact-text{
     text-align: center;
     font-family: 'Martel', serif;
     font-size: 10vh;
+    margin-top: 3vh;
 }
 
 .team>li{
     text-align: center;
     /* border: 3px solid black; */
     padding: 2vw;
-    /* margin: 1vw; */
     font-family: 'Karla', sans-serif;
     font-size: large;
 }
