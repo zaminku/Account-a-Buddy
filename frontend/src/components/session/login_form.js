@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import "./login.css";
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -69,27 +70,31 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <h1>Sign In</h1>
-                    <div>
-                        <input type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')}
-                            placeholder="Username"
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
-                        <br />
-                        {this.renderErrors()}
-                        <input type="submit" value="Submit" />
-                        {this.otherForm()}
-                    </div>
-                </form>
+            <div className="container">
+                <div className="card">
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="inner-box">
+                            <div className="card-front">
+                                <h1>Sign In</h1>
+                                <div>
+                                    <input type="text"
+                                        value={this.state.username}
+                                        onChange={this.update('username')}
+                                        placeholder="Username"
+                                    />
+                                    <input type="password"
+                                        value={this.state.password}
+                                        onChange={this.update('password')}
+                                        placeholder="Password"
+                                    />
+                                    {this.renderErrors()}
+                                    <input type="submit" value="Submit" />
+                                    {this.otherForm()}
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         );
     }
