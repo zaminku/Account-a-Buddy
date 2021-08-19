@@ -19,4 +19,9 @@ router.post("/", (req, res) => {
         })
 })
 
+router.delete('/:roomId', (req, res) => {
+    Room.deleteOne({ _id: req.params.roomId })
+    res.json(req.params.roomId)
+})
+
 module.exports = router;
