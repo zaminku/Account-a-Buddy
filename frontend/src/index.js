@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchGoal = fetchGoal;
   window.createGoal = createGoal;
   window.updateGoal = updateGoal;
-  window.deleteGoal = deleteGoal;
+  // window.deleteGoal = deleteGoal;
   window.createRoom = createRoom;
   
   ReactDOM.render(<Root store={store} />, root);
