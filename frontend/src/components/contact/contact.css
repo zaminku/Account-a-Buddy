@@ -1,0 +1,29 @@
+.team{
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.github{
+    width: 4vw;
+    height: 6vh;
+}
+
+.linkedin{
+    width:4vw;
+    height: 8vh;
+}
+
+.team>a{
+    margin:100px;
+}
+
+.contact-text{
+    text-align: center;
+    font-family: 'Martel', serif;
+    font-size: 10vh;
+}
+
+.blurb{
+    font-family: 'Karla', sans-serif;
+    font-size: large;
+}
