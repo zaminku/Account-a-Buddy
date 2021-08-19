@@ -40,9 +40,9 @@ class NavBar extends React.Component {
         return (
             <div className="navbar">
 
-                <a href="/" id="logo"> 
+                <Link to={'/'} id="logo"> 
                     <img className="navbar-logo" src="../handshake.png" alt="Github-logo" /> Account-A-Buddy 
-                </a>
+                </Link>
                 
                 <div>
                  <Link to={'/about'}>Features</Link>
