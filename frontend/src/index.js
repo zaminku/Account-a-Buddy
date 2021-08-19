@@ -31,6 +31,8 @@ import {fetchGoals, fetchGoal, createGoal, updateGoal, deleteGoal} from './util/
 // window.updateGoal = updateGoal;
 // window.deleteGoal = deleteGoal;
 
+import { createRoom } from "./actions/room_actions"
+
 window.axios = axios;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -67,12 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // testing
   window.dispatch = store.dispatch;
+  window.store = store
   
   window.fetchGoals = fetchGoals;
   window.fetchGoal = fetchGoal;
   window.createGoal = createGoal;
   window.updateGoal = updateGoal;
   window.deleteGoal = deleteGoal;
+
+  window.createRoom = createRoom;
   
   ReactDOM.render(<Root store={store} />, root);
   

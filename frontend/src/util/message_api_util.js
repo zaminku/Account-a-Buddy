@@ -17,3 +17,11 @@ export const fetchMessage = (message) => {
         axios.get(`/api/messages/${message.id}`)
     )
 }
+
+// TEST CODE =================================
+export const deleteMessage = message => {
+    return (
+        axios.delete(`/api/messages/${message._id}`)
+    )
+}
+// ===========================================
