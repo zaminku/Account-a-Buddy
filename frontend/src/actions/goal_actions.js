@@ -3,7 +3,7 @@ import * as APIUtil from "../util/goal_api_util";
 export const RECEIVE_GOALS = "RECEIVE_GOALS";
 export const RECEIVE_USER_GOALS = "RECEIVE_USER_GOALS";
 export const RECEIVE_GOAL = "RECEIVE_GOAL";
-export const REMOVE_GOAL = "REMOVE_GOAL";
+// export const REMOVE_GOAL = "REMOVE_GOAL";
 
 
 const receiveGoals = goals => ({
@@ -21,9 +21,10 @@ const receiveGoal = goal => ({
     goal
 })
 
-const removeGoal = goalId => ({
-    type: REMOVE_GOAL
-})
+// const removeGoal = goalId => ({
+//     type: REMOVE_GOAL,
+//     goalId
+// })
 
 export const fetchGoals = () => dispatch => (
     APIUtil.fetchGoals()
@@ -50,7 +51,7 @@ export const updateGoal = goal => dispatch => (
         .then(goal => dispatch(receiveGoal(goal)))
 )
 
-export const deleteGoal = goalId => dispatch => (
-    APIUtil.deleteGoal(goalId)
-        .then(() => dispatch(removeGoal(goalId)))
-)
+// export const deleteGoal = goalId => dispatch => (
+//     APIUtil.deleteGoal(goalId)
+//         .then(() => dispatch(removeGoal(goalId)))
+// )

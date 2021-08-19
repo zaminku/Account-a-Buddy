@@ -20,6 +20,6 @@ export const updateGoal = goal => (
   axios.patch(`/api/goals/${goal._id}`, goal)
 );
 
-export const deleteGoal = goalId => (
-  axios.delete(`/api/goals/${goalId}`)
-);
+// export const deleteGoal = goalId => (
+//   axios.delete(`/api/goals/${goalId}`)
+// );

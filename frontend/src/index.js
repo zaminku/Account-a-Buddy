@@ -5,6 +5,13 @@ import Root from './components/root';
 import axios from "axios";
 
 
+// TEST CODE vvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+// auto css styling
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+// =====================================
+
 // We set this up in the last section
 import configureStore from './store/store';
 
@@ -17,7 +24,7 @@ import { setAuthToken } from './util/session_api_util';
 // We have not created this action yet, but will do so in the next step
 import { logout } from './actions/session_actions';
 
-import {fetchGoals, fetchUserGoals, fetchGoal, createGoal, updateGoal, deleteGoal} from './actions/goal_actions';
+import {fetchGoals, fetchUserGoals, fetchGoal, createGoal, updateGoal } from './actions/goal_actions';
 // window.fetchGoals = fetchGoals;
 // window.fetchGoal = fetchGoal;
 // window.createGoal = createGoal;
@@ -67,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchGoal = fetchGoal;
   window.createGoal = createGoal;
   window.updateGoal = updateGoal;
-  window.deleteGoal = deleteGoal;
   
   ReactDOM.render(<Root store={store} />, root);
   
