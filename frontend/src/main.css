@@ -1,28 +1,69 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap'); */
+
 .main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     min-height: 30vh;
-    margin-top: 20vh;
+    margin-top: 8vh;
     padding-bottom: 20vh;
+    
+    /* background-image: url("./placeholder.jpg"); */
+    background-color:orange;
+     /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+        
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+        
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background: url(./placeholder.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
 }
 
 .catchphrase {
     font-size: 5vw;
-    font-weight: 700px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    color:white;
+    margin-top: 10vh;
 }
 
-pre{
-    padding: 10px;
-    /* background-color: orange; */
+.catchphrase>div{
+    margin-top:-10px;
+    padding: 0;
 }
 
 .subtext{
     font-size: 2vh;
+    font-family: 'Martel', serif;
+    font-weight: 400;
+    color: white;
 }
 
-body{
-    background-image: url("./placeholder.jpg");
-    background-color:orange;
+.getstarted{
+    border: none ;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 1vw;
+    background-color: #dca69b;
+}
+
+.getstarted:hover{
+    color:white;
+    background-color: #c77857;
+
+    /* background-color: red; */
 }
