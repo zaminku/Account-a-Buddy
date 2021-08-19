@@ -3,7 +3,7 @@ import { fetchUserGoals } from '../../actions/goal_actions';
 import GoalIndex from "./goal_index";
 
 const mSTP = state => ({
-    goals: Object.values(state.goals.user),
+    goals: Object.values(state.goals),
     currentUser: state.session.user
 })
 
