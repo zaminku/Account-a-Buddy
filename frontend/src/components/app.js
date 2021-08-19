@@ -10,7 +10,6 @@ import GoalIndexContainer from './goals/goal_index_container';
 import GoalFormContainer from './goals/goal_form_container';
 import MessageIndexContainer from './messages/message_index_container';
 // import ChatPageContainer from './messages/chat_page_container';
-import GoalIndexContainer from './goals/goal_index_container'
 import AboutPage from './about/about_page'
 import ContactPage from './contact/contact_us';
 
@@ -20,12 +19,12 @@ const App = () => (
         <Switch>
             <Route path="/about" component={AboutPage}/>
             <Route path="/contact" component={ContactPage}/>
-            <Route path="/chat" component={MessageIndexContainer}/>
             <AuthRoute exact path="/" component={MainPage} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/goals" component={GoalIndexContainer}/>
             <ProtectedRoute exact path="/goals/new" component={GoalFormContainer}/>
+            <ProtectedRoute path="/chat" component={MessageIndexContainer}/>
         </Switch>
     </div>
 );
