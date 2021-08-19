@@ -22,6 +22,12 @@ const GoalSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
+    // TEST CODE =============================
+    available: { 
+        type: Boolean,
+        required: true
+    }
+    // =======================================
 }, {
     timestamps: true
 });

@@ -7,7 +7,10 @@ class GoalForm extends React.Component {
         this.state = {
             title: '',
             description: '',
-            category: null
+            category: null, 
+            // TEST CODE =============================
+            available: false
+            // =======================================
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
