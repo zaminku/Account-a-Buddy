@@ -15,7 +15,7 @@ function ContactPage() {
                     <div className="Zamin"><img src="../zamin.jpeg" alt="user"/></div>
                     <div className="links">
                     <a href="https://github.com/zaminku"><img className="github" src="../github-logo.png" alt="Github-logo" /></a>
-                    <a href=""><img className="linkedin" src="../linkedin-logo.png" alt="LinkedIn-Logo" /></a>
+                    <a href="https://www.linkedin.com/in/zamin-k/"><img className="linkedin" src="../linkedin-logo.png" alt="LinkedIn-Logo" /></a>
                     </div>
                     <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
                 </li>

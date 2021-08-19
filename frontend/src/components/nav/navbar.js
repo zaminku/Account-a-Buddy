@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import "./navbar.css"
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -38,9 +39,19 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="navbar">
-                <div className="logo">Account-a-Buddy</div>
-                <Link to={'/about'}>Features</Link>
+
+                <a href="/" id="logo"> 
+                    <img className="navbar-logo" src="../handshake.png" alt="Github-logo" /> Account-A-Buddy 
+                </a>
+                
+                <div>
+                 <Link to={'/about'}>Features</Link>
+                </div>
+
+                <div>
                 <Link to={'/contact'}>Contact Us</Link>
+                </div>
+
                 {this.getLinks()}
             </div>
         );
