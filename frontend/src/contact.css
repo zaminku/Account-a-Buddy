@@ -1,0 +1,18 @@
+.team{
+    display: flex;
+    justify-content: space-around;
+}
+
+.github{
+    width: 4vw;
+    height: 6vh;
+}
+
+.linkedin{
+    width:4vw;
+    height: 8vh;
+}
+
+.links .img{
+    margin: 0 auto;
+}
