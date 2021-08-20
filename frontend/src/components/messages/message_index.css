@@ -11,19 +11,22 @@
 
 .clearfix {
     color: transparent;
-    margin-top: 95px;
+    margin-top: 88px;
 }
 
 .chat-container {
-    margin-top: 30px;
+    margin-top: 20px;
     background-color: #698ea2;
     height: 500px;
     width: 700px;
-    overflow-y: scroll;
-    overflow-x: hidden;
     border-radius: 15px;
     box-shadow: 0px 0px 10px 1px #fde5d6;
-    /* opacity: 0.8; */
+}
+
+.chat-messages {
+    height: 455px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .chat-page #msg {
@@ -70,7 +73,7 @@
     /* color: #fde5d6; */
     color: #fde5d6;
     font-size: 52px;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 
