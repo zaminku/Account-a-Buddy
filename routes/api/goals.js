@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const validateGoalInput = require('../../validation/goals');
 const Goal = require('../../models/Goal')
-const { ObjectID } = require('mongodb');
+// const { ObjectID } = require('mongodb');
 
 router.get('/', (req, res) => {
     Goal.find()
@@ -82,7 +82,7 @@ router.post('/',
     }
   );
 
-  router.delete('/:goalId', (req, res) => {
+//   router.delete('/:goalId', (req, res) => {
     //   Goal.deleteOne({_id: req.params.goalId},
     //     error => {
     //         if (error) {
@@ -92,14 +92,14 @@ router.post('/',
 
     //     res.redirect('/api/goals');
 
-        passport.authenticate("jwt", { session: false }),
-        async (req, res) => {
-            await db.collection("goals").deleteOne({ _id: ObjectID(req.params.id) });
-            res.json("deleted");
-        }
+//         passport.authenticate("jwt", { session: false }),
+//         async (req, res) => {
+//             await db.collection("goals").deleteOne({ _id: ObjectID(req.params.id) });
+//             res.json("deleted");
+//         }
         
-        res.redirect('/api/goals');
-  })
+//         res.redirect('/api/goals');
+//   })
 
 
 module.exports = router;

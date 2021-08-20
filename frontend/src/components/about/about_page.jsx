@@ -7,7 +7,7 @@ function AboutPage() {
         <div className="about-page" >
             <div className="about-description" >
                 <div>
-                    <h3>Account-a-Buddy</h3>
+                    <h2>Account-a-Buddy</h2>
                     <div>
                         <p>Account-a-Buddy is an application for those
                             with aspirations of overcoming challenges in
@@ -29,7 +29,7 @@ function AboutPage() {
 
             <div className="about-lang" >
                 <div>
-                    <h3>Languages</h3>
+                    <h2>Languages</h2>
                     <div>
                         <img className="lang" src="../../html-js-css_logo.png" 
                         alt="Pic of HTML5, CSS3, JS" />
@@ -39,7 +39,7 @@ function AboutPage() {
 
             <div className="about-tech" >
                 <div> 
-                    <h3>Technologies</h3>
+                    <h2>Technologies</h2>
                     <div className="tech-list" >
                         <div>
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU1XVtjEYPj0BoSZ9nrSBJ5nr319wO73dEcfD17BSzTf-m-q-rSZ9FGDO4yzzvd_AWQqo&usqp=CAU" alt="React" />

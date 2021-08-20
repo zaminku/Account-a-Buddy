@@ -22,7 +22,7 @@ class NavBar extends React.Component {
                 <div className="navbar-right">
                     <Link to={'/chat'}>Chat</Link>
                     <Link to={'/goals'}>Goals</Link>
-                    <button onClick={this.logoutUser}>Logout</button>
+                    <button className="logout-btn" onClick={this.logoutUser}>Logout</button>
                 </div>
             );
         } else {
@@ -43,15 +43,17 @@ class NavBar extends React.Component {
                     <img className="navbar-logo" src="../handshake.png" alt="Github-logo" /> Account-A-Buddy 
                 </Link>
                 
-                <div>
-                 <Link to={'/about'}>Features</Link>
+                <div className="f-dec">
+                    <Link to={'/about'}>Features</Link>
                 </div>
 
-                <div>
-                <Link to={'/contact'}>Contact Us</Link>
+                <div className="c-dec">
+                    <Link to={'/contact'}>Contact Us</Link>
                 </div>
 
-                {this.getLinks()}
+                <div className="nav-right-margin">
+                    {this.getLinks()}
+                </div>
             </div>
         );
     }

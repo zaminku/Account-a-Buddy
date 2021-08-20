@@ -7,14 +7,14 @@
     align-items: center;
 }
 
-.about-page h3 {
-    font-family: 'Karla', sans-serif;
-    font-weight: 900;
-    color: #152935;
+.about-page h2 {
+    font-family: 'Martel', sans-serif;
+    font-weight: bold;
+    color: #698ea2;
 }
 
 .about-page p {
-    font-family: 'Martel', serif;
+    font-family: 'Karla', serif;
     color: #152935;
 }
 

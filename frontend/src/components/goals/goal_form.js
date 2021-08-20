@@ -10,6 +10,7 @@ class GoalForm extends React.Component {
             category: null
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
     }
 
     update(field) {

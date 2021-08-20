@@ -48,22 +48,22 @@
 .subtext{
     font-size: 2vh;
     font-family: 'Martel', serif;
-    font-weight: 400;
+    font-weight: 400px;
     color: white;
+    margin-top: 25px;
 }
 
 .getstarted{
     border: none ;
     border-radius: 15px;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 25px;
     font-size: 1vw;
-    background-color: #dca69b;
+    color: #152935;
+    background-color: rgb(252, 193, 202);;
 }
 
 .getstarted:hover{
     color:white;
     background-color: #c77857;
-
-    /* background-color: red; */
 }

@@ -17,7 +17,7 @@ class MainPage extends React.Component {
                 </div>
                 <div className="subtext"> Stay accountable for your goals with like-minded people </div>
                 <Link to={`/signup`}> 
-                    <button className="getstarted">Get Started Here</button>
+                    <button className="getstarted">Get Started</button>
                 </Link>
             </div>
         );
