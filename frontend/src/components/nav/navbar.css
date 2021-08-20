@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.navbar{
+    font-size: 2vh;
+    background-color: #e4a576;
+    padding: 3vw;
+    padding-top: 0px;
+    text-transform: uppercase;
+}
+
+/* Link tag === a tag */
+.navbar-right a{
+    padding-right: 3vw;
+}
+
+.navbar a{
+    text-decoration: none;
+    font-family: 'Karla', sans-serif;
+    color: black;
+}
+
+.navbar a:hover{
+    color: white;
+}
+
+#logo{
+    font-size: 1.25vw;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Dancing Script";
+    text-transform: capitalize;
+}
+
+#logo:hover{
+    color: white
+}
+
+.navbar-logo{
+    width: 2vw;
+    height: 4vh;
+}
