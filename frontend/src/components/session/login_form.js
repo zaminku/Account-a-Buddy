@@ -62,8 +62,9 @@ class LoginForm extends React.Component {
     otherForm() {
         return(
             <div>
-                <div>Don't have an account?</div>
-                <Link to={'/signup'}>Signup</Link>
+                <div className="account-info">Don't have an account?
+                    <Link className="signup-link" to={'/signup'}>  Signup</Link>
+                </div>
             </div>
         )
     }
@@ -72,28 +73,37 @@ class LoginForm extends React.Component {
         return (
             <div className="container">
                 <div></div>
-                <form className = "card" onSubmit={this.handleSubmit}>
+
+                <div className = "card">
                     <div className="inner-box">
                         <div className="card-front">
                             <h1>Sign In</h1>
-                            <div>
-                                <input type="text"
-                                    value={this.state.username}
-                                    onChange={this.update('username')}
-                                    placeholder="Username"
-                                />
-                                <input type="password"
-                                    value={this.state.password}
-                                    onChange={this.update('password')}
-                                    placeholder="Password"
-                                />
-                                {this.renderErrors()}
-                                <input type="submit" value="Submit" />
-                                {this.otherForm()}
+                            <form  onSubmit={this.handleSubmit}>
+                                <div>
+                                    <input type="text"
+                                        className="input-box"
+                                        value={this.state.username}
+                                        onChange={this.update('username')}
+                                        placeholder="Username"
+                                    />
+                                    <input type="password"
+                                        className="input-box"
+                                        value={this.state.password}
+                                        onChange={this.update('password')}
+                                        placeholder="Password"
+                                    />
+                                    <div className="error-div">
+                                        {this.renderErrors()}
+                                    </div>
+
+                                    <input className="submit-btn" type="submit" value="Submit" />
+                                    {this.otherForm()}
                             </div>
+                            </form>
                         </div>
                     </div>
-                </form>
+                </div>
+        
             </div>
         );
     }

@@ -59,8 +59,9 @@ class SignupForm extends React.Component {
     otherForm() {
         return (
             <div>
-                <div>Already have an account?</div>
-                <Link to={'/login'}>Login</Link>
+                <div className="account-info-signup">Already have an account?
+                    <Link className="login-link" to={'/login'}>Login</Link>
+                </div>
             </div>
         )
     }
@@ -69,43 +70,45 @@ class SignupForm extends React.Component {
         return (
             <div className="container">
                 <div></div>
-                <form className="card" onSubmit={this.handleSubmit}>
+                <div className="card">
                     <div className="inner-box">
                         <div className="card-back">
                             <h1>Sign Up</h1>
-                            <div className="signup-form">
-                                <br />
-                                <input type="text"
-                                    value={this.state.email}
-                                    onChange={this.update('email')}
-                                    placeholder="Email"
-                                />
-                                <br />
-                                <input type="text"
-                                    value={this.state.username}
-                                    onChange={this.update('username')}
-                                    placeholder="Username"
-                                />
-                                <br />
-                                <input type="password"
-                                    value={this.state.password}
-                                    onChange={this.update('password')}
-                                    placeholder="Password"
-                                />
-                                <br />
-                                <input type="password"
-                                    value={this.state.password2}
-                                    onChange={this.update('password2')}
-                                    placeholder="Confirm Password"
-                                />
-                                <br />
-                                {this.renderErrors()}
-                                <input type="submit" value="Submit" />
-                                {this.otherForm()}
-                            </div>
+                            <form onSubmit={this.handleSubmit}>
+                                <div className="signup-form">
+                                    <br />
+                                    <input type="text"
+                                        value={this.state.email}
+                                        onChange={this.update('email')}
+                                        placeholder="Email"
+                                    />
+                                    <br />
+                                    <input type="text"
+                                        value={this.state.username}
+                                        onChange={this.update('username')}
+                                        placeholder="Username"
+                                    />
+                                    <br />
+                                    <input type="password"
+                                        value={this.state.password}
+                                        onChange={this.update('password')}
+                                        placeholder="Password"
+                                    />
+                                    <br />
+                                    <input type="password"
+                                        value={this.state.password2}
+                                        onChange={this.update('password2')}
+                                        placeholder="Confirm Password"
+                                    />
+                                    <br />
+                                    {this.renderErrors()}
+                                    <input className="submit-btn" type="submit" value="Submit" />
+                                    {this.otherForm()}
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         );
     }
