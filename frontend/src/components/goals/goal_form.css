@@ -57,6 +57,7 @@
 
 .goal-type {
     font-size: 30px;
+    color: #29526b;
 }
 
 input[type="radio"] {
@@ -90,11 +91,12 @@ textarea.goal-form-text-input {
     border-radius: 15px;
     padding: 5px 10px;
     margin-top: 20px;
-    font-size: 1vw;
-    background-color: #dca69b;
+    font-size: 1.3vw;
+    background-color: #29526b;
+    color: white;
 }
 
 .goal-form-submit:hover{
-    color:white;
-    background-color: #c77857;
+    color:#152935;
+    background-color: #ccd5d2;
 }

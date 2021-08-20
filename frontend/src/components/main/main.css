@@ -49,14 +49,15 @@
     font-size: 2vh;
     font-family: 'Martel', serif;
     font-weight: 400px;
-    color: black;
+    color: white;
+    margin-top: 25px;
 }
 
 .getstarted{
     border: none ;
     border-radius: 15px;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 25px;
     font-size: 1vw;
     color: #152935;
     background-color: rgb(252, 193, 202);;

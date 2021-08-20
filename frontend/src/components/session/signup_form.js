@@ -71,7 +71,7 @@ class SignupForm extends React.Component {
             <div className="container">
                 <div></div>
                 <div className="card">
-                    <div className="inner-box">
+                    <div className="inner-box" id="card">
                         <div className="card-back">
                             <h1>Sign Up</h1>
                             <form onSubmit={this.handleSubmit}>
@@ -82,29 +82,24 @@ class SignupForm extends React.Component {
                                         onChange={this.update('email')}
                                         placeholder="Email"
                                     />
-                                    <br />
                                     <input type="text"
                                         className="input-box"
                                         value={this.state.username}
                                         onChange={this.update('username')}
                                         placeholder="Username"
                                     />
-                                    <br />
                                     <input type="password"
                                         className="input-box"
                                         value={this.state.password}
                                         onChange={this.update('password')}
                                         placeholder="Password"
                                     />
-                                    <br />
                                     <input type="password"
                                         className="input-box"
                                         value={this.state.password2}
                                         onChange={this.update('password2')}
                                         placeholder="Confirm Password"
                                     />
-                                    <br />
-
                                     <div className="error-div">
                                         {this.renderErrors()} 
                                     </div>
