@@ -21,7 +21,7 @@
         
     /* Set up positioning */
     position: fixed;
-    top: 0;
+    top: 1vh;
     left: 0;
 
     background: url(./placeholder.jpg) no-repeat center center fixed;
