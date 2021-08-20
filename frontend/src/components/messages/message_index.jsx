@@ -63,15 +63,15 @@ class MessageIndex extends React.Component{
                     </div>
                     <div className="chat-form-container">
                         <form id="chat-form">
-                        <input
-                            id="msg"
-                            type="text"
-                            placeholder="Enter Message"
-                            autoComplete="off"
-                            onChange={e=>this.update(e)}
-                            value={this.state.message}
-                        />
-                        <button className="btn" onClick={this.sendSocketIO}><i className="fas fa-paper-plane"></i> Send</button>
+                            <input
+                                id="msg"
+                                type="text"
+                                placeholder="Enter Message"
+                                autoComplete="off"
+                                onChange={e=>this.update(e)}
+                                value={this.state.message}
+                            />
+                            <button className="btn" onClick={this.sendSocketIO}><i className="fas fa-paper-plane"></i> Send</button>
                         </form>
                     </div>
                 </div>

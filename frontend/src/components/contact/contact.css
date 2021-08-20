@@ -28,3 +28,7 @@
     font-family: 'Karla', sans-serif;
     font-size: large;
 }
+
+.Zamin > img, .Sam > img, .Jenny > img, .Ben > img {
+    border-radius: 15px;
+}
