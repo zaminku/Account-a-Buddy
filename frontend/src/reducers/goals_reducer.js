@@ -13,8 +13,8 @@ const goalsReducer = (state ={}, action) => {
         case RECEIVE_USER_GOALS:
             goals = action.goals.data;
             goals.forEach(goal => newState[goal._id] = goal);
-            // return newState;
-            return action.goals.data;
+            return newState;
+            // return action.goals.data;
         case RECEIVE_GOAL:
             const goal = { ...action.goal.data, newGoal: true };
             return { ...state, [goal._id]: goal };
