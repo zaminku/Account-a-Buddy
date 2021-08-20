@@ -1,0 +1,28 @@
+.team{
+    display: flex;
+}
+
+.github{
+    width: 4vw;
+    height: 6vh;
+}
+
+.linkedin{
+    width:4vw;
+    height: 8vh;
+}
+
+.contact-text{
+    text-align: center;
+    font-family: 'Martel', serif;
+    font-size: 10vh;
+    margin-top: 3vh;
+}
+
+.team>li{
+    text-align: center;
+    /* border: 3px solid black; */
+    padding: 2vw;
+    font-family: 'Karla', sans-serif;
+    font-size: large;
+}
