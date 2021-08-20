@@ -3,3 +3,16 @@
 @import url("main.css");
 @import url("navbar.css");
 @import url("contact.css");
+
+body {
+    background: linear-gradient(90deg, #ccd5d2, #fde5d6);}
+
+/* colors
+
+#152935
+#698ea2
+#ccd5d2
+#e4a576
+#fde5d6
+
+*/
