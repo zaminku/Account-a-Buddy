@@ -60,7 +60,7 @@ class SignupForm extends React.Component {
         return (
             <div>
                 <div className="account-info-signup">Already have an account?
-                    <Link className="login-link" to={'/login'}>Login</Link>
+                    <Link className="login-link" to={'/login'}> Login</Link>
                 </div>
             </div>
         )
@@ -75,33 +75,40 @@ class SignupForm extends React.Component {
                         <div className="card-back">
                             <h1>Sign Up</h1>
                             <form onSubmit={this.handleSubmit}>
-                                <div className="signup-form">
-                                    <br />
+                                <div>
                                     <input type="text"
+                                        className="input-box"
                                         value={this.state.email}
                                         onChange={this.update('email')}
                                         placeholder="Email"
                                     />
                                     <br />
                                     <input type="text"
+                                        className="input-box"
                                         value={this.state.username}
                                         onChange={this.update('username')}
                                         placeholder="Username"
                                     />
                                     <br />
                                     <input type="password"
+                                        className="input-box"
                                         value={this.state.password}
                                         onChange={this.update('password')}
                                         placeholder="Password"
                                     />
                                     <br />
                                     <input type="password"
+                                        className="input-box"
                                         value={this.state.password2}
                                         onChange={this.update('password2')}
                                         placeholder="Confirm Password"
                                     />
                                     <br />
-                                    {this.renderErrors()}
+
+                                    <div className="error-div">
+                                        {this.renderErrors()} 
+                                    </div>
+
                                     <input className="submit-btn" type="submit" value="Submit" />
                                     {this.otherForm()}
                                 </div>

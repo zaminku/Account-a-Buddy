@@ -3,7 +3,7 @@
     width: 100vw;
     font-family: 'Martel', serif;
     /* background-color: #fde5d6; */
-    background-color: #ccd5d2;
+    /* background-color: #ccd5d2; */
     /* color: #698ea2;
     color: #152935; */
     color: #fde5d6;
@@ -42,7 +42,7 @@
 }
 
 .card-back {
-    transform: rotateY(180deg);
+    /* transform: rotateY(180deg); */
 }
 
 .input-box {
@@ -87,15 +87,14 @@
     font-size: 13px;
 }
 
-.signup-link {
+.account-info-signup {
+    margin-top: 30px;
+    font-size: 13px;
+}
+
+.signup-link, .login-link {
     color: #c77857;
     text-decoration: none;
 }
 
-.account-info-signup {
-    font-size: 13px;
-}
 
-.login-link {
-
-}
