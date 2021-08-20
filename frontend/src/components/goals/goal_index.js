@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import GoalBox from './goal_box';
+import "./goal_index.css"
 
 class Goal extends React.Component {
   constructor(props) {

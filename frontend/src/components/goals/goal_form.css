@@ -45,8 +45,10 @@
 
 .goal-form-title {
     font-size: 70px;
-    font-family: 'Karla', sans-serif;
+    font-weight: bold;
+    font-family: 'Martel', sans-serif;
     margin-bottom: 5vh;
+    color: #698ea2;
 }
 
 .goal-title {
