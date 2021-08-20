@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import GoalBox from './goal_box';
 
 class Goal extends React.Component {
@@ -9,6 +9,8 @@ class Goal extends React.Component {
     // this.state = {
     //   goals: []
     // }
+
+    this.showGoal = this.showGoal.bind(this);
   }
 
   componentWillMount() {
@@ -23,7 +25,7 @@ class Goal extends React.Component {
   //   this.setState({ goals: newState.goals });
   // }
 
-  render() {
+  showGoal() {
     if (this.props.goals.length === 0) {
       return (<div>No goals have been written yet.</div>)
     } else {
@@ -36,6 +38,17 @@ class Goal extends React.Component {
         </div>
       );
     }
+  }
+
+  render() {
+    return (
+      <div>
+        <Link to="/goals/new">
+          <button>Create a goal</button>
+        </Link>
+          {this.showGoal()}
+      </div>
+    )
   }
 }
 
