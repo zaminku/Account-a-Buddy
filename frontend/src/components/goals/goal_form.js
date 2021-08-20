@@ -46,7 +46,6 @@ class GoalForm extends React.Component {
                                 className="goal-form-radio" 
                                 value="breaking-habit"
                                 onChange={this.update('category')}
-                                checked
                             />
                             <label for="goal-type-1" className="goal-form-radio-label">Breaking a Habit</label>
                         </div>
