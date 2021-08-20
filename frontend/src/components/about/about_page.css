@@ -45,14 +45,14 @@ img {
     flex-direction: column;
     align-items: center;
     padding: 0px 400px 0px 400px;
-    margin: 200px 0px 0px 0px;
+    margin: 85px 0px 0px 0px;
 }
 
 .about-tech {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 200px 0px 100px 0px;
+    margin: 85px 0px 100px 0px;
 }
 
 .tech-list {
