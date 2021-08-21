@@ -15,6 +15,7 @@ class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
 
     // Once the user has been authenticated, redirect to the Goals page
@@ -69,6 +70,12 @@ class LoginForm extends React.Component {
         )
     }
 
+    handleDemoLogin(e) {
+        e.preventDefault();
+        let demoUser = { username: "DemoUser", password: "123456" };
+        this.props.login(demoUser);
+    }
+
     render() {
         return (
             <div className="container">
@@ -97,6 +104,7 @@ class LoginForm extends React.Component {
                                     </div>
 
                                     <input className="submit-btn" type="submit" value="Submit" />
+                                    <button className="submit-btn" onClick={this.handleDemoLogin}>Demo Login</button>
                                     {this.otherForm()}
                             </div>
                             </form>
