@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./goal_form.css"
 
 class GoalForm extends React.Component {
     constructor(props) {
@@ -13,6 +13,7 @@ class GoalForm extends React.Component {
             // =======================================
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
     }
 
     update(field) {
@@ -35,47 +36,60 @@ class GoalForm extends React.Component {
 
     render() {
         return(
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Goal type:
+            <div className="goal-form">
+                {/* <div className="clear-fix">clearfix</div> */}
+                <form className="goal-form-box" onSubmit={this.handleSubmit}>
+                    <h1 className="goal-form-title">Create a Goal</h1>
+                    <label className="goal-type">What kind of habit are you trying to work on?</label>
                         <br />
-                        <input 
-                            type="radio" 
-                            name="goal-type" 
-                            value="breaking-habit"
-                            onChange={this.update('category')}
-                        />
-                        <label for="goal-type-1">Breaking a Habit</label>
-                        <br />
-                        <input 
-                            type="radio" 
-                            name="goal-type" 
-                            value="making-habit" 
-                            onChange={this.update('category')}
-                        />
-                        <label for="goal-type-1">Making a Habit</label>
-                    </label>
+                        <div>
+                            <input 
+                                type="radio" 
+                                name="goal-type"
+                                className="goal-form-radio" 
+                                value="breaking-habit"
+                                onChange={this.update('category')}
+                            />
+                            <label for="goal-type-1" className="goal-form-radio-label">Breaking a Habit</label>
+                        </div>
+                        <div>
+                            <input 
+                                type="radio" 
+                                name="goal-type"
+                                className="goal-form-radio" 
+                                value="making-habit" 
+                                onChange={this.update('category')}
+                            />
+                        <label for="goal-type-1" className="goal-form-radio-label">Making a Habit</label>
+                        </div>
                     <br />
-                    <label>Title
+                    <div>
+                        {/* <label>Title</label> */}
+                        {/* <br /> */}
                         <input 
                             type="text"
                             placeholder="Title"
                             value={this.state.title}
+                            className="goal-form-text-input"
                             onChange={this.update('title')}
                         />
-                    </label>
-                    <br />
-                    <label>Description
-                        <input 
-                            type="text"
+                    </div>
+                    <div>
+                        {/* <label>Description</label> */}
+                        {/* <br /> */}
+                        <textarea 
                             placeholder="Description"
                             value={this.state.description}
+                            className="goal-form-text-input"
                             onChange={this.update('description')}
                         />
-                    </label>
+                    </div>
                     <br />
-                    <input type="submit" value="Submit"/>
+                    <div className="goal-form-submit-div">
+                        <input className="goal-form-submit" type="submit" value="Submit"/>
+                    </div>
                 </form>
+                <div className="clear-fix2"></div>
             </div>
         )
     }

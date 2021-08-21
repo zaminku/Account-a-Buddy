@@ -1,6 +1,7 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import GoalBox from './goal_box';
+import "./goal_index.css"
 
 class Goal extends React.Component {
   constructor(props) {
@@ -9,29 +10,55 @@ class Goal extends React.Component {
     // this.state = {
     //   goals: []
     // }
+
+    this.showGoal = this.showGoal.bind(this);
   }
 
   componentWillMount() {
     this.props.fetchUserGoals(this.props.currentUser.id);
   }
 
+  componentWillUnmount() {
+    this.props.clearGoals();
+  }
+
   // componentWillReceiveProps(newState) {
   //   this.setState({ goals: newState.goals });
   // }
 
-  render() {
+  showGoal() {
     if (this.props.goals.length === 0) {
-      return (<div>No goals have been written yet.</div>)
+      return (
+        <div>
+          <div className="no-goals">No goals have been written yet.</div>
+        </div>)
     } else {
       return (
         <div>
-          <h1>All Goals</h1>
-          {this.props.goals.map(goal => (
-            <GoalBox key={goal._id} title={goal.title} description={goal.description}/>
-          ))}
+          <h1 className="goals-title">All Goals</h1>
+            <div className="goal-index-cont">
+              {this.props.goals.map(goal => (
+                <GoalBox key={goal._id} title={goal.title} description={goal.description}/>
+              ))}
+            </div>
         </div>
       );
     }
+  }
+
+  render() {
+    return (
+      <div>
+        <div>
+          {this.showGoal()}
+        </div>
+
+        <Link to="/goals/new">
+          <button className="goal-btn">Create a goal</button>
+        </Link>
+
+      </div>
+    )
   }
 }
 

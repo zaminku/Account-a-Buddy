@@ -1,5 +1,5 @@
-import { connection } from "mongoose";
-import { RECEIVE_GOALS, RECEIVE_USER_GOALS, RECEIVE_GOAL } from "../actions/goal_actions";
+// import { connection } from "mongoose";
+import { RECEIVE_GOALS, RECEIVE_USER_GOALS, RECEIVE_GOAL, CLEAR_GOALS } from "../actions/goal_actions";
 
 const goalsReducer = (state ={}, action) => {
     Object.freeze(state);
@@ -14,10 +14,12 @@ const goalsReducer = (state ={}, action) => {
             goals = action.goals.data;
             goals.forEach(goal => newState[goal._id] = goal);
             return newState;
-            return action.goals.data;
+            // return action.goals.data;
         case RECEIVE_GOAL:
             const goal = { ...action.goal.data, newGoal: true };
             return { ...state, [goal._id]: goal };
+        case CLEAR_GOALS:
+            return {};
         // case REMOVE_GOAL:
         //     delete newState[action.goalId];
         //     return newState;

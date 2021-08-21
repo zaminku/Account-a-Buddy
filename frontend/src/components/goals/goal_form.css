@@ -1,0 +1,102 @@
+* {
+    font-family: 'Martel', serif;
+    
+}
+.goal-form {
+    /* position: fixed; */
+    /* top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px; */
+    /* background-color: #CCD5D2; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(./watercolor.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.goal-form-box {
+    margin-top: 5vh;
+    border-radius: 5px;
+}
+
+.clear-fix {
+    color: transparent;
+    margin-bottom: 400px;
+}
+
+.clear-fix2 {
+    color: transparent;
+    margin-top: 1000px;
+}
+
+.goal-form > form {
+    /* margin: 0 auto; */
+    /* width: 400px; */
+    text-align: center;
+    background-color: rgb(250, 251 ,254);
+    /* opacity: 98%; */
+    padding: 5vh 30vh 10vh 30vh;
+}
+
+.goal-form-title {
+    font-size: 70px;
+    font-weight: bold;
+    font-family: 'Martel', sans-serif;
+    margin-bottom: 5vh;
+    color: #698ea2;
+}
+
+.goal-title {
+    font-weight: bold;
+}
+
+.goal-type {
+    font-size: 30px;
+    color: #29526b;
+}
+
+input[type="radio"] {
+    cursor: pointer;
+}
+
+.goal-form-text-input {
+    /* width: 400px; */
+    width: 80%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+textarea.goal-form-text-input {
+    height: 400px;
+}
+
+.goal-form-radio-label {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.goal-form-submit-div {
+    display: flex;
+    justify-content: center;
+}
+
+.goal-form-submit{
+    border: none ;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin-top: 20px;
+    font-size: 1.3vw;
+    background-color: #29526b;
+    color: white;
+}
+
+.goal-form-submit:hover{
+    color:#152935;
+    background-color: #ccd5d2;
+}

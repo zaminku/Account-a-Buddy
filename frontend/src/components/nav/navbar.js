@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import "./navbar.css"
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class NavBar extends React.Component {
     logoutUser(e) {
         e.preventDefault();
         this.props.logout();
+        this.props.history.push("/");
     }
 
     // Selectively render links dependent on whether the user is logged in
@@ -18,10 +20,9 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div className="navbar-right">
-                    <Link to={'/profile'}>Profile</Link>
-                    <Link to={'/chat'}>Messages</Link>
+                    <Link to={'/chat'}>Chat</Link>
                     <Link to={'/goals'}>Goals</Link>
-                    <button onClick={this.logoutUser}>Logout</button>
+                    <button className="logout-btn" onClick={this.logoutUser}>Logout</button>
                 </div>
             );
         } else {
@@ -37,10 +38,22 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="navbar">
-                <div className="logo">Account-a-Buddy</div>
-                <Link to={'/about'}>Features</Link>
-                <Link to={'/contact'}>Contact Us</Link>
-                {this.getLinks()}
+
+                <Link to={'/'} id="logo"> 
+                    <img className="navbar-logo" src="../handshake.png" alt="Github-logo" /> Account-A-Buddy 
+                </Link>
+                
+                <div className="f-dec">
+                    <Link to={'/about'}>Features</Link>
+                </div>
+
+                <div className="c-dec">
+                    <Link to={'/contact'}>Contact Us</Link>
+                </div>
+
+                <div className="nav-right-margin">
+                    {this.getLinks()}
+                </div>
             </div>
         );
     }
