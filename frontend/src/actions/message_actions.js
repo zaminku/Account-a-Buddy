@@ -24,14 +24,14 @@ export const fetchMessage = message => dispatch => {
 
 
 export const RECEIVE_MESSAGES = "RECEIVE_MESSAGES"
-const receiveMessages = (messages) => ({
+const receiveMessages = messages => ({
     type: RECEIVE_MESSAGES,
     messages
 })
-export const fetchMessages = () => dispatch => {
-    return (MessageApiUtil.fetchMessages())
-    .then(res => dispatch(receiveMessages(res)))
-}
+export const fetchMessages = () => dispatch => (
+    MessageApiUtil.fetchMessages()
+        .then(res => dispatch(receiveMessages(res)))
+)
 
 
 

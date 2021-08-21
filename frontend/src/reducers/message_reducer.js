@@ -11,13 +11,13 @@ export default function messageReducer(oldSlice={}, action){
 
     switch(action.type) {
         case RECEIVE_MESSAGE:
-            console.log(action);
             newSlice[action.message._id] = action.message
             return newSlice
         case RECEIVE_MESSAGES:
             // messages are an array
-            // const messages = action.messages.data
-            // return messages
+            console.log(action);
+            const messages = action.messages.data
+            return messages
         // // TEST CODE =======================================
         // case REMOVE_MESSAGE:
         //     // can't delete messages properly b/c the index, messageId, and keys don't always line up

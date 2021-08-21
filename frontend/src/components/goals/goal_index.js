@@ -37,9 +37,10 @@ class Goal extends React.Component {
         <div>
           <h1 className="goals-title">All Goals</h1>
             <div className="goal-index-cont">
-              {this.props.goals.map(goal => (
-                <GoalBox key={goal._id} title={goal.title} description={goal.description}/>
-              ))}
+              {this.props.goals.map(goal => {
+                  return (<GoalBox key={goal._id} goal={goal} updateGoal={this.props.updateGoal} />);
+                })
+              }
             </div>
         </div>
       );

@@ -23,3 +23,9 @@ export const updateGoal = goal => (
 // export const deleteGoal = goalId => (
 //   axios.delete(`/api/goals/${goalId}`)
 // );
+
+// TEST CODE =================================
+export const fetchBuddy = goal => (
+  axios.get("/api/goals/buddy", goal)
+);
+// ===========================================

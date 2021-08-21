@@ -10,13 +10,17 @@ const mSTP = (state) => {
     })
 }
 
-const mDTP = dispatch => ({
-    addMessage: (message) => dispatch(addMessage(message)),
-    fetchMessages: () => dispatch(fetchMessages()),
-    fetchMessage: (message) => dispatch(fetchMessage(message)), 
-    // TEST CODE ===============================================
-    deleteMessage: (message, index) => dispatch(deleteMessage(message, index))
-    // =========================================================
-})
+const mDTP = dispatch => {
+    return (
+        {
+            addMessage: (message) => dispatch(addMessage(message)),
+            fetchMessages: () => dispatch(fetchMessages()),
+            fetchMessage: (message) => dispatch(fetchMessage(message)), 
+            // TEST CODE ===============================================
+            deleteMessage: (message, index) => dispatch(deleteMessage(message, index))
+            // =========================================================
+        }
+    );
+}
 
 export default connect(mSTP,mDTP)(MessageIndex)

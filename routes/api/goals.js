@@ -101,5 +101,15 @@ router.post('/',
 //         res.redirect('/api/goals');
 //   })
 
+// TEST CODE ==========================================
+router.get("/buddy", (req, res) => {
+    Goal.find({ author: { $ne: req.body.author }, category: req.body.category, available: true })
+        .then(goals => console.log(goals));
+        // .then(goal => res.json(goal))
+        // .catch(err =>
+        //     res.status(404).json({ nogoalfound: 'No available buddies' })
+        // );
+});
+// ====================================================
 
 module.exports = router;

@@ -6,7 +6,7 @@ export const addMessage = message => {
 
 export const fetchMessages = () => {
     return (
-        axios.get("/api/messages/")
+        axios.get("/api/messages")
     )
 }
 
