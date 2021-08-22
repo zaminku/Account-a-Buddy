@@ -36,6 +36,7 @@ class GoalList extends React.Component {
                                     title={goal.title} 
                                     description={goal.description}
                                     category={goal.category}
+                                    available={goal.available}
                                 />
                             ))}
                         </div>

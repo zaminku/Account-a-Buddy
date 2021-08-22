@@ -9,6 +9,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     fetchUserGoals: userId => dispatch(fetchUserGoals(userId)),
+    updateGoal: goal => dispatch(updateGoal(goal)),
     clearGoals: () => dispatch(clearGoals())
 })
 
