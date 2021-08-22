@@ -5,9 +5,12 @@ class GoalBox extends React.Component {
   render() {
     return (
         <div>
-            <div className="goalbox-cont">
-              <h3 className="goals-text1">{this.props.title}</h3>
-              <div className="goals-text2">{this.props.description}</div>
+            <div>
+              <div>{this.props.title}</div>
+              <div>{this.props.description}</div>
+              <div>{this.props.category}</div>
+              <div>{this.props.available}</div>
+              <br/>
             </div>
         </div>
     );
