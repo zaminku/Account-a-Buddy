@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import GoalEdit from '../goals/goal_edit_container'
+import GoalEditContainer from '../goals/goal_edit_container'
 
 
 function Modal({ modal, closeModal }) {
@@ -11,7 +11,7 @@ function Modal({ modal, closeModal }) {
     let component;
     switch (modal) {
         case 'goal-edit': 
-            component = <GoalEdit />
+            component = <GoalEditContainer />
             break;
         default:
             return null;

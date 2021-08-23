@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import GoalBox from './goal_box';
+import GoalBoxContainer from './goal_box_container';
 import "./goal_list.css"
 
 class GoalList extends React.Component {
@@ -32,7 +33,7 @@ class GoalList extends React.Component {
                     <div>
                         <div>
                             {this.props.goals.map(goal => (
-                                <GoalBox key={goal._id} 
+                                <GoalBoxContainer key={goal._id} 
                                     title={goal.title} 
                                     description={goal.description}
                                     category={goal.category}
