@@ -56,6 +56,7 @@ export const updateGoal = goal => dispatch => (
         .then(goal => dispatch(receiveGoal(goal)))
 )
 
+
 // export const deleteGoal = goalId => dispatch => (
 //     APIUtil.deleteGoal(goalId)
 //         .then(() => dispatch(removeGoal(goalId)))

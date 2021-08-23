@@ -1,32 +1,61 @@
 import React from 'react';
 import "./goal_index.css"
-import { fetchBuddy } from "../../util/goal_api_util";
+import { findGoalMatch } from "../../util/goal_api_util";
 
 class GoalBox extends React.Component {
 
   // TEST CODE ===================================
   constructor(props) {
     super(props);
-    this.findPartner = this.findPartner.bind(this);
+    this.state = {
+      // match: ""
+    }
+    this.findBuddy = this.findBuddy.bind(this);
+    this.switchAvailableStatus = this.switchAvailableStatus.bind(this);
   }
   
-  findPartner() {
-    // update goalId status to true
-    const { goal, updateGoal } = this.props
-    const newGoal = Object.assign({}, goal, { available: true });
-    updateGoal(newGoal);
-    // fetch another available goal
-    const buddyGoal = fetchBuddy(goal);
+  findBuddy() {
+    const { goal, createRoom } = this.props
+    findGoalMatch(goal)
+      .then(goals => {
+        if(goals.data) {
+          const randomEl = Math.floor(Math.random() * goals.data.length);
+          this.setState({ match: goals.data[randomEl] })
+          const match = goals.data[randomEl];
+          this.switchAvailableStatus(goal);
+          this.switchAvailableStatus(match);
+          return match;
+        } else {
+          console.log("No available buddies. You will be notified as soon as a match is found for you.");
+        }
+      })
+      .then(match => {
+        const newRoom = {
+          user1: goal, 
+          user2: match, 
+          goal1: goal, 
+          goal2: match
+        };
+        createRoom(newRoom);
+      })
+  }
 
-    // if goal is fetched, update both to status false
-    // create room and pass it both goals and users
-    
+  switchAvailableStatus(goal) {
+    const { updateGoal} = this.props
+    let newGoal = Object.assign({}, goal);
+    if(goal.available) {
+      newGoal.available = false;
+    } else {
+      newGoal.available = true;
+    }
+    updateGoal(newGoal);    
   }
   // =============================================
   
 
   render() {
-    const { category, title, description, author, _id } = this.props.goal
+    const { category, title, description, author, _id, available } = this.props.goal
+    const { goal } = this.props
     return (
         <div>
             <div className="goalbox-cont">
@@ -34,7 +63,8 @@ class GoalBox extends React.Component {
               <div className="goals-text2">{description}</div>
 
               {/* TEST CODE =========================== */}
-              <button onClick={this.findPartner} >Find a buddy</button>
+              <button onClick={() => this.switchAvailableStatus(goal)} >Available: {available ? "true" : "false"}</button>
+              <button onClick={this.findBuddy} >Find a buddy</button>
               {/* ===================================== */}
             </div>
         </div>
