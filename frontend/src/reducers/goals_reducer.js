@@ -16,7 +16,7 @@ const goalsReducer = (state ={}, action) => {
             return newState;
             // return action.goals.data;
         case RECEIVE_GOAL:
-            const goal = { ...action.goal.data, newGoal: true };
+            const goal = { ...action.goal.data };
             return { ...state, [goal._id]: goal };
         case CLEAR_GOALS:
             return {};
