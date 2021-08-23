@@ -72,7 +72,8 @@ class GoalBox extends React.Component {
               {/* TEST CODE =========================== */}
               <button onClick={() => this.switchAvailableStatus(goal)} >Available: {available ? "true" : "false"}</button>
               <button onClick={this.findBuddy} >Find a buddy</button>
-              <Link to="/chat" ><button onClick={this.loadChatRoom} >Chat with your buddy</button></Link>
+              {/* <Link to="/chat" ><button onClick={this.loadChatRoom} >Chat with your buddy</button></Link> */}
+              <Link to={`/chat/${goal._id}`} ><button>Chat with your buddy</button></Link>
               {/* ===================================== */}
             </div>
         </div>

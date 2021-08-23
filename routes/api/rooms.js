@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const Room = require('../../models/Room');
+const Message = require('../../models/Message');
 
 router.post("/", (req, res) => {
     const newRoom = new Room ({
@@ -37,6 +38,13 @@ router.get("/:goalId", (req, res) => {
                 res.json(room)
             }
         })
+})
+
+router.patch("/", (req, res) => {
+    const { room, message } = req.body;
+    room.conversation.push(message);
+    Room.findOneAndUpdate({_id: room._id}, room, {new: true})
+        .then(room => res.json(room));
 })
 
 module.exports = router;

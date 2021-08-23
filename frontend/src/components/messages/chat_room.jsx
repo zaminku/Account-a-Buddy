@@ -11,10 +11,10 @@ class ChatRoom extends React.Component{
         super(props)
         this.state = {
             username: this.props.user.username,
-            message: ''
+            message: '', 
         }
 
-        this.sendSocketIO = this.sendSocketIO.bind(this)
+        this.sendMessage = this.sendMessage.bind(this)
         this.update = this.update.bind(this)
         this.bottom = React.createRef()
 
@@ -23,10 +23,19 @@ class ChatRoom extends React.Component{
         // =========================================
     }
 
-    sendSocketIO(){
-        socket.emit("message", this.state.message)
-        this.props.addMessage(this.state)
-        this.props.fetchMessage(this.state)
+    sendMessage(){
+        // socket.emit("message", this.state.message)
+        // this.props.addMessage(this.state)
+        // this.props.fetchMessage(this.state)
+
+        // invoke a function that will add the this.state message to 
+        // the specific chat room's conversation array.
+        this.props.addMsgToConvo(this.props.room, this.state);
+        // ===============================================
+        // then socket.emit to tell each user's program to 
+        // fetchMessage which will fetch just the new message that was 
+        // added to the chat room's conversation array
+        // ===============================================
         this.setState({message: ''})
     }
 
@@ -43,10 +52,11 @@ class ChatRoom extends React.Component{
     // =========================================
 
     componentDidMount(){
-        this.props.fetchMessages()
-        socket.on("message", data=>{
-            console.log("socket is working")
-        })
+        this.props.fetchRoom(this.props.match.params.goalId);
+        // this.props.fetchMessages()
+        // socket.on("message", data=>{
+        //     console.log("socket is working")
+        // })
     }
 
     componentDidUpdate(){
@@ -54,7 +64,7 @@ class ChatRoom extends React.Component{
     }
 
     render(){
-        const allMessages = this.props.messages.map((message, index) => {
+        const allMessages = this.props.room.conversation.map((message, index) => {
             return (
                 <div>
                     <div className="message">
@@ -82,7 +92,7 @@ class ChatRoom extends React.Component{
                                 onChange={e=>this.update(e)}
                                 value={this.state.message}
                             />
-                            <button className="btn" onClick={this.sendSocketIO}><i className="fas fa-paper-plane"></i> Send</button>
+                            <button className="btn" onClick={this.sendMessage}><i className="fas fa-paper-plane"></i> Send</button>
                         </form>
                     </div>
                 </div>
