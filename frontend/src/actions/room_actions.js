@@ -27,14 +27,16 @@ export const addMsgToConvo = (room, message) => dispatch => {
 }
 
 
-export const REMOVE_ROOM = ""
-const removeRoom = roomId => {
-    return { type: REMOVE_ROOM, roomId }
+export const REMOVE_ROOM = "REMOVE_ROOM"
+const removeRoom = () => {
+    return { type: REMOVE_ROOM }
+}
+export const clearRoom = () => dispatch => {
+    dispatch(removeRoom())
 }
 export const deleteRoom = roomId => dispatch => {
     return RoomApiUtil.deleteRoom(roomId)
         .then(res => {
-            let roomId = res.data
-            dispatch(removeRoom(roomId))
+            dispatch(removeRoom())
         })
 }

@@ -63,6 +63,10 @@ class ChatRoom extends React.Component{
         this.bottom.current.scrollIntoView();
     }
 
+    componentWillUnmount() {
+        this.props.clearRoom();
+    }
+
     render(){
         const allMessages = this.props.room.conversation.map((message, index) => {
             return (
