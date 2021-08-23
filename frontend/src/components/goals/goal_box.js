@@ -64,28 +64,21 @@ class GoalBox extends React.Component {
     const { category, title, description, author, _id, available } = this.props.goal
     const { goal } = this.props
     return (
-        <div>
-<<<<<<< HEAD
-            <div className="goalbox-cont">
-              <h3 className="goals-text1">{title}</h3>
-              <div className="goals-text2">{description}</div>
+      <div>
+        <div>{this.props.title}</div>
+        <div>{this.props.description}</div>
+        <div>{this.props.category}</div>
+        <div>{this.props.available}</div>
 
-              {/* TEST CODE =========================== */}
-              <button onClick={() => this.switchAvailableStatus(goal)} >Available: {available ? "true" : "false"}</button>
-              <button onClick={this.findBuddy} >Find a buddy</button>
-              {/* <Link to="/chat" ><button onClick={this.loadChatRoom} >Chat with your buddy</button></Link> */}
-              <Link to={`/chat/${goal._id}`} ><button>Chat with your buddy</button></Link>
-              {/* ===================================== */}
-=======
-            <div>
-              <div>{this.props.title}</div>
-              <div>{this.props.description}</div>
-              <div>{this.props.category}</div>
-              <div>{this.props.available}</div>
-              <br/>
->>>>>>> main
-            </div>
-        </div>
+        {/* TEST CODE =========================== */}
+        <button onClick={() => this.switchAvailableStatus(goal)} >Available: {available ? "true" : "false"}</button>
+        <button onClick={this.findBuddy} >Find a buddy</button>
+        {/* <Link to="/chat" ><button onClick={this.loadChatRoom} >Chat with your buddy</button></Link> */}
+        <Link to={`/chat/${goal._id}`} ><button>Chat with your buddy</button></Link>
+        {/* ===================================== */}
+
+        <br/>
+      </div>
     );
   }
 }
