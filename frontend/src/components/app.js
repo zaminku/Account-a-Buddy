@@ -8,7 +8,8 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import GoalIndexContainer from './goals/goal_index_container';
 import GoalFormContainer from './goals/goal_form_container';
-import MessageIndexContainer from './messages/message_index_container';
+import ChatRoomContainer from './messages/chat_room_container';
+// import MessageIndexContainer from './messages/message_index_container';
 // import ChatPageContainer from './messages/chat_page_container';
 import AboutPage from './about/about_page'
 import ContactPage from './contact/contact_us';
@@ -24,7 +25,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/goals" component={GoalIndexContainer}/>
             <ProtectedRoute exact path="/goals/new" component={GoalFormContainer}/>
-            <ProtectedRoute path="/chat" component={MessageIndexContainer}/>
+            <ProtectedRoute path="/chat" component={ChatRoomContainer}/>
         </Switch>
     </div>
 );

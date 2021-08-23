@@ -24,4 +24,19 @@ router.delete('/:roomId', (req, res) => {
     res.json(req.params.roomId)
 })
 
+router.get("/:goalId", (req, res) => {
+    Room.findOne({ goal1: req.params.goalId })
+        .then(room => {
+            if(room) {
+                res.json(room)
+            }
+        })
+    Room.findOne({ goal2: req.params.goalId })
+        .then(room => {
+            if(room) {
+                res.json(room)
+            }
+        })
+})
+
 module.exports = router;

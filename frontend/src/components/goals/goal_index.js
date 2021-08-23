@@ -42,8 +42,10 @@ class Goal extends React.Component {
                     <GoalBox 
                       key={goal._id} 
                       goal={goal} 
+                      room={this.props.room}
                       updateGoal={this.props.updateGoal}
                       createRoom={this.props.createRoom} 
+                      fetchRoom={this.props.fetchRoom}
                     />);
                 })
               }

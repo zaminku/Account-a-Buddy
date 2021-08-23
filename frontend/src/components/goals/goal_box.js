@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./goal_index.css"
 import { findGoalMatch } from "../../util/goal_api_util";
 
@@ -9,6 +10,7 @@ class GoalBox extends React.Component {
     super(props);
     this.findBuddy = this.findBuddy.bind(this);
     this.switchAvailableStatus = this.switchAvailableStatus.bind(this);
+    this.loadChatRoom = this.loadChatRoom.bind(this);
   }
   
   // #findBuddy will find an matching goal in the DB and ... 
@@ -50,6 +52,11 @@ class GoalBox extends React.Component {
     }
     updateGoal(newGoal);    
   }
+
+  loadChatRoom() {
+    const { goal, fetchRoom } = this.props;
+    fetchRoom(goal._id);
+  }
   // =============================================
   
 
@@ -65,6 +72,7 @@ class GoalBox extends React.Component {
               {/* TEST CODE =========================== */}
               <button onClick={() => this.switchAvailableStatus(goal)} >Available: {available ? "true" : "false"}</button>
               <button onClick={this.findBuddy} >Find a buddy</button>
+              <Link to="/chat" ><button onClick={this.loadChatRoom} >Chat with your buddy</button></Link>
               {/* ===================================== */}
             </div>
         </div>

@@ -11,6 +11,13 @@ export const createRoom = room => dispatch => {
             dispatch(receiveRoom(room))
         })
 }
+export const fetchRoom = goalId => dispatch => {
+    return RoomApiUtil.fetchRoom(goalId)
+        .then(res => {
+            let room = res.data
+            dispatch(receiveRoom(room))
+        })
+}
 
 
 export const REMOVE_ROOM = ""
