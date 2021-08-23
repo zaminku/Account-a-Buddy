@@ -7,13 +7,13 @@ class GoalBox extends React.Component {
   // TEST CODE ===================================
   constructor(props) {
     super(props);
-    this.state = {
-      // match: ""
-    }
     this.findBuddy = this.findBuddy.bind(this);
     this.switchAvailableStatus = this.switchAvailableStatus.bind(this);
   }
   
+  // #findBuddy will find an matching goal in the DB and ... 
+  // create a chat room with an empty array as the conversation, 
+  // update the local store to include that chat room what was just created
   findBuddy() {
     const { goal, createRoom } = this.props
     findGoalMatch(goal)
@@ -26,7 +26,7 @@ class GoalBox extends React.Component {
           this.switchAvailableStatus(match);
           return match;
         } else {
-          console.log("No available buddies. You will be notified as soon as a match is found for you.");
+          console.log("No available buddies. You will be notified as soon as a match is found.");
         }
       })
       .then(match => {
