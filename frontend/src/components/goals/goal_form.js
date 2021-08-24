@@ -1,5 +1,6 @@
 import React from "react";
 import "./goal_form.css"
+import Milestone from "./milestone";
 
 class GoalForm extends React.Component {
     constructor(props) {
@@ -84,6 +85,10 @@ class GoalForm extends React.Component {
                             onChange={this.update('description')}
                         />
                     </div>
+
+                    <Milestone/>
+                    <button>Add Milestone</button>
+
                     <br />
                     <div className="goal-form-submit-div">
                         <input className="goal-form-submit" type="submit" value="Submit"/>

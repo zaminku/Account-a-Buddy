@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./goal_index.css"
+import "./goal_list.css"
 import { findGoalMatch } from "../../util/goal_api_util";
 
 class GoalBox extends React.Component {
