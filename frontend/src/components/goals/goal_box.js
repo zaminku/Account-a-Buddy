@@ -21,23 +21,29 @@ class GoalBox extends React.Component {
     if(goal.available) {
       findGoalMatch(goal)
       .then(goals => {
-        if(goals.data) {
+        if(goals.data.length > 0) {
           const randomEl = Math.floor(Math.random() * goals.data.length);
           const match = goals.data[randomEl];
           this.setState({ match })
           this.setAvailableToFalse(goal);
           this.setAvailableToFalse(match);
           return match;
+        } else {
+          return null;
         }
       })
       .then(match => {
-        const newRoom = {
-          user1: goal, 
-          user2: match, 
-          goal1: goal, 
-          goal2: match
-        };
-        createRoom(newRoom);
+        if(match !== null) {
+          const newRoom = {
+            user1: goal, 
+            user2: match, 
+            goal1: goal, 
+            goal2: match
+          };
+          createRoom(newRoom);
+        } else {
+          console.log("NO MATCH WAS FOUND!!!");
+        }
       })
     } else {
       console.log("The goal's availble status is FALSE. Must be TRUE in order to find a match.");
@@ -61,6 +67,7 @@ class GoalBox extends React.Component {
         <div>{goal.category}</div>
 
         {/* TEST CODE =========================== */}
+        {/* NOTE: Need to figure out how to only go to chat page if a buddy is found */}
         <Link to={`/chat/${goal._id}`} ><button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button></Link>
         {/* ===================================== */}
 

@@ -1,9 +1,7 @@
 import React from 'react'
-import "whatwg-fetch";
-import openSocket from "socket.io-client"
 import "./chat_room.css"
-const socket = openSocket("http://localhost:5000")
-
+import socketIOClient from "socket.io-client"
+const socket = socketIOClient("http://localhost:5000")
 
 class ChatRoom extends React.Component{
 
@@ -19,23 +17,14 @@ class ChatRoom extends React.Component{
         this.bottom = React.createRef()
 
         // TEST CODE ===============================
-        this.handleDelete = this.handleDelete.bind(this)
+        // this.handleDelete = this.handleDelete.bind(this)
+        this.props.fetchRoom(this.props.match.params.goalId);
         // =========================================
     }
 
     sendMessage(){
-        // socket.emit("message", this.state.message)
-        // this.props.addMessage(this.state)
-        // this.props.fetchMessage(this.state)
-
-        // invoke a function that will add the this.state message to 
-        // the specific chat room's conversation array.
         this.props.addMsgToConvo(this.props.room, this.state);
-        // ===============================================
-        // then socket.emit to tell each user's program to 
-        // fetchMessage which will fetch just the new message that was 
-        // added to the chat room's conversation array
-        // ===============================================
+        socket.emit("sendMessage", this.state);
         this.setState({message: ''})
     }
 
@@ -46,21 +35,34 @@ class ChatRoom extends React.Component{
     }
 
     // TEST CODE ===============================
-    handleDelete(message, index) {
-        this.props.deleteMessage(message, index)
-    }
+    // handleDelete(message, index) {
+    //     this.props.deleteMessage(message, index)
+    // }
     // =========================================
 
     componentDidMount(){
-        this.props.fetchRoom(this.props.match.params.goalId);
-        // this.props.fetchMessages()
-        // socket.on("message", data=>{
-        //     console.log("socket is working")
-        // })
-    }
+        // this.props.fetchRoom(this.props.match.params.goalId);
+
+        // TEST CODE ===============================
+        // socket.on("connect", () => {  
+        //     socket.emit('join', this.props.user.username);
+        // });
+        // socket.on("receiveMessage", data => {
+        //     console.log("component did update");
+        //     // fetch the updated array of messages
+        //     this.props.receiveMessage(data);
+        // });  
+        // =========================================
+    };
 
     componentDidUpdate(){
+        console.log("component did update is fired");
         this.bottom.current.scrollIntoView();
+        // socket.on("receiveMessage", data => {
+        //     console.log("RECEIVED MESSAGE");
+        //     // fetch the updated array of messages
+        //     this.props.receiveMessage(data);
+        // });
     }
 
     componentWillUnmount() {
@@ -70,7 +72,7 @@ class ChatRoom extends React.Component{
     render(){
         const allMessages = this.props.room.conversation.map((message, index) => {
             return (
-                <div>
+                <div key={index} >
                     <div className="message">
                         <span className="author">{message.username}: </span>{message.message}
                     </div>
@@ -97,6 +99,9 @@ class ChatRoom extends React.Component{
                                 value={this.state.message}
                             />
                             <button className="btn" onClick={this.sendMessage}><i className="fas fa-paper-plane"></i> Send</button>
+                            {/* Add an onclick to the below <i> */}
+                            {/* onclick will open settings modal */}
+                            <i className="fas fa-sliders-h"></i>
                         </form>
                     </div>
                 </div>

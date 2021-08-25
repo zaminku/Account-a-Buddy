@@ -25,37 +25,51 @@ const port = process.env.PORT || 5000;
 
 // app.listen(port, () => console.log(`Server is running on port ${port}`));
 
-// Test code ------------------------------
+// TEST CODE ================================================
 
+// App Setup
 const path = require("path")
 const http = require("http")
-const socketio = require("socket.io")
+const socket = require("socket.io")
+const chat = require("./routes/chat")
+app.use(chat);
+const server = http.createServer(app);
 
-const server = http.createServer(app)
-const io = socketio(server, {
-    cors: {
-      origin: '*',
-    }
-  });
+server.listen(port, ()=> {
+  console.log("....... CONNECTED .......");
+  console.log(`PORT is on ${port}`);
+  console.log(".........................");
+});
+
+// Socket Setup
+const io = socket(server, {
+  cors: {
+    origin: '*',
+  }
+});
+
+io.on('connection', (socket) => {
+  console.log("....... CONNECTED .......");
   
-app.use(express.static(path.join(__dirname,"./frontend/public")))
+  // Socket listeners and responses
+  socket.on('sendMessage', data => {
+    console.log(`${data.username} sent a message`);
+    console.log(data);
+    socket.emit('receiveMessage', data);
+  })
+  // socket.on('join', data => {
+  //   console.log(`${data} has joined the room`);
+  // })
+  socket.on("disconnect", () => {
+    console.log(`User has DISCONNECTED`);
+  })
+});
 
-io.on("connection", socket=>{
-  
-    // const id = socket.handshake.query.id
-    // socket.join(id)
-
-    console.log(".......Connected.........")
-
-    socket.on("message", data => {
-      // socket.broadcast.to(data.recipient).emit('receive-message', data.message)
-      console.log(data)
-    })
-})
-
-server.listen(port, ()=> console.log(`PORT is on ${port}`))
-
-// Test end -------------------------------
+// Static Files
+// Below would get the files from public folder and serve it to you in the browser.
+// I'm not sure what it's for or how I can use it.
+// app.use(express.static(path.join(__dirname,"./frontend/public")))
+// ===========================================================
 
 mongoose
     .connect(db, { useNewUrlParser: true })
