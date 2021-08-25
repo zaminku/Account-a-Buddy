@@ -38,7 +38,8 @@ const io = socketio(server, {
     }
   });
   
-app.use(express.static(path.join(__dirname,"./frontend/public")))
+// app.use(express.static(path.join(__dirname,"./frontend/public")))
+app.use('/static', express.static(path.join(__dirname, './frontend/public')));
 
 io.on("connection", socket=>{
   
