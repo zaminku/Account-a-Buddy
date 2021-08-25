@@ -1,6 +1,6 @@
 import React from "react";
 import "./goal_form.css"
-import Milestone from "./milestone";
+// import Milestone from "./milestone";
 
 class GoalForm extends React.Component {
     constructor(props) {
@@ -9,12 +9,14 @@ class GoalForm extends React.Component {
             title: '',
             description: '',
             category: null, 
+            milestoneArray: [],
             // TEST CODE =============================
             available: false
             // =======================================
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
+        this.addMilestone = this.addMilestone.bind(this);
     }
 
     update(field) {
@@ -33,6 +35,12 @@ class GoalForm extends React.Component {
         (this.props.errors.length > 0) ? (
             <div>this.props.errors</div>
         ) : (<div></div>)
+    }
+
+    addMilestone() {
+        let newArray = this.state.milestoneArray;
+        newArray.push("test")
+        this.setState({milestoneArray: newArray})
     }
 
     render() {
@@ -86,8 +94,18 @@ class GoalForm extends React.Component {
                         />
                     </div>
 
-                    <Milestone/>
-                    <button>Add Milestone</button>
+                    {/* <Milestone props={this.props} /> */}
+                    {this.state.milestoneArray.map(milestone => {
+                        return (
+                        <input 
+                            placeholder="Milestone"
+                            // onChange={this.update('milestone')}
+                        />
+                        )
+                    }
+                    )} 
+
+                    <button onClick={this.addMilestone}>Add Milestone</button>
 
                     <br />
                     <div className="goal-form-submit-div">

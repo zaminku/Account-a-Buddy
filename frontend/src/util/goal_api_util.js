@@ -18,9 +18,11 @@ export const findGoalMatch = goal => (
 );
 // ===========================================
 
-export const createGoal = newGoal => (
-  axios.post(`/api/goals/`, newGoal)
-);
+export const createGoal = newGoal => {
+  return axios.post(`/api/goals/`, newGoal)
+}
+
+
 
 export const updateGoal = goal => (
   axios.patch(`/api/goals/${goal._id}`, goal)

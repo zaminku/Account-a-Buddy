@@ -55,7 +55,7 @@ router.post('/',
           date: req.body.date,
           author: req.user.id, 
           available: req.body.available,
-          milestone: req.body.milestone
+        //   milestone: req.body.milestone
       });
   
       newGoal.save()
