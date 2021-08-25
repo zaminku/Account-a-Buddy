@@ -56,13 +56,14 @@ class ChatRoom extends React.Component{
     };
 
     componentDidUpdate(){
-        console.log("component did update is fired");
         this.bottom.current.scrollIntoView();
-        // socket.on("receiveMessage", data => {
-        //     console.log("RECEIVED MESSAGE");
-        //     // fetch the updated array of messages
-        //     this.props.receiveMessage(data);
-        // });
+        socket.on("receiveMessage", data => {
+            console.log("RECEIVED MESSAGE FROM SERVER");
+            console.log(data);
+            console.log("============================");
+            // fetch the updated array of messages
+            // this.props.receiveMessage(data);
+        });
     }
 
     componentWillUnmount() {

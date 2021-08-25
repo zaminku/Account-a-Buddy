@@ -55,7 +55,10 @@ io.on('connection', (socket) => {
   socket.on('sendMessage', data => {
     console.log(`${data.username} sent a message`);
     console.log(data);
-    socket.emit('receiveMessage', data);
+    // Below io.sockets will emit to ALL sockets
+    // Need to revise so that only a particular socket
+    // is emitted to
+    io.sockets.emit('receiveMessage', data);
   })
   // socket.on('join', data => {
   //   console.log(`${data} has joined the room`);
