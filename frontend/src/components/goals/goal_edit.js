@@ -20,11 +20,12 @@ class GoalEdit extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.fetchPin(this.props.pinId);
+        
     }
 
     componentWillUnmount() {
         this.props.closeModal();
+        this.props.fetchUserGoals(this.props.userId);
     }
 
     update(field) {
@@ -38,10 +39,10 @@ class GoalEdit extends React.Component {
     }
 
     render() {
-        // const { closeModal, pin } = this.props;
-        // if (pin === undefined) {
-        //     return null;
-        // }
+        const { closeModal, pin } = this.props;
+        if (pin === undefined) {
+            return null;
+        }
 
         return (
             <div>
