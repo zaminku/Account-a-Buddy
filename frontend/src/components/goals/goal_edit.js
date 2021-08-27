@@ -20,7 +20,7 @@ class GoalEdit extends React.Component {
     }
 
     componentDidMount() {
-        
+
     }
 
     componentWillUnmount() {
@@ -47,7 +47,7 @@ class GoalEdit extends React.Component {
         return (
             <div>
                 <form className="pin-edit-form-modal" onSubmit={this.handleSubmit}>
-                    <h1>Hellooooo</h1>
+                    <input></input>
                 </form>
             </div>
         )
