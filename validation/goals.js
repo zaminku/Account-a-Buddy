@@ -7,7 +7,7 @@ module.exports = function validateGoalInput(data) {
     data.category = validText(data.category) ? data.category : '';
     data.title = validText(data.title) ? data.title : '';
     data.description = validText(data.description) ? data.description : '';
-    data.milestone = validText(data.milestone) ? data.milestone : '';
+    data.milestoneInput = validText(data.milestoneInput) ? data.milestoneInput : '';
 
 
     if (!Validator.isLength(data.category, { min: 5, max: 50 })) {
@@ -22,8 +22,8 @@ module.exports = function validateGoalInput(data) {
         errors.title = 'Title must be at least 3 characters long';
     }
 
-    if (!Validator.isLength(data.milestone, { min: 0, max: 40 })) {
-        errors.milestone = 'Milestone can be at most 40 characters long';
+    if (!Validator.isLength(data.milestoneInput, { min: 0, max: 40 })) {
+        errors.milestone = 'Milestone cannot exceed 40 characters long';
     }
  
     if (Validator.isEmpty(data.title)) {
