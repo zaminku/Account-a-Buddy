@@ -59,7 +59,6 @@ class GoalForm extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         return(
             <div className="goal-form">
                 {/* <div className="clear-fix">clearfix</div> */}
@@ -110,7 +109,6 @@ class GoalForm extends React.Component {
                         />
                     </div>
 
-                    {/* <Milestone props={this.props} /> */}
 
                     <div>
                         <ul>{this.state.milestoneArray.map(milestone => {
