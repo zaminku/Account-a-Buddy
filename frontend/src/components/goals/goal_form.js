@@ -1,5 +1,6 @@
 import React from "react";
 import "./goal_form.css"
+// import Milestone from "./milestone";
 
 class GoalForm extends React.Component {
     constructor(props) {
@@ -8,12 +9,37 @@ class GoalForm extends React.Component {
             title: '',
             description: '',
             category: null, 
+            milestoneArray: [],
+            milestoneInput: "",
             // TEST CODE =============================
             available: true
             // =======================================
         }
+        this.addMilestone = this.addMilestone.bind(this);
+        this.submitMilestone = this.submitMilestone.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
+    }
+
+    addMilestone(e) {
+        this.setState({
+            milestoneInput: e.target.value,
+        })
+    }
+
+    submitMilestone(e) {
+        e.preventDefault();
+        let newArray = this.state.milestoneArray;
+        let milestone = {
+            milestone: this.state.milestoneInput,
+            milestoneCompleted: false
+        }
+        newArray.push(milestone);
+
+        this.setState({
+            milestoneArray: newArray,
+            milestoneInput: "",
+        });
     }
 
     update(field) {
@@ -84,6 +110,27 @@ class GoalForm extends React.Component {
                             onChange={this.update('description')}
                         />
                     </div>
+
+
+                    <div>
+                        <ul>{this.state.milestoneArray.map((milestone, idx) => {
+                            return (
+                                <li key={idx}>{milestone.milestone}</li>
+                                )
+                            })}
+                        </ul>
+
+                        <input 
+                                placeholder="Milestone"
+                                // onChange={this.update('this.state.milestoneinput')}
+                                value={this.state.milestoneInput}
+                                onChange={this.addMilestone}
+                        />
+
+                        <button onClick={this.submitMilestone}>+</button>
+                    </div>
+                    
+
                     <br />
                     <div className="goal-form-submit-div">
                         <input className="goal-form-submit" type="submit" value="Submit"/>

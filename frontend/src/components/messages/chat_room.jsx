@@ -1,7 +1,7 @@
 import React from 'react'
 import "./chat_room.css"
 import socketIOClient from "socket.io-client"
-const socket = socketIOClient("http://localhost:5000")
+const socket = socketIOClient("ws://account-a-buddies-app.herokuapp.com:14827/socket.io/?EIO=4&transport=websocket")
 
 class ChatRoom extends React.Component{
 
