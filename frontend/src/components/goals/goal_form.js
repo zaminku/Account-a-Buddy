@@ -10,13 +10,34 @@ class GoalForm extends React.Component {
             description: '',
             category: null, 
             milestoneArray: [],
+            milestoneInput: "",
+            milestoneCompleted: false,
             // TEST CODE =============================
             available: false
             // =======================================
         }
+        this.addMilestone = this.addMilestone.bind(this);
+        this.submitMilestone = this.submitMilestone.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
-        this.addMilestone = this.addMilestone.bind(this);
+    }
+
+    addMilestone(e) {
+        this.setState({
+            milestoneInput: e.target.value,
+        })
+    }
+
+    submitMilestone(e) {
+        e.preventDefault();
+        let newArray = this.state.milestoneArray;
+        console.log(newArray)
+        newArray.push(this.state.milestoneInput);
+        this.setState({
+            milestoneArray: newArray,
+            milestoneInput: "",
+            milestoneCompleted: false
+        });
     }
 
     update(field) {
@@ -37,13 +58,8 @@ class GoalForm extends React.Component {
         ) : (<div></div>)
     }
 
-    addMilestone() {
-        let newArray = this.state.milestoneArray;
-        newArray.push("test")
-        this.setState({milestoneArray: newArray})
-    }
-
     render() {
+        console.log(this.state);
         return(
             <div className="goal-form">
                 {/* <div className="clear-fix">clearfix</div> */}
@@ -95,17 +111,25 @@ class GoalForm extends React.Component {
                     </div>
 
                     {/* <Milestone props={this.props} /> */}
-                    {this.state.milestoneArray.map(milestone => {
-                        return (
-                        <input 
-                            placeholder="Milestone"
-                            // onChange={this.update('milestone')}
-                        />
-                        )
-                    }
-                    )} 
 
-                    <button onClick={this.addMilestone}>Add Milestone</button>
+                    <div>
+                        <ul>{this.state.milestoneArray.map(milestone => {
+                            return (
+                                <li>{milestone}</li>
+                                )
+                            })}
+                        </ul>
+
+                        <input 
+                                placeholder="Milestone"
+                                // onChange={this.update('this.state.milestoneinput')}
+                                value={this.state.milestoneInput}
+                                onChange={this.addMilestone}
+                        />
+
+                        <button onClick={this.submitMilestone}>+</button>
+                    </div>
+                    
 
                     <br />
                     <div className="goal-form-submit-div">
