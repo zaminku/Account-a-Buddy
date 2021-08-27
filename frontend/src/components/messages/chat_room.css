@@ -23,6 +23,10 @@
     box-shadow: 0px 0px 10px 1px #fde5d6;
 }
 
+.chat-form-container i:hover {
+    opacity: 0.6;
+}
+
 .chat-messages {
     height: 455px;
     overflow-y: scroll;

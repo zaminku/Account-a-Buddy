@@ -12,7 +12,7 @@ class GoalForm extends React.Component {
             milestoneArray: [],
             milestoneInput: "",
             // TEST CODE =============================
-            available: false
+            available: true
             // =======================================
         }
         this.addMilestone = this.addMilestone.bind(this);
