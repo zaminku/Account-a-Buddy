@@ -24,15 +24,9 @@ app.use('/api/rooms', rooms);
 const port = process.env.PORT || 5000;
 
 
-
-
-
-
-
-
-
-// TEST CODE ================================================
-
+// =================================
+// ======== SOCKET SETUP ===========
+// =================================
 // App Setup
 const path = require("path")
 const http = require("http")
@@ -53,7 +47,6 @@ const io = socket(server, {
     origin: '*',
   }
 });
-
 
 io.on('connection', (socket) => {
   console.log("....... IO SOCKET IS CONNECTED .......");
@@ -76,20 +69,10 @@ io.on('connection', (socket) => {
     console.log("USER HAS DISCONNECTED");
   });
 });
-
-// Static Files
-// Below would get the files from public folder and serve it to you in the browser.
-// I'm not sure what it's for or how I can use it.
-// app.use(express.static(path.join(__dirname,"./frontend/public")))
-// ===========================================================
+// =================================
 
 
-
-
-
-
-
-
+app.use('/static', express.static(path.join(__dirname, './frontend/public')));
 
 mongoose
     .connect(db, { useNewUrlParser: true })

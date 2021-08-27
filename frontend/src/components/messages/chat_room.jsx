@@ -13,7 +13,8 @@ class ChatRoom extends React.Component{
                 text: ""
             }, 
             buddy: "", 
-            convoLength: null
+            convoLength: null, 
+            roomLoaded: false
         }
 
         this.sendMessage = this.sendMessage.bind(this)
@@ -51,9 +52,8 @@ class ChatRoom extends React.Component{
     // =========================================
 
     componentDidMount(){
-        // TEST CODE ===============================
         this.props.fetchRoom(this.props.match.params.goalId);
-        if(this.props.room._id) {
+        if(this.props.room) {
             socket.emit("join", this.props.room._id, this.props.user.username);
         }
         socket.on("new user", username => {
@@ -64,15 +64,14 @@ class ChatRoom extends React.Component{
             console.log(`A message by ${message.username} was received by the server: ${message.text}`);
             this.props.receiveMessage(message);
         })
-        // =========================================
     };
 
     componentDidUpdate(){
+        console.log("did update");
         const { room, user } = this.props;
-        if(room._id === null) {
-            socket.emit("join", room._id, user.username);
-        }
-
+        // if(this.props.room._id) {
+        //     socket.emit("join", room._id, user.username);
+        // }
         if(this.state.convoLength === null) {
             this.setState({ convoLength: room.conversation.length });
         } else {

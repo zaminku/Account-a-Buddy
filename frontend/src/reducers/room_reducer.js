@@ -14,9 +14,9 @@ const roomReducer = (oldSlice=defaultRoom, action) => {
 
     switch(action.type) {
         case RECEIVE_ROOM:
-            return action.room
+            return newSlice[action.room._id] = action.room;
         case REMOVE_ROOM:
-            return defaultRoom
+            return defaultRoom;
         case RECEIVE_MESSAGE:
             const newConvo = newSlice.conversation;
             newConvo.push(action.message);

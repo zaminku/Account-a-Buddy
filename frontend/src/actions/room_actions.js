@@ -2,10 +2,7 @@ import * as RoomApiUtil from "../util/room_api_util"
 
 export const RECEIVE_MESSAGE = "RECEIVE_MESSAGE"
 export const receiveMessage = message => {
-    return {
-        type: RECEIVE_MESSAGE, 
-        message
-    }
+    return { type: RECEIVE_MESSAGE, message}
 }
 
 export const RECEIVE_ROOM = "RECEIVE_ROOM"
