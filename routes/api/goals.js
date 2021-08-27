@@ -55,7 +55,7 @@ router.post('/',
           date: req.body.date,
           author: req.user.id, 
           available: req.body.available,
-        //   milestone: req.body.milestone
+          milestones: req.body.milestoneArray
       });
   
       newGoal.save()
@@ -76,6 +76,7 @@ router.patch('/:goalId',
             title: req.body.title,
             description: req.body.description,
             available: req.body.available
+            // milestone: req.body.milestone
         }
 
         Goal.findByIdAndUpdate(
@@ -92,24 +93,5 @@ router.patch('/:goalId',
         );
     }
 );
-
-//   router.delete('/:goalId', (req, res) => {
-    //   Goal.deleteOne({_id: req.params.goalId},
-    //     error => {
-    //         if (error) {
-    //             return error
-    //         }
-    //     });
-
-    //     res.redirect('/api/goals');
-
-//         passport.authenticate("jwt", { session: false }),
-//         async (req, res) => {
-//             await db.collection("goals").deleteOne({ _id: ObjectID(req.params.id) });
-//             res.json("deleted");
-//         }
-        
-//         res.redirect('/api/goals');
-//   })
 
 module.exports = router;
