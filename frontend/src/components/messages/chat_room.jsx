@@ -14,7 +14,7 @@ class ChatRoom extends React.Component{
             }, 
             buddy: "", 
             convoLength: null, 
-            roomLoaded: false
+            roomNeedJoining: true
         }
 
         this.sendMessage = this.sendMessage.bind(this)
@@ -53,9 +53,7 @@ class ChatRoom extends React.Component{
 
     componentDidMount(){
         this.props.fetchRoom(this.props.match.params.goalId);
-        if(this.props.room) {
-            socket.emit("join", this.props.room._id, this.props.user.username);
-        }
+
         socket.on("new user", username => {
             console.log(`${username} was connected to the server`);
             this.setState({buddy: username});
@@ -69,9 +67,10 @@ class ChatRoom extends React.Component{
     componentDidUpdate(){
         console.log("did update");
         const { room, user } = this.props;
-        // if(this.props.room._id) {
-        //     socket.emit("join", room._id, user.username);
-        // }
+        if(this.state.roomNeedJoining) {
+            socket.emit("join", room._id, user.username);
+            this.setState({ roomNeedJoining: false });
+        }
         if(this.state.convoLength === null) {
             this.setState({ convoLength: room.conversation.length });
         } else {
@@ -121,7 +120,7 @@ class ChatRoom extends React.Component{
                             <i className="fas fa-sliders-h"></i>
                         </form>
                     </div>
-                    <div>{this.state.buddy ? `${this.state.buddy} has joined` : ""}</div>
+                    {/* <div>{this.state.buddy ? `${this.state.buddy} has joined` : ""}</div> */}
                 </div>
                 <div className="clearfix">clearfix</div>
             </div>      
