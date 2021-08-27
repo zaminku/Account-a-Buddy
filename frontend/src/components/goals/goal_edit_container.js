@@ -5,7 +5,8 @@ import { fetchGoal, updateGoal, fetchUserGoals } from "../../actions/goal_action
 
 const mSTP = (state, ownProps) => ({
     history: ownProps.history,
-    userId: state.session.user.id
+    userId: state.session.user.id,
+    goal: state.entities.goals[state.ui.modal.itemId]
 })
 
 const mDTP = dispatch => ({
@@ -13,6 +14,6 @@ const mDTP = dispatch => ({
     fetchUserGoals: userId => dispatch(fetchUserGoals(userId)),
     updateGoal: goal => dispatch(updateGoal(goal)),
     closeModal: () => dispatch(closeModal())
-})
+}) 
 
 export default connect(mSTP, mDTP)(GoalEdit)
