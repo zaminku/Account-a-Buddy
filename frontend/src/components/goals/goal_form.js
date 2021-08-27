@@ -11,7 +11,6 @@ class GoalForm extends React.Component {
             category: null, 
             milestoneArray: [],
             milestoneInput: "",
-            milestoneCompleted: false,
             // TEST CODE =============================
             available: false
             // =======================================
@@ -31,12 +30,15 @@ class GoalForm extends React.Component {
     submitMilestone(e) {
         e.preventDefault();
         let newArray = this.state.milestoneArray;
-        console.log(newArray)
-        newArray.push(this.state.milestoneInput);
+        let milestone = {
+            milestone: this.state.milestoneInput,
+            milestoneCompleted: false
+        }
+        newArray.push(milestone);
+
         this.setState({
             milestoneArray: newArray,
             milestoneInput: "",
-            milestoneCompleted: false
         });
     }
 
@@ -111,9 +113,9 @@ class GoalForm extends React.Component {
 
 
                     <div>
-                        <ul>{this.state.milestoneArray.map(milestone => {
+                        <ul>{this.state.milestoneArray.map((milestone, idx) => {
                             return (
-                                <li>{milestone}</li>
+                                <li key={idx}>{milestone.milestone}</li>
                                 )
                             })}
                         </ul>
