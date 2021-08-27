@@ -2,7 +2,7 @@ import React from 'react'
 import "whatwg-fetch";
 import openSocket from "socket.io-client"
 import "./chat_room.css"
-const socket = openSocket("http://localhost:5000")
+const socket = openSocket("ws://account-a-buddies-app.herokuapp.com:14827/socket.io/?EIO=4&transport=websocket")
 
 
 class ChatRoom extends React.Component{
