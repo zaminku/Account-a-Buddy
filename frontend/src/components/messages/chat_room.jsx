@@ -1,17 +1,20 @@
 import React from 'react'
-import "whatwg-fetch";
-import openSocket from "socket.io-client"
 import "./chat_room.css"
-const socket = openSocket("http://localhost:5000")
-
+import socketIOClient from "socket.io-client"
+const socket = socketIOClient("http://localhost:5000")
 
 class ChatRoom extends React.Component{
 
     constructor(props){
         super(props)
         this.state = {
-            username: this.props.user.username,
-            message: '', 
+            message: {
+                username: this.props.user.username,
+                text: ""
+            }, 
+            buddy: "", 
+            convoLength: null, 
+            roomNeedJoining: true
         }
 
         this.sendMessage = this.sendMessage.bind(this)
@@ -19,48 +22,63 @@ class ChatRoom extends React.Component{
         this.bottom = React.createRef()
 
         // TEST CODE ===============================
-        this.handleDelete = this.handleDelete.bind(this)
+        // this.handleDelete = this.handleDelete.bind(this)
         // =========================================
     }
 
     sendMessage(){
-        // socket.emit("message", this.state.message)
-        // this.props.addMessage(this.state)
-        // this.props.fetchMessage(this.state)
-
-        // invoke a function that will add the this.state message to 
-        // the specific chat room's conversation array.
-        this.props.addMsgToConvo(this.props.room, this.state);
-        // ===============================================
-        // then socket.emit to tell each user's program to 
-        // fetchMessage which will fetch just the new message that was 
-        // added to the chat room's conversation array
-        // ===============================================
-        this.setState({message: ''})
+        this.props.addMsgToConvo(this.props.room, this.state.message);
+        socket.emit("send message", this.props.room._id, this.state.message);
+        this.setState({message: { 
+            username: this.props.user.username, 
+            text: "" 
+        }})
+        console.log(`this socket id is ${socket.id}`);
     }
 
     update(e){
         this.setState({
-            message: e.target.value
+            message: { 
+                username: this.state.message.username,
+                text: e.target.value
+            }
         })
     }
 
     // TEST CODE ===============================
-    handleDelete(message, index) {
-        this.props.deleteMessage(message, index)
-    }
+    // handleDelete(message, index) {
+    //     this.props.deleteMessage(message, index)
+    // }
     // =========================================
 
     componentDidMount(){
         this.props.fetchRoom(this.props.match.params.goalId);
-        // this.props.fetchMessages()
-        // socket.on("message", data=>{
-        //     console.log("socket is working")
-        // })
-    }
+
+        socket.on("new user", username => {
+            console.log(`${username} was connected to the server`);
+            this.setState({buddy: username});
+        });
+        socket.on("receive message", message => {
+            console.log(`A message by ${message.username} was received by the server: ${message.text}`);
+            this.props.receiveMessage(message);
+        })
+    };
 
     componentDidUpdate(){
-        this.bottom.current.scrollIntoView();
+        console.log("did update");
+        const { room, user } = this.props;
+        if(this.state.roomNeedJoining) {
+            socket.emit("join", room._id, user.username);
+            this.setState({ roomNeedJoining: false });
+        }
+        if(this.state.convoLength === null) {
+            this.setState({ convoLength: room.conversation.length });
+        } else {
+            if(this.state.convoLength !== room.conversation.length) {
+                this.bottom.current.scrollIntoView();
+                this.setState({ convoLength: room.conversation.length });
+            }
+        }
     }
 
     componentWillUnmount() {
@@ -70,9 +88,9 @@ class ChatRoom extends React.Component{
     render(){
         const allMessages = this.props.room.conversation.map((message, index) => {
             return (
-                <div>
+                <div key={index} >
                     <div className="message">
-                        <span className="author">{message.username}: </span>{message.message}
+                        <span className="author">{message.username}: </span>{message.text}
                     </div>
                     {/* <button onClick={() => this.handleDelete(message, index)} >Delete</button> */}
                 </div>
@@ -80,7 +98,7 @@ class ChatRoom extends React.Component{
         })
         return(
             <div className="chat-page">
-                <h3>Welcome to the chat room</h3>
+                <h3>Welcome to the chat room {this.state.message.username}</h3>
                 <div className="chat-container">
                     <div className="chat-messages">
                         {allMessages}
@@ -94,11 +112,15 @@ class ChatRoom extends React.Component{
                                 placeholder="Enter Message"
                                 autoComplete="off"
                                 onChange={e=>this.update(e)}
-                                value={this.state.message}
+                                value={this.state.message.text}
                             />
                             <button className="btn" onClick={this.sendMessage}><i className="fas fa-paper-plane"></i> Send</button>
+                            {/* Add an onclick to the below <i> */}
+                            {/* onclick will open settings modal */}
+                            <i className="fas fa-sliders-h"></i>
                         </form>
                     </div>
+                    {/* <div>{this.state.buddy ? `${this.state.buddy} has joined` : ""}</div> */}
                 </div>
                 <div className="clearfix">clearfix</div>
             </div>      

@@ -1,4 +1,4 @@
-import { RECEIVE_ROOM, REMOVE_ROOM } from '../actions/room_actions'
+import { RECEIVE_ROOM, REMOVE_ROOM, RECEIVE_MESSAGE } from '../actions/room_actions'
 
 const defaultRoom = {
     user1: "", 
@@ -10,13 +10,17 @@ const defaultRoom = {
 
 const roomReducer = (oldSlice=defaultRoom, action) => {
     Object.freeze(oldSlice)
-    // let newSlice = Object.assign({}, oldSlice)
+    let newSlice = Object.assign({}, oldSlice)
 
     switch(action.type) {
         case RECEIVE_ROOM:
-            return action.room
+            return newSlice[action.room._id] = action.room;
         case REMOVE_ROOM:
-            return defaultRoom
+            return defaultRoom;
+        case RECEIVE_MESSAGE:
+            const newConvo = newSlice.conversation;
+            newConvo.push(action.message);
+            return Object.assign({}, oldSlice, { conversation: newConvo });
         default: 
             return oldSlice
     }

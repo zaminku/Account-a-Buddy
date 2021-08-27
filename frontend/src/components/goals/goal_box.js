@@ -1,82 +1,69 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./goal_index.css"
+import "./goal_list.css"
 import { findGoalMatch } from "../../util/goal_api_util";
+import { updateGoal } from "../../util/goal_api_util";
 
 class GoalBox extends React.Component {
-
-  // TEST CODE ===================================
   constructor(props) {
     super(props);
     this.findBuddy = this.findBuddy.bind(this);
-    this.switchAvailableStatus = this.switchAvailableStatus.bind(this);
-    this.loadChatRoom = this.loadChatRoom.bind(this);
+    this.setAvailableToFalse = this.setAvailableToFalse.bind(this);
   }
   
-  // #findBuddy will find an matching goal in the DB and ... 
-  // create a chat room with an empty array as the conversation, 
-  // update the local store to include that chat room what was just created
+  componentDidMount() {
+    this.props.fetchRoom(this.props.goal._id);
+  }
+
   findBuddy() {
-    const { goal, createRoom } = this.props
-    findGoalMatch(goal)
+    const { goal, createRoom, fetchRoom } = this.props
+    if(goal.available) {
+      findGoalMatch(goal)
       .then(goals => {
-        if(goals.data) {
+        if(goals.data.length > 0) {
           const randomEl = Math.floor(Math.random() * goals.data.length);
-          this.setState({ match: goals.data[randomEl] })
           const match = goals.data[randomEl];
-          this.switchAvailableStatus(goal);
-          this.switchAvailableStatus(match);
+          this.setAvailableToFalse(goal);
+          this.setAvailableToFalse(match);
           return match;
         } else {
-          console.log("No available buddies. You will be notified as soon as a match is found.");
+          return null;
         }
       })
       .then(match => {
-        const newRoom = {
-          user1: goal, 
-          user2: match, 
-          goal1: goal, 
-          goal2: match
-        };
-        createRoom(newRoom);
+        if(match !== null) {
+          const newRoom = {
+            user1: goal, 
+            user2: match, 
+            goal1: goal, 
+            goal2: match
+          };
+          createRoom(newRoom);
+        } else {
+          console.log("NO MATCH WAS FOUND!!!");
+        }
       })
-  }
-
-  switchAvailableStatus(goal) {
-    const { updateGoal} = this.props
-    let newGoal = Object.assign({}, goal);
-    if(goal.available) {
-      newGoal.available = false;
     } else {
-      newGoal.available = true;
+      console.log("The goal's availble status is FALSE. Must be TRUE in order to find a match.");
+      // fetchRoom(goal._id);
     }
-    updateGoal(newGoal);    
   }
 
-  loadChatRoom() {
-    const { goal, fetchRoom } = this.props;
-    fetchRoom(goal._id);
-  }
-  // =============================================
-  
+  setAvailableToFalse(goal) {
+    let newGoal = Object.assign({}, goal);
+    newGoal.available = false;
+    updateGoal(newGoal);
+  }  
 
   render() {
-    const { category, title, description, author, _id, available } = this.props.goal
     const { goal } = this.props
     return (
       <div>
-        <div>{this.props.title}</div>
-        <div>{this.props.description}</div>
-        <div>{this.props.category}</div>
-        <div>{this.props.available}</div>
+        <div>{goal.title}</div>
+        <div>{goal.description}</div>
+        <div>{goal.category}</div>
 
-        {/* TEST CODE =========================== */}
-        <button onClick={() => this.switchAvailableStatus(goal)} >Available: {available ? "true" : "false"}</button>
-        <button onClick={this.findBuddy} >Find a buddy</button>
-        {/* <Link to="/chat" ><button onClick={this.loadChatRoom} >Chat with your buddy</button></Link> */}
-        <Link to={`/chat/${goal._id}`} ><button>Chat with your buddy</button></Link>
-        {/* ===================================== */}
-
+        <Link to={`/chat/${goal._id}`} ><button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button></Link>
         <br/>
       </div>
     );

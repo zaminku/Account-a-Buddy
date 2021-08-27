@@ -51,15 +51,15 @@ router.patch('/:messageId',
     }
 )
 
-router.delete('/:messageId', (req, res) => {
-    Message.deleteOne({_id: req.params.messageId}, 
-        error => {
-            if(error) {
-                return error
-            }
-        })
-    res.json(req.params.messageId)
-})
+// router.delete('/:messageId', (req, res) => {
+//     Message.deleteOne({_id: req.params.messageId}, 
+//         error => {
+//             if(error) {
+//                 return error
+//             }
+//         })
+//     res.json(req.params.messageId)
+// })
 // ===================================
 
 module.exports = router
