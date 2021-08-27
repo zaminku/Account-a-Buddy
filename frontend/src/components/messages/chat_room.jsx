@@ -1,7 +1,13 @@
 import React from 'react'
 import "./chat_room.css"
-import socketIOClient from "socket.io-client"
-const socket = socketIOClient("ws://account-a-buddies-app.herokuapp.com:14827/socket.io/?EIO=4&transport=websocket")
+
+// TEST CODE ===============================================
+// import socketIOClient from "socket.io-client"
+// const socket = socketIOClient("ws://account-a-buddies-app.herokuapp.com:14827/socket.io/?EIO=4&transport=websocket")
+const io = require('socket.io-client');
+const socket = io();
+// =========================================================
+
 
 class ChatRoom extends React.Component{
 
