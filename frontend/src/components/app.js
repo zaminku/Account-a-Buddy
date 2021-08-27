@@ -27,7 +27,7 @@ const App = () => (
             <ProtectedRoute exact path="/goals" component={GoalListContainer}/>
             {/* <ProtectedRoute exact path="/goalslist" component={GoalListContainer}/> */}
             <ProtectedRoute exact path="/goals/new" component={GoalFormContainer}/>
-            <ProtectedRoute path="/chat/:goalId" component={ChatRoomContainer}/>
+            <ProtectedRoute path={`/chat/:goalId`} component={ChatRoomContainer}/>
         </Switch>
     </div>
 );

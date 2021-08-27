@@ -17,14 +17,14 @@ class GoalBox extends React.Component {
   // create a chat room with an empty array as the conversation, 
   // update the local store to include that chat room that was just created
   findBuddy() {
-    const { goal, createRoom } = this.props
+    const { goal, createRoom, fetchRoom } = this.props
     if(goal.available) {
       findGoalMatch(goal)
       .then(goals => {
         if(goals.data.length > 0) {
           const randomEl = Math.floor(Math.random() * goals.data.length);
           const match = goals.data[randomEl];
-          this.setState({ match })
+          // this.setState({ match })
           this.setAvailableToFalse(goal);
           this.setAvailableToFalse(match);
           return match;
@@ -47,6 +47,7 @@ class GoalBox extends React.Component {
       })
     } else {
       console.log("The goal's availble status is FALSE. Must be TRUE in order to find a match.");
+      fetchRoom(goal._id);
     }
   }
 

@@ -20,7 +20,7 @@ function AboutPage() {
                             chat online with your partner, but the relationship 
                             is a two-way street. You will be eachother's 
                             accountability partners, and together, you may 
-                            finally achieve that thing that which has been 
+                            finally achieve the thing that has been 
                             itching at your heart and soul for so long.
                         </p>
                     </div>

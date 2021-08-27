@@ -29,10 +29,10 @@ export const fetchRoom = goalId => dispatch => {
 export const addMsgToConvo = (room, message) => dispatch => {
     return RoomApiUtil.addMsgToConvo(room, message)
         // Transferring the below dispatch to the sockets to take care of
-        // .then(res => {
-        //     let room = res.data
-        //     dispatch(receiveRoom(room))
-        // })
+        .then(res => {
+            let room = res.data
+            dispatch(receiveRoom(room))
+        })
 }
 
 
