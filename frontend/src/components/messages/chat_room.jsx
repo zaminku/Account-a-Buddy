@@ -12,7 +12,8 @@ class ChatRoom extends React.Component{
                 username: this.props.user.username,
                 text: ""
             }, 
-            buddy: ""
+            buddy: "", 
+            convoLength: null
         }
 
         this.sendMessage = this.sendMessage.bind(this)
@@ -31,8 +32,7 @@ class ChatRoom extends React.Component{
             username: this.props.user.username, 
             text: "" 
         }})
-        // console.log(`this socket id is ${socket.id}`);
-        // this.bottom.current.scrollIntoView();
+        console.log(`this socket id is ${socket.id}`);
     }
 
     update(e){
@@ -51,29 +51,36 @@ class ChatRoom extends React.Component{
     // =========================================
 
     componentDidMount(){
-        
-
         // TEST CODE ===============================
         this.props.fetchRoom(this.props.match.params.goalId);
         if(this.props.room._id) {
             socket.emit("join", this.props.room._id, this.props.user.username);
         }
         socket.on("new user", username => {
-            // console.log(`${username} was connected to the server`);
+            console.log(`${username} was connected to the server`);
             this.setState({buddy: username});
         });
         socket.on("receive message", message => {
-            // console.log(`A message by ${message.username} was received by the server: ${message.text}`);
+            console.log(`A message by ${message.username} was received by the server: ${message.text}`);
             this.props.receiveMessage(message);
         })
         // =========================================
     };
 
     componentDidUpdate(){
-        // if(this.props.room._id) {
-        //     socket.emit("join", this.props.room._id, this.props.user.username);
-        // }
-        this.bottom.current.scrollIntoView();
+        const { room, user } = this.props;
+        if(room._id === null) {
+            socket.emit("join", room._id, user.username);
+        }
+
+        if(this.state.convoLength === null) {
+            this.setState({ convoLength: room.conversation.length });
+        } else {
+            if(this.state.convoLength !== room.conversation.length) {
+                this.bottom.current.scrollIntoView();
+                this.setState({ convoLength: room.conversation.length });
+            }
+        }
     }
 
     componentWillUnmount() {

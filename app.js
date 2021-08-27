@@ -57,18 +57,18 @@ const io = socket(server, {
 
 io.on('connection', (socket) => {
   console.log("....... IO SOCKET IS CONNECTED .......");
-  // console.log(socket.id);
+  console.log(socket.id);
 
   socket.on("join", (roomId, username) => {
     socket.join(roomId);
-    // console.log(`Connection coming from room ${roomId}`);
-    // console.log(`${username} has been connected`);
+    console.log(`Connection coming from room ${roomId}`);
+    console.log(`${username} has been connected`);
     socket.to(roomId).emit("new user", username);
   });
 
   socket.on("send message", (roomId, message) => {
-    // console.log(`${message.username} sent the following text: ${message.text}`);
-    // console.log(`re-emitting that message to socket id ${roomId}`);
+    console.log(`${message.username} sent the following text: ${message.text}`);
+    console.log(`re-emitting that message to socket id ${roomId}`);
     socket.to(roomId).emit("receive message", message);
   })
 
