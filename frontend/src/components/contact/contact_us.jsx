@@ -56,22 +56,47 @@ class ContactPage extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            "Zamin Kugshia": false,
+            "Sam Song": false,
+            "Jenny Nhan": false,
+            "Ben Chai": false
+        }
         this.showDev = this.showDev.bind(this);
         this.showTeam = this.showTeam.bind(this);
+        this.setModal = this.setModal.bind(this);
+        this.showModal = this.showModal.bind(this);
+    }
+
+    showModal(dev) {
+        if(this.state[dev.name]) {
+            return (
+                <div className={`${dev.name.split(' ')[0]}`} >
+                    <p>{dev.description}</p>
+                </div>
+            );
+        }
+    }
+
+    setModal(bool, devName) {
+        this.setState({ [devName]: bool });
     }
 
     showDev(dev) {
         return (
             <li>
                 <h3>{dev.name}</h3>
-                <img src={dev.img.src} alt={dev.img.alt} />
+                <img src={dev.img.src} alt={dev.img.alt} 
+                    onMouseOver={() => this.setModal(true, dev.name)} 
+                    onMouseOut={() => this.setModal(false, dev.name)} 
+                />
                 <div className="links" >
-                    <a href={dev.github}><img src="../github-logo2.png" alt="Github icon" /></a>
-                    <a href={dev.linkedin}><img src="../linkedin-logo.png" alt="LinkedIn icon" /></a>
-                    <a href={dev.angellist}><img src="../angellist-logo.png" alt="AngelList icon" /></a>
-                    <a href={dev.personalSite}><img src="../website-logo.png" alt="Webpage icon" /></a> 
+                    <a href={dev.github}><img src="../github-logo2.png" alt="Github" /></a>
+                    <a href={dev.linkedin}><img src="../linkedin-logo.png" alt="LinkedIn" /></a>
+                    <a href={dev.angellist}><img src="../angellist-logo.png" alt="AngelList" /></a>
+                    <a href={dev.personalSite}><img src="../website-logo.png" alt="Portfolio Site" /></a> 
                 </div>
-                {/* <p>{dev.description}</p> */}
+                {this.showModal(dev)}
             </li>
         );
     }
