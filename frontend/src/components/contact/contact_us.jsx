@@ -1,63 +1,92 @@
 import React from 'react'
 import "./contact.css"
 
-function ContactPage() {
+const TEAM = {
+    zamin: {
+        name: "Zamin Kugshia", 
+        img: {
+            src: "../zamin.jpeg", 
+            alt: "Photo of Zamin the Zombie"
+        }, 
+        personalSite: "", // for our personalSite website 
+        github: "https://github.com/zaminku", 
+        linkedin: "https://www.linkedin.com/in/zamin-k/", 
+        angellist: "", // for angel list profile
+        description: "I am Zamin the zombie."
+    }, 
+    sam: {
+        name: "Sam Song", 
+        img: {
+            src: "../sam.jpg", 
+            alt: "Photo of Sam the Pokemon Master"
+        }, 
+        personalSite: "", // for our personalSite website 
+        github: "https://github.com/samsongs1991", 
+        linkedin: "https://www.linkedin.com/in/samuel-song-a0b64a21a/", 
+        angellist: "https://angel.co/u/samsongs",
+        description: "I am Sam the Pokemon master."
+    }, 
+    jenny: {
+        name: "Jenny Nhan", 
+        img: {
+            src: "../jenny.jpeg", 
+            alt: "Photo of Jenny the happy one"
+        }, 
+        personalSite: "", // for our personalSite website 
+        github: "https://github.com/j3nhan", 
+        linkedin: "https://www.linkedin.com/in/zamin-k/", 
+        angellist: "", // for angel list profile
+        description: "I am Jenny the happy one."
+    }, 
+    ben: {
+        name: "Ben Chai", 
+        img: {
+            src: "../ben.jpeg", 
+            alt: "Photo of Ben with the calming voice"
+        }, 
+        personalSite: "", // for our personalSite website 
+        github: "https://github.com/b-chai", 
+        linkedin: "https://www.linkedin.com/in/ben-chai/", 
+        angellist: "", // for angel list profile
+        description: "I am Ben the calm voice."
+    }
+}
 
-    return (
-        <div className="contact-page" >
-            {/* <div className="contact-text">Who We Are</div> */}
+class ContactPage extends React.Component {
 
-            <div className="contact-text">Meet the Team</div>
+    constructor(props) {
+        super(props);
+        this.showTeam = this.showTeam.bind(this);
+    }
 
-            <ul className="team">
-
-                <li>Zamin
-                    <div className="Zamin"><img src="../zamin.jpeg" alt="user"/></div>
-                    <div className="links">
-                    <a href="https://github.com/zaminku"><img className="github" src="../github-logo.png" alt="Github-logo" /></a>
-                    <a href="https://www.linkedin.com/in/zamin-k/"><img className="linkedin" src="../linkedin-logo.png" alt="LinkedIn-Logo" /></a>
+    showTeam() {
+        return (
+            Object.values(TEAM).map((dev, index) => (
+                <li key={index} >
+                    <h3>{dev.name}</h3>
+                    <img src={dev.img.src} alt={dev.img.alt} />
+                    <div className="links" >
+                        <a href={dev.github}><img src="../github-logo2.png" alt="Github icon" /></a>
+                        <a href={dev.linkedin}><img src="../linkedin-logo.png" alt="LinkedIn icon" /></a>
+                        <a href={dev.angellist}><img src="../angellist-logo.png" alt="AngelList icon" /></a>
+                        <a href={dev.personalSite}><img src="../website-logo.png" alt="Webpage icon" /></a> 
                     </div>
-                    <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                    <p>{dev.description}</p>
                 </li>
+            ))
+        );
+    }
 
-                <li>Sam
-                    <div className="Sam"><img src="../sam.jpg" alt="user"/></div>
-                    <div className="links">
-                    <a href="https://github.com/samsongs1991"><img className="github" src="../github-logo.png" alt="Github-logo" /></a>
-                    <a href=""><img className="linkedin" src="../linkedin-logo.png" alt="LinkedIn-Logo" /></a>
-                    </div>
-                    <div>
-                        I am a 2nd generation Korean-American who 
-                        was raised in Seattle by a single-mom.
-                        A few things I am proud of are that I paid 
-                        my own way through university, I cycled
-                        across the country alone, and I served in the US 
-                        Peace Corps where I also became fluent in Spanish.
-                    </div>
-                </li>
-
-                <li>Jenny
-                    <div className="Jenny"><img src="../jenny.jpeg" alt="user"/></div>
-                    <div className="links">
-                    <a href="https://github.com/j3nhan"><img className="github" src="../github-logo.png" alt="Github-logo" /></a>
-                    <a href=""><img className="linkedin" src="../linkedin-logo.png" alt="LinkedIn-Logo" /></a>
-                    </div>
-                    <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
-                </li>
-
-                <li>Ben
-                    <div className="Ben"><img src="../ben.jpeg" alt="user"/></div>
-                    <div className="links">
-                    <a href="https://github.com/b-chai"><img className="github" src="../github-logo.png" alt="Github-logo" /></a>
-                    <a href="https://www.linkedin.com/in/ben-chai/"><img className="linkedin" src="../linkedin-logo.png" alt="LinkedIn-Logo" /></a>
-                    
-                    </div>
-                    <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
-                </li>
-                
-            </ul>
-        </div>
-    )
+    render() {
+        return (
+            <div className="contact-page" >
+                <h2 className="contact-text">Meet the Team</h2>
+                <ul className="team">
+                    {this.showTeam()}
+                </ul>
+            </div>
+        )
+    }
 }
 
 export default ContactPage
