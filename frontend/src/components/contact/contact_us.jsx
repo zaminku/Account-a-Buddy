@@ -56,24 +56,39 @@ class ContactPage extends React.Component {
 
     constructor(props) {
         super(props);
+        this.showDev = this.showDev.bind(this);
         this.showTeam = this.showTeam.bind(this);
     }
 
-    showTeam() {
+    showDev(dev) {
         return (
-            Object.values(TEAM).map((dev, index) => (
-                <li key={index} >
-                    <h3>{dev.name}</h3>
-                    <img src={dev.img.src} alt={dev.img.alt} />
-                    <div className="links" >
-                        <a href={dev.github}><img src="../github-logo2.png" alt="Github icon" /></a>
-                        <a href={dev.linkedin}><img src="../linkedin-logo.png" alt="LinkedIn icon" /></a>
-                        <a href={dev.angellist}><img src="../angellist-logo.png" alt="AngelList icon" /></a>
-                        <a href={dev.personalSite}><img src="../website-logo.png" alt="Webpage icon" /></a> 
-                    </div>
-                    <p>{dev.description}</p>
-                </li>
-            ))
+            <li>
+                <h3>{dev.name}</h3>
+                <img src={dev.img.src} alt={dev.img.alt} />
+                <div className="links" >
+                    <a href={dev.github}><img src="../github-logo2.png" alt="Github icon" /></a>
+                    <a href={dev.linkedin}><img src="../linkedin-logo.png" alt="LinkedIn icon" /></a>
+                    <a href={dev.angellist}><img src="../angellist-logo.png" alt="AngelList icon" /></a>
+                    <a href={dev.personalSite}><img src="../website-logo.png" alt="Webpage icon" /></a> 
+                </div>
+                {/* <p>{dev.description}</p> */}
+            </li>
+        );
+    }
+
+    showTeam() {
+        const { zamin, sam, jenny, ben } = TEAM;
+        return (
+            <ul className="team" >
+                <div className="top">
+                    {this.showDev(zamin)}
+                    {this.showDev(sam)}
+                </div>
+                <div className="bottom">
+                    {this.showDev(jenny)}
+                    {this.showDev(ben)}
+                </div>
+            </ul>
         );
     }
 
@@ -81,9 +96,7 @@ class ContactPage extends React.Component {
         return (
             <div className="contact-page" >
                 <h2 className="contact-text">Meet the Team</h2>
-                <ul className="team">
-                    {this.showTeam()}
-                </ul>
+                {this.showTeam()}
             </div>
         )
     }
