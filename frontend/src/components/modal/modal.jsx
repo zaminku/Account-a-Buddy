@@ -9,7 +9,8 @@ function Modal({ modal, closeModal }) {
         return null;
     }
     let component;
-    switch (modal) {
+    // debugger
+    switch (modal.type) {
         case 'goal-edit': 
             component = <GoalEditContainer />
             break;

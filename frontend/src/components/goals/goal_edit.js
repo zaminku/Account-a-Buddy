@@ -7,20 +7,19 @@ import "./goal_edit.css"
 class GoalEdit extends React.Component {
     constructor(props) {
         super(props);
-        // const pin = this.props.pin
-        // this.state = {
-        //     id: this.props.pinId,
-        //     title: pin.title,
-        //     description: pin.description,
-        //     pinUrl: pin.pinUrl
-        // }
+        const goal = this.props.goal;
+        this.state = {
+            id: this.props.goalId,
+            title: goal.title,
+            description: goal.description,
+            category: goal.category
+        }
 
-        // this.handleDelete = this.handleDelete.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
-
+        this.props.fetchGoal(this.props.goalId);
     }
 
     componentWillUnmount() {
@@ -34,24 +33,27 @@ class GoalEdit extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.updatePin(this.state)
-            .then(() => this.props.closeModal())
+        // this.props.updatePin(this.state)
+            // .then(() => this.props.closeModal())
     }
 
     render() {
         const { closeModal, pin } = this.props;
-        if (pin === undefined) {
-            return null;
-        }
+        // if (goal === undefined) {
+        //     return null;
+        // }
 
         return (
             <div>
                 <form className="pin-edit-form-modal" onSubmit={this.handleSubmit}>
-                    <input></input>
+                    <input
+                        type="text"
+                        value={this.state.title}
+                    />
                 </form>
             </div>
         )
     }
 }
 
-export default withRouter(GoalEdit);
+export default GoalEdit;

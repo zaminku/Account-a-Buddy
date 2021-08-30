@@ -7,7 +7,7 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    openModal: (type) => dispatch(openModal(type))
+    openModal: (type, goalId) => dispatch(openModal(type, goalId))
 })
 
 export default connect(null, mDTP)(GoalBox)

@@ -33,8 +33,9 @@ class GoalList extends React.Component {
                     <div>
                         <div>
                             {this.props.goals.map(goal => (
-                                <GoalBoxContainer key={goal._id} 
-                                    title={goal.title} 
+                                <GoalBoxContainer key={goal._id}
+                                    id={goal._id}
+                                    title={goal.title}
                                     description={goal.description}
                                     category={goal.category}
                                     available={goal.available}
