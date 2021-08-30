@@ -56,6 +56,20 @@ class GoalBox extends React.Component {
   }  
 
   render() {
+<<<<<<< HEAD
+    const { openModal } = this.props;
+    return (
+        <div>
+            <div>
+              <div>{this.props.title}</div>
+              <div>{this.props.description}</div>
+              <div>{this.props.category}</div>
+              <div>{this.props.available}</div>
+              <button onClick={() => openModal('goal-edit', this.props.id)}>    ...    </button>
+              <br/>
+            </div>
+        </div>
+=======
     const { goal } = this.props
     return (
       <div>
@@ -66,6 +80,7 @@ class GoalBox extends React.Component {
         <Link to={`/chat/${goal._id}`} ><button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button></Link>
         <br/>
       </div>
+>>>>>>> main
     );
   }
 }

@@ -14,9 +14,11 @@ import ChatRoomContainer from './messages/chat_room_container';
 // import ChatPageContainer from './messages/chat_page_container';
 import AboutPage from './about/about_page'
 import ContactPage from './contact/contact_us';
+import Modal from './modal/modal';
 
 const App = () => (
     <div>
+        <Modal />
         <NavBarContainer />
         <Switch>
             <Route path="/about" component={AboutPage}/>
