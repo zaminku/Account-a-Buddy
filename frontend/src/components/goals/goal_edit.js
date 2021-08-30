@@ -9,7 +9,7 @@ class GoalEdit extends React.Component {
         super(props);
         const goal = this.props.goal;
         this.state = {
-            id: this.props.goalId,
+            _id: this.props.goalId,
             title: goal.title,
             description: goal.description,
             category: goal.category
@@ -33,8 +33,8 @@ class GoalEdit extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // this.props.updatePin(this.state)
-            // .then(() => this.props.closeModal())
+        this.props.updateGoal(this.state)
+            .then(() => this.props.closeModal())
     }
 
     render() {
@@ -49,7 +49,69 @@ class GoalEdit extends React.Component {
                     <input
                         type="text"
                         value={this.state.title}
+                        onChange={this.update('title')}
                     />
+                    <input
+                        type="text"
+                        value={this.state.description}
+                        onChange={this.update('description')}
+                    />
+                    
+                    {/* <label>What kind of habit are you trying to work on?</label>
+                    <br /> */}
+                    {/* <div>
+                        {(this.state.category === "breaking-habit") ? 
+                        <div> 
+                            <input
+                                type="radio"
+                                name="goal-type"
+                                className="goal-form-radio"
+                                value="breaking-habit"
+                                onChange={this.update('category')}
+                                checked
+                            />
+                            <label for="goal-type-1" className="goal-form-radio-label">Breaking a Habit</label>
+                        </div> : 
+                        <div>
+                            <input
+                                type="radio"
+                                name="goal-type"
+                                className="goal-form-radio"
+                                value="breaking-habit"
+                                onChange={this.update('category')}
+                            />
+                            <label for="goal-type-1" className="goal-form-radio-label">Breaking a Habit</label>
+                        </div>
+                        }
+                        
+                    </div>
+                    <div>
+                        {(this.state.category === "making-habit") ?
+                        <div>
+                            <input
+                                type="radio"
+                                name="goal-type"
+                                className="goal-form-radio"
+                                value="making-habit"
+                                onChange={this.update('category')}
+                                checked
+                            />
+                            <label for="goal-type-1" className="goal-form-radio-label">Making a Habit</label>
+                        </div> : 
+                        <div>
+                            <input
+                                type="radio"
+                                name="goal-type"
+                                className="goal-form-radio"
+                                value="making-habit"
+                                onChange={this.update('category')}
+                            />
+                            <label for="goal-type-1" className="goal-form-radio-label">Making a Habit</label>
+                        </div>
+                        }   
+                    </div> */}
+                    
+                    <button type="submit">Edit Goal</button>
                 </form>
             </div>
         )
