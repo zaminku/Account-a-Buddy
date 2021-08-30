@@ -1,4 +1,118 @@
-.team{
+/* ========================================== */
+/* =============== NEW CSS ================ */
+/* ========================================== */
+
+/* HEADER: Meet the Team */
+.contact-text {
+    text-align: center;
+    font-family: 'Martel', serif;
+    font-size: 7vh;
+    margin-top: 3vh;
+    color: #698ea2;
+}
+
+/* PHOTOS: 2x2 grid */
+.team {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+}
+
+.team .top, .team .bottom {
+    display: flex;
+}
+
+.team .top li, .team .bottom li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* PHOTOS: grid panel styling */
+.team li > img {
+    height: 200px;
+    width: 200px;
+    margin: 0px 15px 0px 15px;
+    border-radius: 25px;
+    transition: 0.3s;
+    opacity: 0.95;
+}
+
+.team li > img:hover {
+    box-shadow: 0px 0px 20px 0.5px rgb(105, 105, 105);
+    height: 205px;
+    width: 205px;
+    opacity: 1;
+}
+
+/* NAMES */
+.team h3 {
+    color: #698ea2;
+    font-family: 'Karla', sans-serif;
+    font-size: 26px;
+    margin-top: 15px;
+}
+
+/* LINKS */
+.links img {
+    height: 25px;
+    margin: 5px 7px 0px 7px; 
+}
+
+.links img:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
+
+/* DESCRIPTION: modal */
+.team li {
+    position: relative;
+}
+
+.team .Zamin, .team .Sam, 
+.team .Jenny, .team .Ben {
+    position: absolute;
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 0px 20px 0.5px rgb(148, 148, 148);
+    height: 200px;
+    width: 400px;
+}
+
+.team .Zamin, .team .Jenny {
+    top: 55px;
+    right: 225px;
+}
+
+.team .Sam, .team .Ben {
+    top: 55px;
+    left: 225px;
+}
+
+.team .show {
+    opacity: 1;
+    transition: 
+        transform 0.3s ease-out, 
+        opacity 0.3s ease-out;
+    
+}
+
+.team .hide {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 
+        transform 0.3s ease-in, 
+        opacity 0.3s ease-in;
+}
+
+/* ========================================== */
+/* =============== PREV CSS ================ */
+/* ========================================== */
+
+/* .team{
     display: flex;
 }
 
@@ -23,7 +137,7 @@
 
 .team>li{
     text-align: center;
-    /* border: 3px solid black; */
+    border: 3px solid black;
     padding: 2vw;
     font-family: 'Karla', sans-serif;
     font-size: large;
@@ -31,4 +145,4 @@
 
 .Zamin > img, .Sam > img, .Jenny > img, .Ben > img {
     border-radius: 15px;
-}
+} */
