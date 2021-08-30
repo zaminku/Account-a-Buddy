@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json({ nogoalsfound: 'No goals found' }));
 });
 
-router.get('/users/:userId', (req, res) => {
+router.get('/list/:userId', (req, res) => {
     Goal.find({author: req.params.userId})
         .sort({date: -1 })
         .then(goals => res.json(goals))
@@ -23,13 +23,21 @@ router.get('/users/:userId', (req, res) => {
     );
 });
 
-router.get('/:goalId', (req, res) => {
+router.get('/goal/:goalId', (req, res) => {
     Goal.findById(req.params.goalId)
         .then(goal => res.json(goal))
         .catch(err =>
             res.status(404).json({ nogoalfound: 'No goal found with that ID' })
         );
 });
+
+// TEST CODE ==========================================
+router.get('/match/:authorId/:category', (req, res) => {
+    Goal.find({ author: { $ne: req.params.authorId }, category: req.params.category, available: true })
+        .then(goals => res.json(goals))
+        .catch(err => res.status(404).json({ nogoalfound: 'No available buddies' }));
+});
+// ====================================================
 
 router.post('/',
     passport.authenticate('jwt', { session: false }),
@@ -45,15 +53,17 @@ router.post('/',
           title: req.body.title,
           description: req.body.description,
           date: req.body.date,
-          author: req.user.id
+          author: req.user.id, 
+          available: req.body.available,
+          milestones: req.body.milestoneArray
       });
   
       newGoal.save()
         .then(goal => res.json(goal));
     }
-  );
+);
 
-  router.patch('/:goalId', 
+router.patch('/:goalId', 
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
         const { errors, isValid } = validateGoalInput(req.body);
@@ -65,6 +75,8 @@ router.post('/',
         const update = {
             title: req.body.title,
             description: req.body.description,
+            available: req.body.available
+            // milestone: req.body.milestone
         }
 
         Goal.findByIdAndUpdate(
@@ -76,30 +88,10 @@ router.post('/',
                     res.status(400).json(err)
                 } else {
                     res.json(goal);
-               }   
+                }   
             }
         );
     }
-  );
-
-//   router.delete('/:goalId', (req, res) => {
-    //   Goal.deleteOne({_id: req.params.goalId},
-    //     error => {
-    //         if (error) {
-    //             return error
-    //         }
-    //     });
-
-    //     res.redirect('/api/goals');
-
-//         passport.authenticate("jwt", { session: false }),
-//         async (req, res) => {
-//             await db.collection("goals").deleteOne({ _id: ObjectID(req.params.id) });
-//             res.json("deleted");
-//         }
-        
-//         res.redirect('/api/goals');
-//   })
-
+);
 
 module.exports = router;

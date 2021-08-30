@@ -1,6 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const Milestone = new Schema({
+    milestone: {
+        type: String
+    },
+    
+    milestoneCompleted: {
+        type: Boolean
+    }
+});
+
+
 const GoalSchema = new Schema({
     category: {
         type: String,
@@ -22,6 +33,17 @@ const GoalSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
+
+    milestones: {
+        type: [Milestone]
+    },
+
+    // TEST CODE =============================
+    available: { 
+        type: Boolean,
+        required: true
+    }
+    // =======================================
 }, {
     timestamps: true
 });

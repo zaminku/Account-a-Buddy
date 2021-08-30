@@ -6,6 +6,7 @@ const users = require("./routes/api/users");
 const passport = require('passport');
 const goals = require('./routes/api/goals');
 const messages = require('./routes/api/messages');
+const rooms = require('./routes/api/rooms');
 
 const bodyParser = require('body-parser');
 app.use(passport.initialize());
@@ -17,43 +18,61 @@ app.use(bodyParser.json());
 // routes are made here
 app.use('/api/users', users);
 app.use('/api/goals', goals);
-app.use('/api/messages', messages)
+app.use('/api/messages', messages);
+app.use('/api/rooms', rooms);
 
 const port = process.env.PORT || 5000;
 
-// app.listen(port, () => console.log(`Server is running on port ${port}`));
 
-// Test code ------------------------------
-
+// =================================
+// ======== SOCKET SETUP ===========
+// =================================
+// App Setup
 const path = require("path")
 const http = require("http")
-const socketio = require("socket.io")
+const socket = require("socket.io")
+const chat = require("./routes/chat")
+app.use(chat);
+const server = http.createServer(app);
 
-const server = http.createServer(app)
-const io = socketio(server, {
-    cors: {
-      origin: '*',
-    }
+server.listen(port, ()=> {
+  console.log("....... CONNECTED .......");
+  console.log(`PORT is on ${port}`);
+  console.log(".........................");
+});
+
+// Socket Setup
+const io = socket(server, {
+  cors: {
+    origin: '*',
+  }
+});
+
+io.on('connection', (socket) => {
+  console.log("....... IO SOCKET IS CONNECTED .......");
+  console.log(socket.id);
+
+  socket.on("join", (roomId, username) => {
+    socket.join(roomId);
+    console.log(`Connection coming from room ${roomId}`);
+    console.log(`${username} has been connected`);
+    socket.to(roomId).emit("new user", username);
   });
-  
-app.use(express.static(path.join(__dirname,"./frontend/public")))
 
-io.on("connection", socket=>{
-  
-    // const id = socket.handshake.query.id
-    // socket.join(id)
+  socket.on("send message", (roomId, message) => {
+    console.log(`${message.username} sent the following text: ${message.text}`);
+    console.log(`re-emitting that message to socket id ${roomId}`);
+    socket.to(roomId).emit("receive message", message);
+  })
 
-    console.log(".......Connected.........")
+  socket.on("disconnect", () => {
+    console.log("USER HAS DISCONNECTED");
+  });
+});
+// =================================
 
-    socket.on("message", data => {
-      // socket.broadcast.to(data.recipient).emit('receive-message', data.message)
-      console.log(data)
-    })
-})
 
-server.listen(port, ()=> console.log(`PORT is on ${port}`))
-
-// Test end -------------------------------
+app.use('/static', express.static(path.join(__dirname, './frontend/public')));
 
 mongoose
     .connect(db, { useNewUrlParser: true })

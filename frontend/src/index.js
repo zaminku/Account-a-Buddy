@@ -31,6 +31,9 @@ import {fetchGoals, fetchUserGoals, fetchGoal, createGoal, updateGoal } from './
 // window.updateGoal = updateGoal;
 // window.deleteGoal = deleteGoal;
 
+import { createRoom, deleteRoom } from "./actions/room_actions"
+import { findGoalMatch } from "./util/goal_api_util"
+
 window.axios = axios;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -66,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
 
   // testing
+  window.store = store
   window.dispatch = store.dispatch;
   window.getState = store.getState;
   
@@ -74,6 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchGoal = fetchGoal;
   window.createGoal = createGoal;
   window.updateGoal = updateGoal;
+  // window.deleteGoal = deleteGoal;
+  window.createRoom = createRoom;
+  window.deleteRoom = deleteRoom;
+  window.findGoalMatch = findGoalMatch;
   
   ReactDOM.render(<Root store={store} />, root);
   

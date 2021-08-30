@@ -17,6 +17,10 @@ class MessageIndex extends React.Component{
         this.sendSocketIO = this.sendSocketIO.bind(this)
         this.update = this.update.bind(this)
         this.bottom = React.createRef()
+
+        // TEST CODE ===============================
+        this.handleDelete = this.handleDelete.bind(this)
+        // =========================================
     }
 
     sendSocketIO(){
@@ -32,6 +36,12 @@ class MessageIndex extends React.Component{
         })
     }
 
+    // TEST CODE ===============================
+    handleDelete(message, index) {
+        this.props.deleteMessage(message, index)
+    }
+    // =========================================
+
     componentDidMount(){
         this.props.fetchMessages()
         socket.on("message", data=>{
@@ -44,12 +54,13 @@ class MessageIndex extends React.Component{
     }
 
     render(){
-        const allMessages = this.props.messages.map(message => {
+        const allMessages = this.props.messages.map((message, index) => {
             return (
                 <div>
                     <div className="message">
                         <span className="author">{message.username}: </span>{message.message}
                     </div>
+                    {/* <button onClick={() => this.handleDelete(message, index)} >Delete</button> */}
                 </div>
             )
         })

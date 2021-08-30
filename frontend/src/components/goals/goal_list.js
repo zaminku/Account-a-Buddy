@@ -39,6 +39,11 @@ class GoalList extends React.Component {
                                     description={goal.description}
                                     category={goal.category}
                                     available={goal.available}
+                                    goal={goal} 
+                                    room={this.props.room}
+                                    // updateGoal={this.props.updateGoal}
+                                    createRoom={this.props.createRoom} 
+                                    fetchRoom={this.props.fetchRoom}
                                 />
                             ))}
                         </div>

@@ -7,6 +7,8 @@ module.exports = function validateGoalInput(data) {
     data.category = validText(data.category) ? data.category : '';
     data.title = validText(data.title) ? data.title : '';
     data.description = validText(data.description) ? data.description : '';
+    data.milestoneInput = validText(data.milestoneInput) ? data.milestoneInput : '';
+
 
     if (!Validator.isLength(data.category, { min: 5, max: 50 })) {
         errors.category = 'Category must be at least 5 characters long';
@@ -16,8 +18,12 @@ module.exports = function validateGoalInput(data) {
         errors.category = 'Category field is required';
     }
 
-    if (!Validator.isLength(data.title, { min: 5, max: 50 })) {
-        errors.title = 'Title must be at least 5 characters long';
+    if (!Validator.isLength(data.title, { min: 3, max: 40 })) {
+        errors.title = 'Title must be at least 3 characters long';
+    }
+
+    if (!Validator.isLength(data.milestoneInput, { min: 0, max: 40 })) {
+        errors.milestone = 'Milestone cannot exceed 40 characters long';
     }
  
     if (Validator.isEmpty(data.title)) {
