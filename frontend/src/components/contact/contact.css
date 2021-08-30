@@ -95,12 +95,15 @@
     transition: 
         transform 0.3s ease-out, 
         opacity 0.3s ease-out;
-    /* transform: translateY(-100px); */
+    
 }
 
 .team .hide {
     opacity: 0;
     transform: translateY(30px);
+    transition: 
+        transform 0.3s ease-in, 
+        opacity 0.3s ease-in;
 }
 
 /* ========================================== */
