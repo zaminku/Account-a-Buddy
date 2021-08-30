@@ -11,6 +11,14 @@ const Milestone = new Schema({
     }
 });
 
+const Emotions = new Schema ({
+        sad: {type: Integer},
+        happy: {type: Integer}, 
+        anxious: {type: Integer}, 
+        neutral: {type: Integer}, 
+        angry: {type: Integer}
+})
+
 
 const GoalSchema = new Schema({
     category: {
@@ -35,7 +43,7 @@ const GoalSchema = new Schema({
     milestones: {
         type: [Milestone]
     },
-    
+    emotions: Emotions,
 
     // TEST CODE =============================
     available: { 

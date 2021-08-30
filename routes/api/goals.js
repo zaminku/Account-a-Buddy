@@ -75,8 +75,9 @@ router.patch('/:goalId',
         const update = {
             title: req.body.title,
             description: req.body.description,
-            available: req.body.available
-            // milestone: req.body.milestone
+            available: req.body.available,
+            // milestone: req.body.milestone,
+            emotions: req.body.emotions,
         }
 
         Goal.findByIdAndUpdate(

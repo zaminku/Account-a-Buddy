@@ -22,12 +22,6 @@ export const createGoal = newGoal => {
   return axios.post(`/api/goals/`, newGoal)
 }
 
-
-
 export const updateGoal = goal => (
   axios.patch(`/api/goals/${goal._id}`, goal)
 );
-
-// export const deleteGoal = goalId => (
-//   axios.delete(`/api/goals/${goalId}`)
-// );
