@@ -8,7 +8,6 @@ const io = require('socket.io-client');
 const socket = io();
 // =========================================================
 
-
 class ChatRoom extends React.Component{
 
     constructor(props){
