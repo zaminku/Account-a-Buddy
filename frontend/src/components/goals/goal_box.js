@@ -52,36 +52,21 @@ class GoalBox extends React.Component {
   setAvailableToFalse(goal) {
     let newGoal = Object.assign({}, goal);
     newGoal.available = false;
-    updateGoal(newGoal);
+    updateGoal(newGoal)
   }  
 
   render() {
-<<<<<<< HEAD
-    const { openModal } = this.props;
-    return (
-        <div>
-            <div>
-              <div>{this.props.title}</div>
-              <div>{this.props.description}</div>
-              <div>{this.props.category}</div>
-              <div>{this.props.available}</div>
-              <button onClick={() => openModal('goal-edit', this.props.id)}>    ...    </button>
-              <br/>
-            </div>
-        </div>
-=======
-    const { goal } = this.props
+    const { openModal, goal } = this.props;
     return (
       <div>
         <div>{goal.title}</div>
         <div>{goal.description}</div>
         <div>{goal.category}</div>
-
+        <button onClick={() => openModal('goal-edit', this.props.id)}>Edit</button>
         <Link to={`/chat/${goal._id}`} ><button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button></Link>
         <br/>
       </div>
->>>>>>> main
-    );
+    )
   }
 }
 
