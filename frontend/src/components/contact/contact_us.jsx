@@ -74,6 +74,7 @@ class ContactPage extends React.Component {
                 `show ${dev.name.split(' ')[0]}` : 
                 `hide ${dev.name.split(' ')[0]}`
             } >
+                <label>About Me</label>
                 <p>{dev.description}</p>
             </div>
         );
