@@ -21,21 +21,9 @@ module.exports = function validateGoalInput(data) {
     if (!Validator.isLength(data.title, { min: 3, max: 40 })) {
         errors.title = 'Title must be at least 3 characters long';
     }
-
-    if (!Validator.isLength(data.milestoneInput, { min: 0, max: 40 })) {
-        errors.milestone = 'Milestone cannot exceed 40 characters long';
-    }
  
     if (Validator.isEmpty(data.title)) {
         errors.title = 'Title field is required';
-    }
-
-    if (!Validator.isLength(data.description, { min: 5, max: 300 })) {
-        errors.description = 'Description must be at least 5 characters long';
-    }
- 
-    if (Validator.isEmpty(data.description)) {
-        errors.description = 'Description field is required';
     }
 
     return {

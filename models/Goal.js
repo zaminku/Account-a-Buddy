@@ -23,7 +23,6 @@ const GoalSchema = new Schema({
     },
     description: {
         type: String,
-        required: true
     },
     date: {
         type: Date,
@@ -33,10 +32,10 @@ const GoalSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
-
     milestones: {
         type: [Milestone]
     },
+    
 
     // TEST CODE =============================
     available: { 
