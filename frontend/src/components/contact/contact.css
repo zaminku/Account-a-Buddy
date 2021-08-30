@@ -40,7 +40,7 @@
 }
 
 .team li > img:hover {
-    box-shadow: 0px 0px 20px 0.5px rgb(148, 148, 148);
+    box-shadow: 0px 0px 20px 0.5px rgb(105, 105, 105);
     height: 205px;
     width: 205px;
     opacity: 1;
