@@ -36,13 +36,14 @@
     margin: 0px 15px 0px 15px;
     border-radius: 25px;
     transition: 0.3s;
+    opacity: 0.95;
 }
 
 .team li > img:hover {
     box-shadow: 0px 0px 20px 0.5px rgb(148, 148, 148);
     height: 205px;
     width: 205px;
-    cursor: pointer;
+    opacity: 1;
 }
 
 /* NAMES */
@@ -62,16 +63,45 @@
 .links img:hover {
     cursor: pointer;
     opacity: 0.7;
+    transform: translateY(-2px);
 }
 
 /* DESCRIPTION: modal */
+.team li {
+    position: relative;
+}
 
 .team .Zamin, .team .Sam, 
 .team .Jenny, .team .Ben {
     position: absolute;
     background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 0px 20px 0.5px rgb(148, 148, 148);
 }
 
+.team .Zamin, .team .Jenny {
+    top: 55px;
+    right: 225px;
+}
+
+.team .Sam, .team .Ben {
+    top: 55px;
+    left: 225px;
+}
+
+.team .show {
+    opacity: 1;
+    transition: 
+        transform 0.3s ease-out, 
+        opacity 0.3s ease-out;
+    /* transform: translateY(-100px); */
+}
+
+.team .hide {
+    opacity: 0;
+    transform: translateY(30px);
+}
 
 /* ========================================== */
 /* =============== PREV CSS ================ */

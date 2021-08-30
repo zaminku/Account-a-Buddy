@@ -69,13 +69,14 @@ class ContactPage extends React.Component {
     }
 
     showModal(dev) {
-        if(this.state[dev.name]) {
-            return (
-                <div className={`${dev.name.split(' ')[0]}`} >
-                    <p>{dev.description}</p>
-                </div>
-            );
-        }
+        return (
+            <div className={this.state[dev.name] ? 
+                `show ${dev.name.split(' ')[0]}` : 
+                `hide ${dev.name.split(' ')[0]}`
+            } >
+                <p>{dev.description}</p>
+            </div>
+        );
     }
 
     setModal(bool, devName) {
