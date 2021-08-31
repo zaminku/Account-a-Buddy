@@ -56,7 +56,8 @@ router.post('/',
           author: req.user.id, 
           available: req.body.available,
           milestones: req.body.milestoneArray, 
-          emotions: req.body.emotions
+          emotions: req.body.emotions,
+          dailyEmoji: req.body.dailyEmoji
       });
   
       newGoal.save()

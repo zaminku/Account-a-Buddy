@@ -57,8 +57,23 @@ class GoalBox extends React.Component {
 
   incrementCounter(key) {
     let newGoal = this.props.goal;
-    newGoal.emotions[key]++;
-    this.props.updateGoal(newGoal);
+    const today = this.currentDate()
+    console.log(newGoal.dailyEmoji)
+    if (newGoal.dailyEmoji !== today){
+      newGoal.dailyEmoji = today
+      newGoal.emotions[key]++;
+      this.props.updateGoal(newGoal);
+    }else{
+      console.log("You've pressed today, chill bruv")
+    }
+  }
+
+  currentDate(){
+    const time = new Date();
+    const month = time.getMonth()
+    const day = time.getDate()
+    const current = `${month}/${day}`
+    return current
   }
 
   showEmojis() {

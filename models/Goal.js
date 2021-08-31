@@ -44,7 +44,9 @@ const GoalSchema = new Schema({
         type: [Milestone]
     },
     emotions: Emotions,
-
+    dailyEmoji: {
+        type: String
+    },
     // TEST CODE =============================
     available: { 
         type: Boolean,
