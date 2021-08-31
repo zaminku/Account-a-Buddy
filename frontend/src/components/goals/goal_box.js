@@ -52,21 +52,21 @@ class GoalBox extends React.Component {
   setAvailableToFalse(goal) {
     let newGoal = Object.assign({}, goal);
     newGoal.available = false;
-    updateGoal(newGoal);
+    updateGoal(newGoal)
   }  
 
   render() {
-    const { goal, openModal } = this.props;
+    const { openModal, goal } = this.props;
     return (
       <div>
         <div>{goal.title}</div>
         <div>{goal.description}</div>
         <div>{goal.category}</div>
-        <button onClick={() => openModal('goal-edit', this.props.id)}>    ...    </button>
+        <button onClick={() => openModal('goal-edit', this.props.id)}>Edit</button>
         <Link to={`/chat/${goal._id}`} ><button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button></Link>
         <br/>
       </div>
-    );
+    )
   }
 }
 
