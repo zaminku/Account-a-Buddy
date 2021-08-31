@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./goal_list.css"
 import { findGoalMatch } from "../../util/goal_api_util";
 import { updateGoal } from "../../util/goal_api_util";
+import "./goal_box.css";
 
 class GoalBox extends React.Component {
   constructor(props) {
@@ -67,8 +68,12 @@ class GoalBox extends React.Component {
 
       return(
         <ul>
-          <li><button onClick={() => this.incrementCounter("sad")} >SAD</button>{sad}</li>
-          <li><button onClick={() => this.incrementCounter("happy")} >HAPPY</button>{happy}</li>
+          <li><button id="emo-button" onClick={() => this.incrementCounter("sad")} ></button>{sad}</li>
+          {/* <li><button onClick={() => this.incrementCounter("happy")} >HAPPY</button>{happy}</li> */}
+          <li><button onClick={() => this.incrementCounter("happy")} >
+            <img src="./happy.png" alt="happy"/>
+          </button>{happy}</li>
+
           <li><button onClick={() => this.incrementCounter("anxious")} >ANXIOUS</button>{anxious}</li>
           <li><button onClick={() => this.incrementCounter("neutral")} >NEUTRAL</button>{neutral}</li>
           <li><button onClick={() => this.incrementCounter("angry")} >ANGRY</button>{angry}</li>
