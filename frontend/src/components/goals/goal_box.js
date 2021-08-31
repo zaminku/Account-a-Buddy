@@ -83,11 +83,11 @@ class GoalBox extends React.Component {
 
       return(
         <ul>
-          <li><img clasName="emoji" src="../emoticons/happy.png" onClick={() => this.incrementCounter("happy")} />{happy}</li>
-          <li><img clasName="emoji" src="../emoticons/sad.png" onClick={() => this.incrementCounter("sad")} />{sad}</li>
-          <li><img clasName="emoji" src="../emoticons/neutral.png" onClick={() => this.incrementCounter("neutral")} />{neutral}</li>
-          <li><img clasName="emoji" src="../emoticons/anxious.png" onClick={() => this.incrementCounter("anxious")} />{anxious}</li>
-          <li><img clasName="emoji" src="../emoticons/angry.png" onClick={() => this.incrementCounter("angry")} />{angry}</li>
+          <li><img className="emoji" src="../emoticons/happy.png" onClick={() => this.incrementCounter("happy")} />{happy}</li>
+          <li><img className="emoji" src="../emoticons/sad.png" onClick={() => this.incrementCounter("sad")} />{sad}</li>
+          <li><img className="emoji" src="../emoticons/neutral.png" onClick={() => this.incrementCounter("neutral")} />{neutral}</li>
+          <li><img className="emoji" src="../emoticons/anxious.png" onClick={() => this.incrementCounter("anxious")} />{anxious}</li>
+          <li><img className="emoji" src="../emoticons/angry.png" onClick={() => this.incrementCounter("angry")} />{angry}</li>
         </ul>
       ); 
     }
