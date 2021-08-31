@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import GoalBox from './goal_box';
 import GoalBoxContainer from './goal_box_container';
 import "./goal_list.css"
 
@@ -31,13 +30,12 @@ class GoalList extends React.Component {
                 <div>
                     <h1>All Goals</h1>
                     <div>
-                        <div>
+                        <div className="all-goals">
                             {this.props.goals.map(goal => (
                                 <GoalBoxContainer key={goal._id}
                                     id={goal._id}
                                     goal={goal} 
                                     room={this.props.room}
-                                    // updateGoal={this.props.updateGoal}
                                     createRoom={this.props.createRoom} 
                                     fetchRoom={this.props.fetchRoom}
                                 />
@@ -55,7 +53,7 @@ class GoalList extends React.Component {
             <div>
                 <div>
                     <Link to="/goals/new">
-                        <button className="goal-btn">Create a goal</button>
+                        <button className="goal-btn"> + </button>
                     </Link>
                 </div>
 
