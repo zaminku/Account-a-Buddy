@@ -12,11 +12,11 @@ const Milestone = new Schema({
 });
 
 const Emotions = new Schema ({
-        sad: {type: Integer},
-        happy: {type: Integer}, 
-        anxious: {type: Integer}, 
-        neutral: {type: Integer}, 
-        angry: {type: Integer}
+        sad: {type: Number},
+        happy: {type: Number}, 
+        anxious: {type: Number}, 
+        neutral: {type: Number}, 
+        angry: {type: Number}
 })
 
 

@@ -53,7 +53,29 @@ class GoalBox extends React.Component {
     let newGoal = Object.assign({}, goal);
     newGoal.available = false;
     updateGoal(newGoal);
-  }  
+  }
+
+  incrementCounter(key) {
+    let newGoal = this.props.goal;
+    newGoal.emotions[key]++;
+    this.props.updateGoal(newGoal);
+  }
+
+  showEmojis() {
+    if(this.props.goal.emotions) {
+      const { sad, happy, anxious, neutral, angry } = this.props.goal.emotions;
+
+      return(
+        <ul>
+          <li><button onClick={() => this.incrementCounter("sad")} >SAD</button>{sad}</li>
+          <li><button onClick={() => this.incrementCounter("happy")} >HAPPY</button>{happy}</li>
+          <li><button onClick={() => this.incrementCounter("anxious")} >ANXIOUS</button>{anxious}</li>
+          <li><button onClick={() => this.incrementCounter("neutral")} >NEUTRAL</button>{neutral}</li>
+          <li><button onClick={() => this.incrementCounter("angry")} >ANGRY</button>{angry}</li>
+        </ul>
+      ); 
+    }
+  }
 
   render() {
     const { goal, openModal } = this.props;
@@ -64,7 +86,7 @@ class GoalBox extends React.Component {
         <div>{goal.category}</div>
         <button onClick={() => openModal('goal-edit', this.props.id)}>    ...    </button>
         <Link to={`/chat/${goal._id}`} ><button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button></Link>
-        <br/>
+        <div>{this.showEmojis()}</div>
       </div>
     );
   }
