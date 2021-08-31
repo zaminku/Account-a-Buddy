@@ -12,10 +12,12 @@ class GoalEdit extends React.Component {
             _id: this.props.goalId,
             title: goal.title,
             description: goal.description,
-            category: goal.category
+            category: goal.category,
+            milestones: goal.milestones
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderMilestones = this.renderMilestones.bind(this);
     }
 
     componentDidMount() {
@@ -37,11 +39,44 @@ class GoalEdit extends React.Component {
             .then(() => this.props.closeModal())
     }
 
+    updateMilestone(idx) {
+        let newMilestones = this.state.milestones;
+
+
+        if (newMilestones[idx].milestoneCompleted) {
+            newMilestones[idx].milestoneCompleted = false;
+        } else {
+            newMilestones[idx].milestoneCompleted = true;
+        }
+
+        this.setState({milestones: newMilestones})
+    }
+
+    renderMilestones() {
+        console.log(this.state)
+        return (
+            <div>
+                {this.props.milestones.map((milestone, idx) => {
+                    return (
+                        <label>
+                            <input 
+                                type="checkbox"
+                                onChange = {event => this.updateMilestone(idx)}
+                                checked = {this.state.milestones[idx].milestoneCompleted}
+                            />
+                            {milestone.milestone}
+                        </label>
+                    )
+                })}
+            </div>
+        )
+    }
+
     render() {
-        const { closeModal, pin } = this.props;
-        // if (goal === undefined) {
-        //     return null;
-        // }
+        const { closeModal, goal, milestones } = this.props;
+        if (goal === undefined) {
+            return null;
+        }
 
         return (
             <div>
@@ -110,7 +145,10 @@ class GoalEdit extends React.Component {
                         </div>
                         }   
                     </div> */}
-                    
+
+
+
+                    {this.renderMilestones()}
                     <button type="submit">Edit Goal</button>
                 </form>
             </div>

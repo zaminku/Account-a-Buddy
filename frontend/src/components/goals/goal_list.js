@@ -35,10 +35,6 @@ class GoalList extends React.Component {
                             {this.props.goals.map(goal => (
                                 <GoalBoxContainer key={goal._id}
                                     id={goal._id}
-                                    // title={goal.title}
-                                    // description={goal.description}
-                                    // category={goal.category}
-                                    // available={goal.available}
                                     goal={goal} 
                                     room={this.props.room}
                                     // updateGoal={this.props.updateGoal}

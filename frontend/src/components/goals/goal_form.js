@@ -55,6 +55,8 @@ class GoalForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        console.log("submit was pressed")
+        console.log(this.props)
         this.props.createGoal(this.state)
             .then(() => {
                 this.props.history.push('/goals');

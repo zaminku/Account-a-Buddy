@@ -81,6 +81,7 @@ router.patch('/:goalId',
             // milestone: req.body.milestone,
             emotions: req.body.emotions,
             dailyEmoji: req.body.dailyEmoji
+            milestones: req.body.milestones
         }
 
         Goal.findByIdAndUpdate(
