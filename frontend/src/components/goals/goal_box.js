@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./goal_list.css"
 import { findGoalMatch } from "../../util/goal_api_util";
 import { updateGoal } from "../../util/goal_api_util";
+import "./goal_box.css";
 
 class GoalBox extends React.Component {
   constructor(props) {
@@ -52,7 +53,44 @@ class GoalBox extends React.Component {
   setAvailableToFalse(goal) {
     let newGoal = Object.assign({}, goal);
     newGoal.available = false;
-    updateGoal(newGoal)
+    updateGoal(newGoal);
+  }
+
+  incrementCounter(key) {
+    let newGoal = this.props.goal;
+    const today = this.currentDate()
+    console.log(newGoal.dailyEmoji)
+    if (newGoal.dailyEmoji !== today){
+      newGoal.dailyEmoji = today
+      newGoal.emotions[key]++;
+      this.props.updateGoal(newGoal);
+    }else{
+      console.log("You've pressed today, chill bruv")
+    }
+  }
+
+  currentDate(){
+    const time = new Date();
+    const month = time.getMonth()
+    const day = time.getDate()
+    const current = `${month}/${day}`
+    return current
+  }
+
+  showEmojis() {
+    if(this.props.goal.emotions) {
+      const { sad, happy, anxious, neutral, angry } = this.props.goal.emotions;
+
+      return(
+        <ul>
+          <li><img className="emoji" src="../emoticons/happy.png" onClick={() => this.incrementCounter("happy")} />{happy}</li>
+          <li><img className="emoji" src="../emoticons/sad.png" onClick={() => this.incrementCounter("sad")} />{sad}</li>
+          <li><img className="emoji" src="../emoticons/neutral.png" onClick={() => this.incrementCounter("neutral")} />{neutral}</li>
+          <li><img className="emoji" src="../emoticons/anxious.png" onClick={() => this.incrementCounter("anxious")} />{anxious}</li>
+          <li><img className="emoji" src="../emoticons/angry.png" onClick={() => this.incrementCounter("angry")} />{angry}</li>
+        </ul>
+      ); 
+    }
   }  
 
   render() {
@@ -64,7 +102,7 @@ class GoalBox extends React.Component {
         <div>{goal.category}</div>
         <button onClick={() => openModal('goal-edit', this.props.id)}>Edit</button>
         <Link to={`/chat/${goal._id}`} ><button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button></Link>
-        <br/>
+        <div>{this.showEmojis()}</div>
       </div>
     )
   }

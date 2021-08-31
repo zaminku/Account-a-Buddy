@@ -11,6 +11,14 @@ const Milestone = new Schema({
     }
 });
 
+const Emotions = new Schema ({
+        sad: {type: Number},
+        happy: {type: Number}, 
+        anxious: {type: Number}, 
+        neutral: {type: Number}, 
+        angry: {type: Number}
+})
+
 
 const GoalSchema = new Schema({
     category: {
@@ -23,7 +31,6 @@ const GoalSchema = new Schema({
     },
     description: {
         type: String,
-        required: true
     },
     date: {
         type: Date,
@@ -33,11 +40,13 @@ const GoalSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
-
     milestones: {
         type: [Milestone]
     },
-
+    emotions: Emotions,
+    dailyEmoji: {
+        type: String
+    },
     // TEST CODE =============================
     available: { 
         type: Boolean,

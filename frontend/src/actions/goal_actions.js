@@ -46,7 +46,7 @@ export const createGoal = goal => dispatch => {
         .then(goal => dispatch(receiveGoal(goal)))
 }
 
-export const updateGoal = goal => dispatch => (
-    APIUtil.updateGoal(goal)
+export const updateGoal = goal => dispatch => {
+    return APIUtil.updateGoal(goal)
         .then(goal => dispatch(receiveGoal(goal)))
-)
+}
