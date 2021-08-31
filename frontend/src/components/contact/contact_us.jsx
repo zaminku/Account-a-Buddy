@@ -34,7 +34,7 @@ const TEAM = {
         }, 
         personalSite: "", // for our personalSite website 
         github: "https://github.com/j3nhan", 
-        linkedin: "https://www.linkedin.com/in/zamin-k/", 
+        linkedin: "https://www.linkedin.com/in/jennynhan/", 
         angellist: "", // for angel list profile
         description: "I am Jenny the happy one."
     }, 
