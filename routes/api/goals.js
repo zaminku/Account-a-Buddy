@@ -78,9 +78,8 @@ router.patch('/:goalId',
             title: req.body.title,
             description: req.body.description,
             available: req.body.available,
-            // milestone: req.body.milestone,
             emotions: req.body.emotions,
-            dailyEmoji: req.body.dailyEmoji
+            dailyEmoji: req.body.dailyEmoji,
             milestones: req.body.milestones
         }
 
