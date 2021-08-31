@@ -57,7 +57,7 @@ router.post('/',
           available: req.body.available,
           milestones: req.body.milestoneArray, 
           emotions: req.body.emotions,
-          dailyEmoji: req.body.dailyEmoji
+          dailyEmoji: ''
       });
   
       newGoal.save()
@@ -80,6 +80,7 @@ router.patch('/:goalId',
             available: req.body.available,
             // milestone: req.body.milestone,
             emotions: req.body.emotions,
+            dailyEmoji: req.body.dailyEmoji
         }
 
         Goal.findByIdAndUpdate(
