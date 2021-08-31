@@ -11,7 +11,8 @@
 .card {
     width: 350px;
     height: 500px;
-    box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
+    box-shadow: 0 0 100px 5px rgba(0, 0, 0, 0.21);
+    border-color: white;
 }
 
 .inner-box {
@@ -26,7 +27,7 @@
     height: 100%;
     background-position: center;
     background-size: cover;
-    background-color: #152935;;
+    background-color: white;
     padding: 55px;
     box-sizing: border-box;
     backface-visibility: hidden;
