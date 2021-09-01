@@ -27,5 +27,12 @@
 
 .goal-header{
     text-align: center;
-    margin-top: 2vh;    
+    margin-top: 2vh;
+    text-transform: capitalize; 
+}
+
+.no-goals{
+    margin-top: 20vh;
+    text-align: center;
+    font-size: 24px;
 }
