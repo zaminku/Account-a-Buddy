@@ -11,7 +11,7 @@ const TEAM = {
         personalSite: "", // for our personalSite website 
         github: "https://github.com/zaminku", 
         linkedin: "https://www.linkedin.com/in/zamin-k/", 
-        angellist: "", // for angel list profile
+        angellist: "https://angel.co/u/zamin-kugshia-1",
         description: "I am Zamin the zombie."
     }, 
     sam: {
