@@ -103,7 +103,7 @@ class ChatRoom extends React.Component{
         })
         return(
             <div className="chat-page">
-                <h3>Welcome to the chat room {this.state.message.username}</h3>
+                {/* <h3>Welcome to the chat room {this.state.message.username}</h3> */}
                 <div className="chat-container">
                     <div className="chat-messages">
                         {allMessages}
