@@ -82,12 +82,43 @@ class GoalBox extends React.Component {
       const { sad, happy, anxious, neutral, angry } = this.props.goal.emotions;
 
       return(
-        <ul>
-          <li><img className="emoji" src="../emoticons/happy.png" onClick={() => this.incrementCounter("happy")} />{happy}</li>
-          <li><img className="emoji" src="../emoticons/sad.png" onClick={() => this.incrementCounter("sad")} />{sad}</li>
-          <li><img className="emoji" src="../emoticons/neutral.png" onClick={() => this.incrementCounter("neutral")} />{neutral}</li>
-          <li><img className="emoji" src="../emoticons/anxious.png" onClick={() => this.incrementCounter("anxious")} />{anxious}</li>
-          <li><img className="emoji" src="../emoticons/angry.png" onClick={() => this.incrementCounter("angry")} />{angry}</li>
+        <ul className="emoji-list">
+
+          <li>
+            <img className="emoji" src="../emoticons/happy.png" onClick={() => this.incrementCounter("happy")} alt="happy"/>
+            <div className='emotion-value'>
+              {happy}
+            </div>
+          </li>
+
+          <li>
+            <img className="emoji" src="../emoticons/anxious.png" onClick={() => this.incrementCounter("anxious")} alt="anxious"/>
+            <div className='emotion-value'>
+              {anxious}
+            </div>
+          </li>
+
+          <li>
+            <img className="emoji" src="../emoticons/neutral.png" onClick={() => this.incrementCounter("neutral")} alt="neutral" />
+            <div className='emotion-value'>
+              {neutral}
+            </div>
+          </li>
+
+          <li>
+            <img className="emoji" src="../emoticons/sad.png" onClick={() => this.incrementCounter("sad")} alt="sad" />
+            <div className='emotion-value'>
+              {sad}
+            </div>
+          </li>
+
+          <li>
+            <img className="emoji" src="../emoticons/angry.png" onClick={() => this.incrementCounter("angry")} alt="angry" />
+            <div className='emotion-value'>
+              {angry}
+            </div>
+          </li>
+
         </ul>
       ); 
     }
@@ -96,11 +127,10 @@ class GoalBox extends React.Component {
   render() {
     const { openModal, goal } = this.props;
     return (
-      <div>
+      <div className="goal-box">
         <div>{goal.title}</div>
-        <div>{goal.description}</div>
         <div>{goal.category}</div>
-        <button onClick={() => openModal('goal-edit', this.props.id)}>Edit</button>
+        <button id="edit-btn" onClick={() => openModal('goal-edit', this.props.id)}>Show Details</button>
         <Link to={`/chat/${goal._id}`} ><button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button></Link>
         <div>{this.showEmojis()}</div>
       </div>

@@ -2,7 +2,42 @@
   cursor: pointer;
 }
 
-.emoji {
+.emoji{
     height: 25px;
     width: 25px;
+}
+
+.goal-box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: left;
+  border: black 1px solid;
+  border-radius: 5px;
+  min-width: 100%;
+  margin: 10px 20px;
+  margin-top: 5vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.goal-box>*{
+  min-width: 15%;
+  max-width: 50%;
+  padding-left: 10px;
+}
+
+.emoji-list{
+  display:flex;
+  flex-direction: row;
+}
+
+.emoji-list>li{
+  padding-top: 30px;
+  padding-left: 1vw;
+}
+
+.emotion-value{
+  padding-left:30%;
 }
