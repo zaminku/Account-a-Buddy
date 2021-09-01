@@ -22,6 +22,7 @@ class GoalList extends React.Component {
         if (this.props.goals.length === 0) {
         return (
             <div>
+            <h1 className="goal-header"> {this.props.currentUser.username}'s Goals</h1>
             <div className="no-goals">No goals have been written yet.</div>
             </div>)
         } else {

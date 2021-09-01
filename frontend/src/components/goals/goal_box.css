@@ -23,7 +23,7 @@
 }
 
 .goal-box>*{
-  min-width: 20%;
+  min-width: 15%;
   max-width: 50%;
   padding-left: 10px;
 }
@@ -40,8 +40,4 @@
 
 .emotion-value{
   padding-left:30%;
-}
-
-#edit-btn {
-    width: 50%;
 }

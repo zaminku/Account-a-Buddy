@@ -92,9 +92,9 @@ class GoalBox extends React.Component {
           </li>
 
           <li>
-            <img className="emoji" src="../emoticons/sad.png" onClick={() => this.incrementCounter("sad")} alt="sad" />
+            <img className="emoji" src="../emoticons/anxious.png" onClick={() => this.incrementCounter("anxious")} alt="anxious"/>
             <div className='emotion-value'>
-              {sad}
+              {anxious}
             </div>
           </li>
 
@@ -106,9 +106,9 @@ class GoalBox extends React.Component {
           </li>
 
           <li>
-            <img className="emoji" src="../emoticons/anxious.png" onClick={() => this.incrementCounter("anxious")} alt="anxious"/>
+            <img className="emoji" src="../emoticons/sad.png" onClick={() => this.incrementCounter("sad")} alt="sad" />
             <div className='emotion-value'>
-              {anxious}
+              {sad}
             </div>
           </li>
 
@@ -130,7 +130,7 @@ class GoalBox extends React.Component {
       <div className="goal-box">
         <div>{goal.title}</div>
         <div>{goal.category}</div>
-        <button id="edit-btn" onClick={() => openModal('goal-edit', this.props.id)}>Edit</button>
+        <button id="edit-btn" onClick={() => openModal('goal-edit', this.props.id)}>Show Details</button>
         <Link to={`/chat/${goal._id}`} ><button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button></Link>
         <div>{this.showEmojis()}</div>
       </div>
