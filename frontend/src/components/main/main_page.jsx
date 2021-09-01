@@ -30,9 +30,11 @@ class MainPage extends React.Component {
 
                     <div> Stay accountable for your goals with like-minded people </div>
 
-                    <Link to={`/signup`}> 
-                        <button className="getstarted">Get Started</button>
-                    </Link>
+                    <div>
+                        <Link to={`/signup`}> 
+                            <button className="getstarted-btn">Get Started</button>
+                        </Link>
+                    </div>
                 </div>
 
                 <div className="right-cont">
