@@ -14,8 +14,12 @@
   text-align: left;
   border: black 1px solid;
   border-radius: 5px;
-  width: 75vw;
+  min-width: 100%;
+  margin: 10px 20px;
   margin-top: 5vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 .goal-box>*{
@@ -36,4 +40,8 @@
 
 .emotion-value{
   padding-left:30%;
+}
+
+#edit-btn {
+    width: 50%;
 }
