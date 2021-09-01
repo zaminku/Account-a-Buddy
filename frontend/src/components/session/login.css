@@ -6,12 +6,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
 }
 
 .card {
     width: 350px;
-    height: 500px;
-    box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
+    height: 55vh;
+    box-shadow: 0 0 100px 5px rgba(0, 0, 0, 0.21);
+    border-color: white;
 }
 
 .inner-box {
@@ -26,26 +28,31 @@
     height: 100%;
     background-position: center;
     background-size: cover;
-    background-color: #152935;;
+    background-color: white;
     padding: 55px;
     box-sizing: border-box;
     backface-visibility: hidden;
     text-align: center;
+    border-radius: 25px;
 }
 
 .input-box {
     width: 100%;
     background: transparent;
     border: 1px solid #fff;
-    margin: 6px 0;
+    margin: 6px 0 20px;
     height: 32px;
-    border-radius: 20px;
-    padding: 0 10px;
+    padding: 0 5px;
     box-sizing: border-box;
     outline: none;
-    color: #fff; 
+    color: black; 
     text-align: center;
     cursor: pointer;
+
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: rgba(198, 198, 198);
+    color: rgba(118, 118, 118);
 }
 
 ::placeholder {
@@ -57,32 +64,77 @@
     border-radius: 15px;
     padding: 5px 10px;
     margin-top: 10px;
-    font-size: 1.2vw;
-    background-color: #dca69b;
+    width: 40%;
+    /* background-color: ; */
 }
 
 .submit-btn:hover {
     color:white;
-    background-color: #c77857;
+    /* background-color: ; */
 }
 
 .error-div {
     font-size: 11px;
+    color: black;
+    position: absolute;
+    /* top: 1vh; */
+    bottom: 5px;
+    padding: 0 0 5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-div > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding-left: 0px;
+
 }
 
 .account-info {
     margin-top: 30px;
     font-size: 13px;
+    color: black;
 }
 
 .account-info-signup {
     margin-top: 30px;
     font-size: 13px;
+    color: black;
 }
 
 .signup-link, .login-link {
-    color: #c77857;
     text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
+.session-title {
+    color: black;
+}
 
+.session-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.session-inputs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.errors-list > li {
+    font-size: 10px;
+    color: black;
+}
+
+.errors-list {
+    padding-left: 0;
+}

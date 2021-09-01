@@ -50,7 +50,7 @@ class LoginForm extends React.Component {
     // Render the session errors if there are any
     renderErrors() {
         return (
-            <ul>
+            <ul className="errors-list">
                 {Object.keys(this.state.errors).map((error, i) => (
                     <li key={`error-${i}`}>
                         {this.state.errors[error]}
@@ -84,9 +84,9 @@ class LoginForm extends React.Component {
                 <div className = "card">
                     <div className="inner-box">
                         <div className="card-front">
-                            <h1>Sign In</h1>
+                            <h1 className="session-title">Sign In</h1>
                             <form  onSubmit={this.handleSubmit}>
-                                <div>
+                                <div className="session-inputs">
                                     <input type="text"
                                         className="input-box"
                                         value={this.state.username}
@@ -99,12 +99,12 @@ class LoginForm extends React.Component {
                                         onChange={this.update('password')}
                                         placeholder="Password"
                                     />
-                                    <div className="error-div">
-                                        {this.renderErrors()}
+                                    {this.renderErrors()}
+                                    <div className="session-buttons">
+                                        <input className="submit-btn" type="submit" value="Submit" />
+                                        <button className="submit-btn" onClick={this.handleDemoLogin}>Demo</button>
                                     </div>
 
-                                    <input className="submit-btn" type="submit" value="Submit" />
-                                    <button className="submit-btn" onClick={this.handleDemoLogin}>Demo Login</button>
                                     {this.otherForm()}
                             </div>
                             </form>
