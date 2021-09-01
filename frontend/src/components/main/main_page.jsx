@@ -23,12 +23,12 @@ class MainPage extends React.Component {
 
             <div className="mainpage-cont">
                 <div className="left-cont">
-                    <div>
-                        <div>Help Me</div> 
-                        <div>Help You</div>
+                    <div className="title">
+                        <div className="title-one">Help Me</div> 
+                        <div className="title-two">Help You</div>
                     </div>
 
-                    <div> Stay accountable for your goals with like-minded people </div>
+                    <div className="subtitle"> Stay accountable for your goals with like-minded people </div>
 
                     <div>
                         <Link to={`/signup`}> 
