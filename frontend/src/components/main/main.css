@@ -92,8 +92,9 @@
 }
 
 .title {
-    font-size: 60px;
-    padding: 30px;
+    font-size: 52px;
+    margin: 0 0 8px;
+    font-weight: bold;
 }
 
 .title-one, .title-two {
@@ -101,6 +102,7 @@
 }
 
 .subtitle {
-    padding: 20px;
+    margin: 0 0 32px;
+    font-size: 18px;
 }
 
