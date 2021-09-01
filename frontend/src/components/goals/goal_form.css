@@ -12,17 +12,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url(./watercolor.jpg) no-repeat center center fixed;
+    /* background: url(./watercolor.jpg) no-repeat center center fixed; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 .goal-form-box {
     margin-top: 5vh;
-    border-radius: 5px;
+    border-radius: 25px;
+    box-shadow: 0 0 100px 5px rgba(0, 0, 0, 0.21);
+    padding-right: 0px;
+    padding-left: 0px;
 }
+
 
 .clear-fix {
     color: transparent;
@@ -44,7 +50,7 @@
 }
 
 .goal-form-title {
-    font-size: 70px;
+    font-size: 50px;
     font-weight: bold;
     font-family: 'Martel', sans-serif;
     margin-bottom: 5vh;
@@ -56,7 +62,7 @@
 }
 
 .goal-type {
-    font-size: 30px;
+    font-size: 17px;
     color: #29526b;
 }
 
@@ -73,11 +79,11 @@ input[type="radio"] {
 }
 
 textarea.goal-form-text-input {
-    height: 400px;
+    height: 20vh;
 }
 
 .goal-form-radio-label {
-    font-size: 20px;
+    font-size: 15px;
     margin-left: 10px;
 }
 
@@ -99,4 +105,10 @@ textarea.goal-form-text-input {
 .goal-form-submit:hover{
     color:#152935;
     background-color: #ccd5d2;
+}
+
+form.goal-form-box {
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    padding: 40px 30px;
 }
