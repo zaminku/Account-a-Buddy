@@ -11,9 +11,9 @@ class GoalEdit extends React.Component {
             title: goal.title,
             description: goal.description,
             category: goal.category,
-            milestones: goal.milestones
+            milestones: goal.milestones,
+            emotions: goal.emotions
         }
-        console.log(this.state)
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderMilestones = this.renderMilestones.bind(this);
     }
@@ -132,11 +132,10 @@ class GoalEdit extends React.Component {
     }
 
     render() {
-        const { closeModal, goal, milestones } = this.props;
+        const { goal } = this.props;
         if (goal === undefined) {
             return null;
         }
-
         return (
             <div>
                 <form className="pin-edit-form-modal" onSubmit={this.handleSubmit}>
