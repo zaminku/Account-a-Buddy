@@ -11,7 +11,8 @@ const mSTP = (state, ownProps) => ({
     userId: state.session.user.id,
     goalId: state.ui.modal.itemId,
     goal: state.goals[state.ui.modal.itemId],
-    milestones: state.goals[state.ui.modal.itemId].milestones
+    milestones: state.goals[state.ui.modal.itemId].milestones,
+    // emotions: state.goals[state.ui.modal.itemmId].emotion
 })
 
 const mDTP = dispatch => ({

@@ -2,11 +2,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://wallpaperaccess.com/full/5786916.jpg") no-repeat center center fixed;
+    /* background: url("https://wallpaperaccess.com/full/5786916.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover; */
 }
 
 .clearfix {
