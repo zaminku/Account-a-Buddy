@@ -33,15 +33,12 @@ class MainPage extends React.Component {
                     <Link to={`/signup`}> 
                         <button className="getstarted">Get Started</button>
                     </Link>
-
                 </div>
 
-                <div>
+                <div className="right-cont">
                     <img className="background-img" src="./placeholder.jpg" alt="background-img"/>
                 </div>
-
             </div>
-        
         );
     }
 }

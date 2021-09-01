@@ -40,9 +40,27 @@
 /* new homepage */
 
 .mainpage-cont {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100vw;
+}
 
+.left-cont {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-cont {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .background-img {
-
+    height: 300px;
+    width: 400px;
 }
