@@ -9,6 +9,8 @@
     font-size: 2vw;
     background-color: #A4F467;
     color: #152935;
+
+    /* padding-bottom: 5px */
 }
 
 .goal-btn:hover {
@@ -20,4 +22,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.goal-header{
+    text-align: center;
+    margin-top: 2vh;    
 }

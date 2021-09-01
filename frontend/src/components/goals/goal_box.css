@@ -2,10 +2,9 @@
   cursor: pointer;
 }
 
-.emoji {
+.emoji{
     height: 25px;
     width: 25px;
-    align-items: center;
 }
 
 .goal-box{
@@ -18,7 +17,19 @@
   margin-top: 5vh;
 }
 
+.goal-box>*{
+  width: 10%;
+}
+
 .emoji-list{
   display:flex;
   flex-direction: row;
+}
+
+.emoji-list>li{
+  padding-top: 30px;
+}
+
+.emotion-value{
+  padding-left:30%;
 }

@@ -28,7 +28,7 @@ class GoalList extends React.Component {
         return (
             <div>
                 <div>
-                    <h1>All Goals</h1>
+                    <h1 className="goal-header"> {this.props.currentUser.username}'s Goals</h1>
                     <div>
                         <div className="all-goals">
                             {this.props.goals.map(goal => (
@@ -53,7 +53,7 @@ class GoalList extends React.Component {
             <div>
                 <div>
                     <Link to="/goals/new">
-                        <button className="goal-btn"> + </button>
+                        <button className="goal-btn fas fa-tasks"></button>
                     </Link>
                 </div>
 
