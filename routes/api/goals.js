@@ -55,7 +55,9 @@ router.post('/',
           date: req.body.date,
           author: req.user.id, 
           available: req.body.available,
-          milestones: req.body.milestoneArray
+          milestones: req.body.milestoneArray, 
+          emotions: req.body.emotions,
+          dailyEmoji: ''
       });
   
       newGoal.save()
@@ -75,8 +77,10 @@ router.patch('/:goalId',
         const update = {
             title: req.body.title,
             description: req.body.description,
-            available: req.body.available
-            // milestone: req.body.milestone
+            available: req.body.available,
+            emotions: req.body.emotions,
+            dailyEmoji: req.body.dailyEmoji,
+            milestones: req.body.milestones
         }
 
         Goal.findByIdAndUpdate(

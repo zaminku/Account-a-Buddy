@@ -1,6 +1,4 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
-import { withRouter } from "react-router-dom";
 import "./goal_edit.css"
 
 
@@ -12,10 +10,12 @@ class GoalEdit extends React.Component {
             _id: this.props.goalId,
             title: goal.title,
             description: goal.description,
-            category: goal.category
+            category: goal.category,
+            milestones: goal.milestones,
+            emotions: goal.emotions
         }
-
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderMilestones = this.renderMilestones.bind(this);
     }
 
     componentDidMount() {
@@ -37,81 +37,133 @@ class GoalEdit extends React.Component {
             .then(() => this.props.closeModal())
     }
 
-    render() {
-        const { closeModal, pin } = this.props;
-        // if (goal === undefined) {
-        //     return null;
-        // }
+    updateMilestone(idx) {
+        let newMilestones = this.state.milestones;
 
+
+        if (newMilestones[idx].milestoneCompleted) {
+            newMilestones[idx].milestoneCompleted = false;
+        } else {
+            newMilestones[idx].milestoneCompleted = true;
+        }
+
+        this.setState({milestones: newMilestones})
+    }
+
+    renderMilestones() {
+        return (
+            <div className="modal-milstone-list">
+                {this.props.milestones.map((milestone, idx) => {
+                    return (
+                        <label>
+                            <input 
+                                className="modal-milestone"
+                                type="checkbox"
+                                onChange = {event => this.updateMilestone(idx)}
+                                checked = {this.state.milestones[idx].milestoneCompleted}
+                            />
+                            {milestone.milestone}
+                        </label>
+                    )
+                })}
+            </div>
+        )
+    }
+
+    renderBreaking(){
+        if (this.state.category === "breaking-habit"){
+            return(
+            <div> 
+                <input
+                    type="radio"
+                    name="goal-type"
+                    className="goal-form-radio"
+                    value="breaking-habit"
+                    onChange={this.update('category')}
+                    checked
+                />
+                <label for="goal-type-1" className="goal-form-radio-label">Breaking a Habit</label>
+            </div>
+            )}else{
+                return(
+                <div>
+                    <input
+                        type="radio"
+                        name="goal-type"
+                        className="goal-form-radio"
+                        value="breaking-habit"
+                        onChange={this.update('category')}
+                    />
+                    <label for="goal-type-1" className="goal-form-radio-label">Breaking a Habit</label>
+                </div>
+                )
+            }
+    }
+
+    renderMaking(){
+        if (this.state.category === "making-habit"){
+            return(
+                <div>
+                    <input
+                        type="radio"
+                        name="goal-type"
+                        className="goal-form-radio"
+                        value="making-habit"
+                        onChange={this.update('category')}
+                        checked
+                    />
+                    <label for="goal-type-1" className="goal-form-radio-label">Making a Habit</label>
+                </div>
+            )
+        }else{
+            return(
+                <div>
+                    <input
+                        type="radio"
+                        name="goal-type"
+                        className="goal-form-radio"
+                        value="making-habit"
+                        onChange={this.update('category')}
+                    />
+                    <label for="goal-type-1" className="goal-form-radio-label">Making a Habit</label>
+                </div>
+            )
+        }
+    }
+
+    render() {
+        const { goal } = this.props;
+        if (goal === undefined) {
+            return null;
+        }
         return (
             <div>
                 <form className="pin-edit-form-modal" onSubmit={this.handleSubmit}>
-                    <input
-                        type="text"
-                        value={this.state.title}
-                        onChange={this.update('title')}
-                    />
-                    <input
-                        type="text"
-                        value={this.state.description}
-                        onChange={this.update('description')}
-                    />
-                    
-                    {/* <label>What kind of habit are you trying to work on?</label>
-                    <br /> */}
-                    {/* <div>
-                        {(this.state.category === "breaking-habit") ? 
-                        <div> 
-                            <input
-                                type="radio"
-                                name="goal-type"
-                                className="goal-form-radio"
-                                value="breaking-habit"
-                                onChange={this.update('category')}
-                                checked
-                            />
-                            <label for="goal-type-1" className="goal-form-radio-label">Breaking a Habit</label>
-                        </div> : 
-                        <div>
-                            <input
-                                type="radio"
-                                name="goal-type"
-                                className="goal-form-radio"
-                                value="breaking-habit"
-                                onChange={this.update('category')}
-                            />
-                            <label for="goal-type-1" className="goal-form-radio-label">Breaking a Habit</label>
-                        </div>
-                        }
-                        
+                    <div >
+                        <div>Title</div>
+                        <input
+                            className='modal-title'
+                            type="text"
+                            value={this.state.title}
+                            onChange={this.update('title')}
+                        />
+                    </div>
+                    <div className="modal-habit-buttons">
+                        {this.renderBreaking()}
+                        {this.renderMaking()}
                     </div>
                     <div>
-                        {(this.state.category === "making-habit") ?
                         <div>
-                            <input
-                                type="radio"
-                                name="goal-type"
-                                className="goal-form-radio"
-                                value="making-habit"
-                                onChange={this.update('category')}
-                                checked
+                            <div>Description</div>
+                            <textarea
+                                className="modal-description"
+                                value={this.state.description}
+                                onChange={this.update('description')}
                             />
-                            <label for="goal-type-1" className="goal-form-radio-label">Making a Habit</label>
-                        </div> : 
-                        <div>
-                            <input
-                                type="radio"
-                                name="goal-type"
-                                className="goal-form-radio"
-                                value="making-habit"
-                                onChange={this.update('category')}
-                            />
-                            <label for="goal-type-1" className="goal-form-radio-label">Making a Habit</label>
                         </div>
-                        }   
-                    </div> */}
-                    
-                    <button type="submit">Edit Goal</button>
+                    </div>
+                        {this.renderMilestones()}
+                    <button className="modal-edit-button" type="submit">Edit Goal</button>
                 </form>
             </div>
         )

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./goal_list.css"
 import { findGoalMatch } from "../../util/goal_api_util";
 import { updateGoal } from "../../util/goal_api_util";
+import "./goal_box.css";
 
 class GoalBox extends React.Component {
   constructor(props) {
@@ -53,20 +54,91 @@ class GoalBox extends React.Component {
     let newGoal = Object.assign({}, goal);
     newGoal.available = false;
     updateGoal(newGoal);
+  }
+
+  incrementCounter(key) {
+    let newGoal = this.props.goal;
+    const today = this.currentDate()
+    console.log(newGoal.dailyEmoji)
+    if (newGoal.dailyEmoji !== today){
+      newGoal.dailyEmoji = today
+      newGoal.emotions[key]++;
+      this.props.updateGoal(newGoal);
+    }else{
+      console.log("You've pressed today, chill bruv")
+    }
+  }
+
+  currentDate(){
+    const time = new Date();
+    const month = time.getMonth()
+    const day = time.getDate()
+    const current = `${month}/${day}`
+    return current
+  }
+
+  showEmojis() {
+    if(this.props.goal.emotions) {
+      const { sad, happy, anxious, neutral, angry } = this.props.goal.emotions;
+
+      return(
+        <ul className="emoji-list">
+
+          <li>
+            <img className="emoji" src="../emoticons/happy.png" onClick={() => this.incrementCounter("happy")} alt="happy"/>
+            <div className='emotion-value'>
+              {happy}
+            </div>
+          </li>
+
+          <li>
+            <img className="emoji" src="../emoticons/anxious.png" onClick={() => this.incrementCounter("anxious")} alt="anxious"/>
+            <div className='emotion-value'>
+              {anxious}
+            </div>
+          </li>
+
+          <li>
+            <img className="emoji" src="../emoticons/neutral.png" onClick={() => this.incrementCounter("neutral")} alt="neutral" />
+            <div className='emotion-value'>
+              {neutral}
+            </div>
+          </li>
+
+          <li>
+            <img className="emoji" src="../emoticons/sad.png" onClick={() => this.incrementCounter("sad")} alt="sad" />
+            <div className='emotion-value'>
+              {sad}
+            </div>
+          </li>
+
+          <li>
+            <img className="emoji" src="../emoticons/angry.png" onClick={() => this.incrementCounter("angry")} alt="angry" />
+            <div className='emotion-value'>
+              {angry}
+            </div>
+          </li>
+
+        </ul>
+      ); 
+    }
   }  
 
   render() {
-    const { goal, openModal } = this.props;
+    const { openModal, goal } = this.props;
     return (
-      <div>
+      <div className="goal-box">
         <div>{goal.title}</div>
-        <div>{goal.description}</div>
         <div>{goal.category}</div>
-        <button onClick={() => openModal('goal-edit', this.props.id)}>    ...    </button>
-        <Link to={`/chat/${goal._id}`} ><button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button></Link>
-        <br/>
+        <button id="edit-btn" onClick={() => openModal('goal-edit', this.props.id)}>Show Details</button>
+
+        <Link to={`/chat/${goal._id}`} >
+          <button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button>
+        </Link>
+        
+        <div>{this.showEmojis()}</div>
       </div>
-    );
+    )
   }
 }
 

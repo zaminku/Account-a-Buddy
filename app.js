@@ -21,7 +21,7 @@ app.use('/api/goals', goals);
 app.use('/api/messages', messages);
 app.use('/api/rooms', rooms);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000
 
 
 // =================================

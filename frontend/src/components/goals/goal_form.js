@@ -12,7 +12,14 @@ class GoalForm extends React.Component {
             milestoneArray: [],
             milestoneInput: "",
             // TEST CODE =============================
-            available: true
+            available: true, 
+            emotions: {
+                sad: 0, 
+                happy: 0, 
+                neutral: 0, 
+                anxious: 0,
+                angry: 0 
+            }
             // =======================================
         }
         this.addMilestone = this.addMilestone.bind(this);
@@ -48,6 +55,8 @@ class GoalForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        console.log("submit was pressed")
+        console.log(this.props)
         this.props.createGoal(this.state)
             .then(() => {
                 this.props.history.push('/goals');
