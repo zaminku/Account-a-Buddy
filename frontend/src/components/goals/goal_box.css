@@ -22,6 +22,10 @@
   white-space: nowrap;
 }
 
+.goal-box::-webkit-scrollbar {
+    display: none;
+}
+
 .goal-box>*{
   min-width: 15%;
   max-width: 50%;
