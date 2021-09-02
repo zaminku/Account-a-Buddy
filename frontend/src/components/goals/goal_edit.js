@@ -148,9 +148,12 @@ class GoalEdit extends React.Component {
                             onChange={this.update('title')}
                         />
                     </div>
-                    <div className="modal-habit-buttons">
-                        {this.renderBreaking()}
-                        {this.renderMaking()}
+                    <div>
+                        <div>Habit Type</div>
+                        <div className="modal-habit-buttons">
+                            {this.renderBreaking()}
+                            {this.renderMaking()}
+                        </div>
                     </div>
                     <div>
                         <div>
@@ -162,7 +165,10 @@ class GoalEdit extends React.Component {
                             />
                         </div>
                     </div>
+                    <div>
+                        <div>Milestones</div>
                         {this.renderMilestones()}
+                    </div>
                     <button className="modal-edit-button" type="submit">Edit Goal</button>
                 </form>
             </div>
