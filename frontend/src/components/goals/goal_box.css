@@ -49,3 +49,59 @@
 .goal-box>button, a>button{
   border-radius: 5px;
 }
+
+#edit-btn {
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0,0,.2,1);
+    display: inline-block;
+    --text-opacity: 1;
+    color: black;
+    font-size: 1rem;
+    --border-opacity: 1;
+    border-width: 2px;
+    font-weight: 500;
+    padding: .5rem 1.5rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    border-color: rgb(237, 236, 237);
+    background-color: white;
+    border-style: solid;
+    border-color: #7ADAB2;
+    color: #7ADAB2;
+}
+
+#edit-btn:hover {
+    color:white;
+    background-color: #7ADAB2;
+}
+
+#buddy-btn {
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0,0,.2,1);
+    display: inline-block;
+    --text-opacity: 1;
+    color: black;
+    font-size: 1rem;
+    --border-opacity: 1;
+    border-width: 2px;
+    font-weight: 500;
+    padding: .5rem 1.5rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    border-color: rgb(237, 236, 237);
+    background-color: white;
+    border-style: solid;
+    border-color: #73A2FA;
+    color: #73A2FA;
+}
+
+#buddy-btn:hover {
+    color:white;
+    background-color: #73A2FA;  
+}
+
+.goal-box > div {
+  text-transform: capitalize;
+}
