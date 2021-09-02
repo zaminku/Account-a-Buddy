@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .container {
     height: 100vh;
     width: 100vw;
-    font-family: 'Martel', serif;
+    font-family: 'Roboto', serif;
     color: #fde5d6;
     display: flex;
     align-items: center;
@@ -18,13 +20,13 @@
 
 .inner-box {
     position: relative;
-    width: 100%;
+    width: 150%;
     height: 100%;
 }
 
 .card-front, .card-back {
     position: absolute;
-    width: 100%;
+    width: 150%;
     height: 100vh;
     background-position: center;
     background-size: cover;
@@ -37,7 +39,7 @@
 }
 
 .input-box {
-    width: 100%;
+    width: 80%;
     background: transparent;
     border: 1px solid #fff;
     margin: 6px 0 20px;
@@ -61,15 +63,20 @@
 
 .submit-btn {
     border: none ;
-    border-radius: 15px;
     padding: 5px 10px;
     margin-top: 10px;
     width: 40%;
-    /* background-color: ; */
+    color: rgb(240, 103, 107);
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(240, 103, 107);
+    border-radius: 9999px;
 }
 
 .submit-btn:hover {
     color:white;
+    background-color: rgb(240, 103, 107);
     /* background-color: ; */
 }
 
@@ -115,6 +122,7 @@
 
 .session-title {
     color: black;
+    font-family: 'Roboto', 'sans-serif'
 }
 
 .session-buttons {

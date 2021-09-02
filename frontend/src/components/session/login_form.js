@@ -84,9 +84,9 @@ class LoginForm extends React.Component {
                 <div className = "card">
                     <div className="inner-box">
                         <div className="card-front">
-                            <h1 className="session-title">Sign In</h1>
                             <form  onSubmit={this.handleSubmit}>
                                 <div className="session-inputs">
+                                    <h1 className="session-title">Sign In</h1>
                                     <input type="text"
                                         className="input-box"
                                         value={this.state.username}

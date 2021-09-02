@@ -46,21 +46,21 @@
     border-color: rgb(237, 236, 237);
     background-color: white;
     border-style: solid;
-    border-color: #1AAD7A;
-    color: #1AAD7A;
+    border-color: rgb(240, 103, 107);
+    color: rgb(240, 103, 107);
 }
 
 
 .getstarted-btn:hover {
     color:white;
-    background-color: #1AAD7A;
+    background-color: rgb(240, 103, 107);
 }
 
 .title {
     font-size: 5vw;
     margin: 0 0 8px;
     font-weight: bold;
-    color:salmon;
+    color: rgb(240, 103, 107);
 }
 
 .title-one, .title-two {
