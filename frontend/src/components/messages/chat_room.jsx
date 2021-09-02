@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./chat_room.css"
+// import { fetchUser } from '../../util/user_api_util'
 
 // TEST CODE ===============================================
 // import socketIOClient from "socket.io-client"
@@ -134,6 +135,9 @@ class ChatRoom extends React.Component{
         } else {
             partnerGoalId = room.goal1;
         }
+
+        // fetchUser(partnerGoalId)
+        //     .then(user => console.log("PARTNER", user))
         // Need to fetch the 2nd goal and partner user info
 
         return (
