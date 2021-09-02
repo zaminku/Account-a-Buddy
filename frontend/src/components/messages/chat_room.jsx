@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "./chat_room.css"
 
 // TEST CODE ===============================================
@@ -22,13 +23,11 @@ class ChatRoom extends React.Component{
             roomNeedJoining: true
         }
 
-        this.sendMessage = this.sendMessage.bind(this)
-        this.update = this.update.bind(this)
-        this.bottom = React.createRef()
-
-        // TEST CODE ===============================
-        // this.handleDelete = this.handleDelete.bind(this)
-        // =========================================
+        this.sendMessage = this.sendMessage.bind(this);
+        this.update = this.update.bind(this);
+        this.bottom = React.createRef();
+        this.showMessages = this.showMessages.bind(this);
+        this.showGoalItems = this.showGoalItems.bind(this);
     }
 
     sendMessage(){
@@ -50,13 +49,8 @@ class ChatRoom extends React.Component{
         })
     }
 
-    // TEST CODE ===============================
-    // handleDelete(message, index) {
-    //     this.props.deleteMessage(message, index)
-    // }
-    // =========================================
-
     componentDidMount(){
+        this.props.fetchUserGoals(this.props.user.id);
         this.props.fetchRoom(this.props.match.params.goalId);
 
         socket.on("new user", username => {
@@ -88,25 +82,49 @@ class ChatRoom extends React.Component{
 
     componentWillUnmount() {
         this.props.clearRoom();
+        this.props.clearGoals();
     }
 
+    showGoalItems() {
+        const { goals, fetchRoom } = this.props;
+        return (
+            <ul>
+                {Object.values(goals).map((goal, index) => {
+                    return (
+                        <Link to={`/chat/${goal._id}`} >
+                            <li key={index} onClick={() => fetchRoom(goal._id)} >{goal.title}</li>
+                        </Link>
+                    );
+                })}
+            </ul>
+        );
+    }
+    
+    showMessages() {
+        return (
+            <ul>
+                {this.props.room.conversation.map((message, index) => {
+                    return (
+                        <li key={index}>
+                            <span className="author" >{message.username}: </span> 
+                            {message.text}
+                        </li>
+                    );
+                })}
+            </ul>
+        );
+    } 
+
     render(){
-        const allMessages = this.props.room.conversation.map((message, index) => {
-            return (
-                <div key={index} >
-                    <div className="message">
-                        <span className="author">{message.username}: </span>{message.text}
-                    </div>
-                    {/* <button onClick={() => this.handleDelete(message, index)} >Delete</button> */}
-                </div>
-            )
-        })
         return(
             <div className="chat-page">
-                <h3>Welcome to the chat room {this.state.message.username}</h3>
+                <div className="chat-index" >
+                    {this.showGoalItems()}
+                </div>
                 <div className="chat-container">
+                    <i className="fas fa-info-circle"></i>
                     <div className="chat-messages">
-                        {allMessages}
+                        {this.showMessages()}
                         <div ref={this.bottom}/>
                     </div>
                     <div className="chat-form-container">
@@ -125,9 +143,8 @@ class ChatRoom extends React.Component{
                             <i className="fas fa-sliders-h"></i>
                         </form>
                     </div>
-                    {/* <div>{this.state.buddy ? `${this.state.buddy} has joined` : ""}</div> */}
                 </div>
-                <div className="clearfix">clearfix</div>
+                {/* <div className="clearfix">clearfix</div> */}
             </div>      
         )
     }

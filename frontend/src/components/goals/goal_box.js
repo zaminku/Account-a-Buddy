@@ -13,7 +13,7 @@ class GoalBox extends React.Component {
   }
   
   componentDidMount() {
-    this.props.fetchRoom(this.props.goal._id);
+    // this.props.fetchRoom(this.props.goal._id);
   }
 
   findBuddy() {
@@ -53,7 +53,9 @@ class GoalBox extends React.Component {
   setAvailableToFalse(goal) {
     let newGoal = Object.assign({}, goal);
     newGoal.available = false;
-    updateGoal(newGoal);
+    goal._id === this.props.goal._id ? 
+      this.props.updateGoal(newGoal) : 
+      updateGoal(newGoal);
   }
 
   incrementCounter(key) {
@@ -131,7 +133,11 @@ class GoalBox extends React.Component {
         <div>{goal.title}</div>
         <div>{goal.category}</div>
         <button id="edit-btn" onClick={() => openModal('goal-edit', this.props.id)}>Show Details</button>
-        <Link to={`/chat/${goal._id}`} ><button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button></Link>
+        {/* <Link to={`/chat/${goal._id}`} ><button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button></Link> */}
+        {/* <button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : <Link to={`/chat/${goal._id}`} >Chat</Link>}</button> */}
+        {goal.available ? 
+          <button onClick={this.findBuddy} >"Find a buddy"</button> : 
+          <Link to={`/chat/${goal._id}`} ><button>Chat</button></Link>}
         <div>{this.showEmojis()}</div>
       </div>
     )

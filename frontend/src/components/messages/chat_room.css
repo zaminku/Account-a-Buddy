@@ -1,19 +1,20 @@
 .chat-page {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: url("https://wallpaperaccess.com/full/5786916.jpg") no-repeat center center fixed;
+    flex-direction: row;
+    /* align-items: center; */
+    /* background: url("https://wallpaperaccess.com/full/5786916.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover; */
 }
 
-.clearfix {
-    color: transparent;
-    margin-top: 88px;
+/* Chat Index */
+.chat-page .chat-index {
+    background-color: gray;
 }
 
+/* Chat Container */
 .chat-container {
     margin-top: 20px;
     background-color: #698ea2;
@@ -23,16 +24,35 @@
     box-shadow: 0px 0px 10px 1px #fde5d6;
 }
 
-.chat-form-container i:hover {
-    opacity: 0.6;
-}
-
 .chat-messages {
     height: 455px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
+.message {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    display: inline-block;
+    background-color: #152935;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    font-family: 'Martel', serif;
+    color: #e4a576;
+}
+
+.author {
+    color: #698ea2;
+}
+
+.chat-page h3 {
+    font-family: 'Karla', sans-serif;
+    color: #fde5d6;
+    font-size: 52px;
+    margin-top: 15px;
+}
+
+/* Chat Form - Input */
 .chat-page #msg {
     height: 40px;
     width: 580px;
@@ -56,49 +76,47 @@
     margin-bottom: 5px;
 }
 
-.message {
-    margin: 5px;
-    padding: 10px;
-    border-radius: 15px;
-    display: inline-block;
-    /* border-inline-end: solid;  */
-    background-color: #152935;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
-    font-family: 'Martel', serif;
-    color: #e4a576;
+/* Font Awesome icons */
+.chat-page i:hover {
+    opacity: 0.6;
+    cursor: pointer;
 }
 
-.author {
-    color: #698ea2;
+/* Links */
+.chat-page a {
+    text-decoration: none;
+    color: black;
 }
 
-.chat-page h3 {
-    font-family: 'Karla', sans-serif;
-    /* color: #fde5d6; */
-    color: #fde5d6;
-    font-size: 52px;
-    margin-top: 15px;
+.chat-page a:hover {
+    cursor: pointer;
+    color: black;
 }
 
+.chat-index li:hover {
+    opacity: 0.6;
+}
 
-
-
+/* Clear Fix */
+.clearfix {
+    color: transparent;
+    margin-top: 88px;
+}
 
 /* Scroll bar styling */
-
 /* width */
 ::-webkit-scrollbar {
     width: 20px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px #fde5d6;
     border-radius: 10px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #ccd5d2;
     border-radius: 10px;
-  }
+}
