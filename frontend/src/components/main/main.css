@@ -1,69 +1,76 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap'); */
 
-.main{
+.mainpage-cont {
     display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    height: 80vh;
+    width: 100vw;
+}
+
+.left-cont {
+    display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-between; */
-    min-height: 30vh;
-    margin-top: 8vh;
-    padding-bottom: 20vh;
-    
-    /* background-image: url("./placeholder.jpg"); */
-    background-color:orange;
-     /* Set rules to fill background */
-    min-height: 100%;
-    min-width: 1024px;
-        
-    /* Set up proportionate scaling */
-    width: 100%;
-    height: auto;
-        
-    /* Set up positioning */
-    position: fixed;
-    top: 1vh;
-    left: 0;
-
-    background: url(placeholder.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    
+    width: 60%;
 }
 
-.catchphrase {
+.right-cont {
+    display: flex;
+    align-items: center;
+}
+
+.background-img {
+    object-fit: cover;
+    object-position: 50%;
+    height: 75%;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.getstarted-btn {
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0,0,.2,1);
+    display: inline-block;
+    --text-opacity: 1;
+    color: black;
+    font-size: 1rem;
+    --border-opacity: 1;
+    border-width: 2px;
+    font-weight: 500;
+    padding: .5rem 1.5rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    border-color: rgb(237, 236, 237);
+    background-color: white;
+    border-style: solid;
+    border-color: #1AAD7A;
+    color: #1AAD7A;
+}
+
+
+.getstarted-btn:hover {
+    color:white;
+    background-color: #1AAD7A;
+}
+
+.title {
     font-size: 5vw;
-    font-family: 'Karla', sans-serif;
-    font-weight: 700;
-    color:white;
-    margin-top: 10vh;
+    margin: 0 0 8px;
+    font-weight: bold;
+    color:salmon;
 }
 
-.catchphrase>div{
-    margin-top:-10px;
-    padding: 0;
+.title-one, .title-two {
+    text-align: center;
 }
 
-.subtext{
-    font-size: 2vh;
-    font-family: 'Martel', serif;
-    font-weight: 400px;
-    color: white;
-    margin-top: 25px;
+.subtitle {
+    margin: 0 0 32px;
+    font-size: 2vw;
+    text-align: center;
+    font-weight: lighter;
 }
 
-.getstarted{
-    border: none ;
-    border-radius: 15px;
-    padding: 10px;
-    margin-top: 25px;
-    font-size: 1vw;
-    color: #152935;
-    background-color: rgb(252, 193, 202);;
-}
-
-.getstarted:hover{
-    color:white;
-    background-color: #c77857;
-}
