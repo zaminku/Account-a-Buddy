@@ -79,14 +79,14 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className="container">
-                <div></div>
+                {/* <div></div> */}
 
-                <div className = "card">
+                {/* <div className = "card"> */}
                     <div className="inner-box">
                         <div className="card-front">
-                            <h1 className="session-title">Sign In</h1>
                             <form  onSubmit={this.handleSubmit}>
                                 <div className="session-inputs">
+                                    <h1 className="session-title">Sign In</h1>
                                     <input type="text"
                                         className="input-box"
                                         value={this.state.username}
@@ -110,7 +110,7 @@ class LoginForm extends React.Component {
                             </form>
                         </div>
                     </div>
-                </div>
+                {/* </div> */}
         
             </div>
         );

@@ -169,7 +169,7 @@ class GoalEdit extends React.Component {
                         <div className="modal-tag">Milestones</div>
                         {this.renderMilestones()}
                     </div>
-                    <button className="modal-edit-button" type="submit">Edit Goal</button>
+                    <button className="modal-edit-button" type="submit">Save</button>
                 </form>
             </div>
         )
