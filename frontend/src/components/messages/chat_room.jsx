@@ -20,7 +20,9 @@ class ChatRoom extends React.Component{
             }, 
             buddy: "", 
             convoLength: null, 
-            roomNeedJoining: true
+            roomNeedJoining: true, 
+            info: false,
+            settings: false
         }
 
         this.sendMessage = this.sendMessage.bind(this);
@@ -115,14 +117,38 @@ class ChatRoom extends React.Component{
         );
     } 
 
+    showInfo() {
+        return (
+            <div>INFO</div>
+        );
+    }
+
+    showSettings() {
+        return (
+            <div>SETTINGS</div>
+        );
+    }
+
+    openModal(key) {
+        if(this.state[key]) {
+            this.setState({ [key]: false })
+        } else {
+            this.setState({ [key]: true });
+        }
+    }
+
     render(){
+        // console.log(this.props);
+        // console.log(this.props.match.params.goalId);
+        // console.log(this.props.goals[this.props.match.params.goalId]);
         return(
             <div className="chat-page">
                 <div className="chat-index" >
                     {this.showGoalItems()}
                 </div>
                 <div className="chat-container">
-                    <i className="fas fa-info-circle"></i>
+                    <i className="fas fa-info-circle" onClick={() => this.openModal("info")} ></i>
+                    {this.state.info ? this.showInfo() : null}
                     <div className="chat-messages">
                         {this.showMessages()}
                         <div ref={this.bottom}/>
@@ -138,9 +164,8 @@ class ChatRoom extends React.Component{
                                 value={this.state.message.text}
                             />
                             <button className="btn" onClick={this.sendMessage}><i className="fas fa-paper-plane"></i> Send</button>
-                            {/* Add an onclick to the below <i> */}
-                            {/* onclick will open settings modal */}
-                            <i className="fas fa-sliders-h"></i>
+                            <i className="fas fa-sliders-h" onClick={() => this.openModal("settings")} ></i>
+                            {this.state.settings ? this.showSettings() : null}
                         </form>
                     </div>
                 </div>
