@@ -140,7 +140,7 @@ class GoalEdit extends React.Component {
             <div>
                 <form className="pin-edit-form-modal" onSubmit={this.handleSubmit}>
                     <div >
-                        <div>Title</div>
+                        <div className="modal-tag">Title</div>
                         <input
                             className='modal-title'
                             type="text"
@@ -149,7 +149,7 @@ class GoalEdit extends React.Component {
                         />
                     </div>
                     <div>
-                        <div>Habit Type</div>
+                        <div className="modal-tag">Habit Type</div>
                         <div className="modal-habit-buttons">
                             {this.renderBreaking()}
                             {this.renderMaking()}
@@ -157,7 +157,7 @@ class GoalEdit extends React.Component {
                     </div>
                     <div>
                         <div>
-                            <div>Description</div>
+                            <div className="modal-tag">Description</div>
                             <textarea
                                 className="modal-description"
                                 value={this.state.description}
@@ -166,7 +166,7 @@ class GoalEdit extends React.Component {
                         </div>
                     </div>
                     <div>
-                        <div>Milestones</div>
+                        <div className="modal-tag">Milestones</div>
                         {this.renderMilestones()}
                     </div>
                     <button className="modal-edit-button" type="submit">Edit Goal</button>
