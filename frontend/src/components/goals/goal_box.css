@@ -12,11 +12,13 @@
   justify-content: space-around;
   align-items: center;
   text-align: left;
-  border: black 1px solid;
-  border-radius: 5px;
+  /* border: black 1px solid; */
+  border: none;
+  box-shadow: 5px 5px 13px -10px rgba(0,0,0,0.41);
+  border-radius: 10px;
   min-width: 100%;
   margin: 10px 20px;
-  margin-top: 5vh;
+  margin-bottom: 5vh;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
