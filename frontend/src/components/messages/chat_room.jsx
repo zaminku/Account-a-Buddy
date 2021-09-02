@@ -117,9 +117,35 @@ class ChatRoom extends React.Component{
         );
     } 
 
+    convertDate(date) {
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
+        const convertedDate = new Date(date);
+        return (`${months[convertedDate.getMonth()]} ${convertedDate.getDate()}`);
+    }
+
     showInfo() {
+        const { goals, user, room } = this.props;
+        const { goalId } = this.props.match.params;
+        const goal = goals[goalId];
+
+        let partnerGoalId = "";
+        if(room.goal1 === goalId) {
+            partnerGoalId = room.goal2;
+        } else {
+            partnerGoalId = room.goal1;
+        }
+        // Need to fetch the 2nd goal and partner user info
+
         return (
-            <div>INFO</div>
+            <ul className="info" >
+                <li>Username: {user.username}</li>
+                <li>Goal: {goal.title}</li>
+                <li>Date Goal Created: {this.convertDate(goal.createdAt)}</li>
+                {/* <li>Partner's Username: </li>
+                <li>Partner's Goal: {partnerGoal.title}</li>
+                <li>Date Partner's Goal Created: {this.convertDate(partnerGoal._id)}</li>
+                <li>Date Partnership Formed: {this.convertDate(room.createdAt)}</li> */}
+            </ul>
         );
     }
 
@@ -138,7 +164,7 @@ class ChatRoom extends React.Component{
     }
 
     render(){
-        // console.log(this.props);
+        console.log(this.props);
         // console.log(this.props.match.params.goalId);
         // console.log(this.props.goals[this.props.match.params.goalId]);
         return(
