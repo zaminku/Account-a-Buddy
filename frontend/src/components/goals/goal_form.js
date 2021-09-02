@@ -142,7 +142,7 @@ class GoalForm extends React.Component {
 
                     <br />
                     <div className="goal-form-submit-div">
-                        <input className="goal-form-submit" type="submit" value="Submit"/>
+                        <input className="goal-form-submit" type="submit" value="Create"/>
                     </div>
                 </form>
                 <div className="clear-fix2"></div>
