@@ -131,7 +131,6 @@ class GoalForm extends React.Component {
                         <button className="plus-sign" onClick={this.submitMilestone}>+</button>
                     </div>
                     
-
                     <br />
                     <div className="goal-form-submit-div">
                         <input className="goal-form-submit" type="submit" value="Create"/>
