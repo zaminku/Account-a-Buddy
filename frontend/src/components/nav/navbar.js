@@ -40,7 +40,7 @@ class NavBar extends React.Component {
 
                 <Link to={'/'} id="logo"> 
                     <img className="navbar-logo" src="../handshake.png" alt="Github-logo" /> 
-                    <div>Account-A-Buddy</div> 
+                    <div className="navbar-name">Account-A-Buddy</div> 
                 </Link>
                 
                 <div className="f-dec">

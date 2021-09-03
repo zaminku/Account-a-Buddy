@@ -27,6 +27,12 @@
     color: black;
 }
 
+.navbar-logo {
+    margin: 7px;
+}
+
+
+
 #logo{
     font-size: 1.2em;
     text-decoration: none;
@@ -50,17 +56,36 @@
 }
 
 .logout-btn {
-    border: none ;
-    border-radius: 15px;
+    /* border-radius: 15px;
     padding: 5px 10px;
     margin-top: 10px;
     font-size: 1vw;
-    background-color: #fde5d6;
+    background-color: rgb(240, 103, 107);
+    border-color: rgb(240, 103, 107); */
+
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0,0,.2,1);
+    display: inline-block;
+    --text-opacity: 1;
+    color: black;
+    font-size: 1rem;
+    --border-opacity: 1;
+    border-width: 2px;
+    font-weight: 500;
+    padding: .25rem 0.75rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    border-color: rgb(237, 236, 237);
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(240, 103, 107);
+    color: rgb(240, 103, 107);
 }
 
 .logout-btn:hover {
     color:white;
-    background-color: #c77857;
+    background-color: rgb(240, 103, 107);
 }
 
 .f-dec, .c-dec {
