@@ -36,7 +36,7 @@ const TEAM = {
         github: "https://github.com/j3nhan", 
         linkedin: "https://www.linkedin.com/in/jennynhan/", 
         angellist: "https://angel.co/u/jenny-nhan",
-        description: "I am Jenny the happy one."
+        description: "Three fun facts about me! Chocolate is my guilty pleasure. Brewing kombucha is one of my hobbies. Movies with Keanu Reeves are my favorite."
     }, 
     ben: {
         name: "Ben Chai", 
