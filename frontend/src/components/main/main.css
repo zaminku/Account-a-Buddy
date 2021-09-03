@@ -71,9 +71,9 @@
     /* font-size: 18px; */
     /* line-height: 24px; */
     /* width: 300px; */
-    background: rgb(164, 209, 253);
+    background: rgb(113, 178, 248);
     border-radius: 40px;
-    padding: 24px;
+    padding: 3vw;
     text-align: center;
     color: white;
     margin-bottom: 30px;
@@ -82,14 +82,14 @@
 
 .bubble-bottom-right:before {
 content: "";
-width: 0px;
+width: 3vw;
 height: 0px;
 position: absolute;
-border-right: 36px solid rgb(164, 209, 253);
+border-right: 36px solid rgb(113, 178, 248);
 border-left: 18px solid transparent;
-border-top: 18px solid rgb(164, 209, 253);
+border-top: 18px solid rgb(113, 178, 248);
 border-bottom: 30px solid transparent;
-left: 80%;
+right: 40px;
 bottom: -24px;
 }
 

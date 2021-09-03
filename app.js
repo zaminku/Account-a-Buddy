@@ -48,11 +48,6 @@ const io = socket(server, {
   }
 });
 
-io.configure(function () {
-  io.set("transports", ["xhr-polling"]);
-  io.set("polling duration", 10);
-});
-
 io.on('connection', (socket) => {
   console.log("....... IO SOCKET IS CONNECTED .......");
   console.log(socket.id);
