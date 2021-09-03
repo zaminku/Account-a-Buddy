@@ -34,10 +34,10 @@ class GoalBox extends React.Component {
       .then(match => {
         if(match !== null) {
           const newRoom = {
-            user1: goal, 
-            user2: match, 
-            goal1: goal, 
-            goal2: match
+            user1: goal.author, 
+            user2: match.author, 
+            goal1: goal._id, 
+            goal2: match._id
           };
           createRoom(newRoom);
         } else {

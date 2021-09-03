@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import ChatRoom from './chat_room'
-import { addMsgToConvo, fetchRoom, clearRoom, receiveMessage } from '../../actions/room_actions'
-import { fetchUserGoals, clearGoals } from '../../actions/goal_actions'
+import { addMsgToConvo, fetchRoom, clearRoom, receiveMessage, deleteRoom } from '../../actions/room_actions'
+import { fetchUserGoals, clearGoals, updateGoal } from '../../actions/goal_actions'
 
 const mSTP = (state) => {
     return({
@@ -19,7 +19,8 @@ const mDTP = dispatch => {
             addMsgToConvo: (room, message) => dispatch(addMsgToConvo(room, message)), 
             fetchRoom: goalId => dispatch(fetchRoom(goalId)), 
             clearRoom: () => dispatch(clearRoom()), 
-            receiveMessage: message => dispatch(receiveMessage(message))
+            receiveMessage: message => dispatch(receiveMessage(message)), 
+            deleteRoom: roomId => dispatch(deleteRoom(roomId))
         }
     );
 }

@@ -95,10 +95,10 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 
 
 // TEST CODE =========================================
-// router.get(`/user/${userId}`, (req, res) => {
-//     User.findOne({ _id: userId })
-//         .then(user => res.json(user))
-// })
+router.get(`/user/:userId`, (req, res) => {
+    User.findById(req.params.userId)
+        .then(user => res.json(user))
+})
 // ===================================================
 
 module.exports = router;
