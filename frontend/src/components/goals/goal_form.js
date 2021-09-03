@@ -72,7 +72,6 @@ class GoalForm extends React.Component {
     render() {
         return(
             <div className="goal-form">
-                {/* <div className="clear-fix">clearfix</div> */}
                 <form className="goal-form-box" onSubmit={this.handleSubmit}>
                     <h1 className="goal-form-title">Create a Goal</h1>
                     <label className="goal-type">What kind of habit are you trying to work on?</label>
@@ -85,7 +84,7 @@ class GoalForm extends React.Component {
                                 value="breaking-habit"
                                 onChange={this.update('category')}
                             />
-                            <label for="goal-type-1" className="goal-form-radio-label">Breaking a Habit</label>
+                            <label for="goal-type-1" className="goal-form-radio-label">Breaking Habit</label>
                         </div>
                         <div>
                             <input 
@@ -95,12 +94,10 @@ class GoalForm extends React.Component {
                                 value="making-habit" 
                                 onChange={this.update('category')}
                             />
-                        <label for="goal-type-1" className="goal-form-radio-label">Making a Habit</label>
+                        <label for="goal-type-1" className="goal-form-radio-label">Making Habit</label>
                         </div>
                     <br />
                     <div>
-                        {/* <label>Title</label> */}
-                        {/* <br /> */}
                         <input 
                             type="text"
                             placeholder="Title"
@@ -110,8 +107,7 @@ class GoalForm extends React.Component {
                         />
                     </div>
                     <div>
-                        {/* <label>Description</label> */}
-                        {/* <br /> */}
+
                         <textarea 
                             placeholder="Description"
                             value={this.state.description}
@@ -129,14 +125,14 @@ class GoalForm extends React.Component {
                             })}
                         </ul>
 
-                        <input 
+                        <input className="milestone-input"
                                 placeholder="Milestone"
                                 // onChange={this.update('this.state.milestoneinput')}
                                 value={this.state.milestoneInput}
                                 onChange={this.addMilestone}
                         />
 
-                        <button onClick={this.submitMilestone}>+</button>
+                        <button className="plus-sign" onClick={this.submitMilestone}>+</button>
                     </div>
                     
 
@@ -145,7 +141,6 @@ class GoalForm extends React.Component {
                         <input className="goal-form-submit" type="submit" value="Create"/>
                     </div>
                 </form>
-                <div className="clear-fix2"></div>
             </div>
         )
     }
