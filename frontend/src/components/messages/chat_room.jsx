@@ -120,11 +120,13 @@ class ChatRoom extends React.Component{
         return (
             <ul>
                 {Object.values(goals).map((goal, index) => {
-                    return (
-                        <Link to={`/chat/${goal._id}`} >
-                            <li key={index} onClick={() => fetchRoom(goal._id)} >{goal.title}</li>
-                        </Link>
-                    );
+                    if(goal.available === false) {
+                        return (
+                            <Link to={`/chat/${goal._id}`} >
+                                <li key={index} onClick={() => fetchRoom(goal._id)} >{goal.title}</li>
+                            </Link>
+                        );
+                    }
                 })}
             </ul>
         );
@@ -241,7 +243,6 @@ class ChatRoom extends React.Component{
                         </form>
                     </div>
                 </div>
-                {/* <div className="clearfix">clearfix</div> */}
             </div>      
         )
     }

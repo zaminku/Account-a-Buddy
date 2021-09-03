@@ -1,80 +1,48 @@
+/* Chat page container */
 .chat-page {
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
-    /* background: url("https://wallpaperaccess.com/full/5786916.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; */
-}
+    width: 100%;
+    height: 100%;
 
-/* Chat Index */
-.chat-page .chat-index {
     background-color: gray;
 }
 
+/* Chat Index - list of convos */
+.chat-index {
+    /* width: 25%; */
+    height: 75vh;
+}
+
+.chat-index ul {
+    height: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+    background-color: red;
+}
+
+.chat-index li {
+    border: 1px solid black;
+    height: 50px;
+    font-size: 18px;
+}
+
+.chat-index a {
+    color: black;
+    text-decoration: none;
+}
+
+.chat-index a:hover {
+    color: black;
+    opacity: 0.6;
+}
+
 /* Chat Container */
-.chat-container {
-    margin-top: 20px;
-    background-color: #698ea2;
-    height: 500px;
-    width: 700px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px 1px #fde5d6;
-}
-
-.chat-messages {
-    height: 455px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-.message {
-    margin: 5px;
-    padding: 10px;
-    border-radius: 15px;
-    display: inline-block;
-    background-color: #152935;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
-    font-family: 'Martel', serif;
-    color: #e4a576;
-}
-
-.author {
-    color: #698ea2;
-}
-
-.chat-page h3 {
-    font-family: 'Karla', sans-serif;
-    color: #fde5d6;
-    font-size: 52px;
-    margin-top: 15px;
-}
 
 /* Chat Form - Input */
-.chat-page #msg {
-    height: 40px;
-    width: 580px;
-    border-radius: 15px;
-    opacity: 0.9;
-    border: none;
-    padding-left: 15px;
-    margin-left: 5px;
-}
-
-.chat-page #msg:focus {
-    outline: none;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
-}
-
-.chat-page #msg:hover {
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
-}
-
-.chat-page .btn {
-    margin-bottom: 5px;
-}
 
 /* Font Awesome icons */
 .chat-page i:hover {
@@ -83,25 +51,11 @@
 }
 
 /* Links */
-.chat-page a {
-    text-decoration: none;
-    color: black;
-}
 
-.chat-page a:hover {
-    cursor: pointer;
-    color: black;
-}
-
-.chat-index li:hover {
-    opacity: 0.6;
-}
-
-/* Clear Fix */
-.clearfix {
-    color: transparent;
-    margin-top: 88px;
-}
+/* ================================================= */
+/* ================================================= */
+/* ================================================= */
+/* ================================================= */
 
 /* Scroll bar styling */
 /* width */
