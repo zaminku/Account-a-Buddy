@@ -1,6 +1,5 @@
 import React from "react";
 import "./goal_form.css"
-// import Milestone from "./milestone";
 
 class GoalForm extends React.Component {
     constructor(props) {
@@ -11,7 +10,6 @@ class GoalForm extends React.Component {
             category: null, 
             milestoneArray: [],
             milestoneInput: "",
-            // TEST CODE =============================
             available: true, 
             emotions: {
                 sad: 0, 
@@ -20,7 +18,6 @@ class GoalForm extends React.Component {
                 anxious: 0,
                 angry: 0 
             }
-            // =======================================
         }
         this.addMilestone = this.addMilestone.bind(this);
         this.submitMilestone = this.submitMilestone.bind(this);
@@ -127,7 +124,6 @@ class GoalForm extends React.Component {
 
                         <input className="milestone-input"
                                 placeholder="Milestone"
-                                // onChange={this.update('this.state.milestoneinput')}
                                 value={this.state.milestoneInput}
                                 onChange={this.addMilestone}
                         />
