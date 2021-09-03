@@ -95,13 +95,13 @@
     border-color: rgb(237, 236, 237);
     background-color: white;
     border-style: solid;
-    border-color: #73A2FA;
-    color: #73A2FA;
+    border-color: #52A89D;
+    color: #52A89D;
 }
 
 #buddy-btn:hover {
     color:white;
-    background-color: #73A2FA;  
+    background-color: #52A89D;  
 }
 
 .goal-box > div {
