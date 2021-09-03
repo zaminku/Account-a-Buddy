@@ -69,8 +69,6 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="container">
-                {/* <div></div> */}
-                {/* <div className="card"> */}
                     <div className="inner-box" id="card">
                         <div className="card-back">
                             <h1 className="session-title">Sign Up</h1>
@@ -110,7 +108,6 @@ class SignupForm extends React.Component {
                             </form>
                         </div>
                     </div>
-                {/* </div> */}
             </div>
         );
     }
