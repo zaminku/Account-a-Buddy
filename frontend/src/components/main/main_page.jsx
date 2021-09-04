@@ -9,7 +9,7 @@ class MainPage extends React.Component {
 
             <div className="mainpage-cont">
                 <div className="left-cont">
-                    <div className="title">
+                    <div className="title bubble bubble-bottom-right">
                         <div className="title-one">Help Me</div> 
                         <div className="title-two">Help You</div>
                     </div>
@@ -26,7 +26,7 @@ class MainPage extends React.Component {
                 <div className="right-cont">
                     <img className="background-img" src="./placeholder.jpg" alt="background-img"/>
                 </div>
-            </div>
+            </div> 
         );
     }
 }

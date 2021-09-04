@@ -140,37 +140,39 @@ class GoalEdit extends React.Component {
         return (
             <div>
                 <form className="pin-edit-form-modal" onSubmit={this.handleSubmit}>
-                    <div >
-                        <div className="modal-tag">Title</div>
+                    <div className="hr-div">
                         <input
                             className='modal-title'
                             type="text"
                             value={this.state.title}
                             onChange={this.update('title')}
+                            placeholder="Title"
                         />
+                        <br></br>
+                        <hr className="title-hr"></hr>
                     </div>
                     <div>
-                        <div className="modal-tag">Habit Type</div>
                         <div className="modal-habit-buttons">
                             {this.renderBreaking()}
                             {this.renderMaking()}
                         </div>
                     </div>
-                    <div>
+                    <div className="hr-div">
                         <div>
-                            <div className="modal-tag">Description</div>
                             <textarea
                                 className="modal-description"
                                 value={this.state.description}
+                                placeholder="Description"
                                 onChange={this.update('description')}
                             />
                         </div>
+                        <hr></hr>
                     </div>
                     <div>
                         <div className="modal-tag">Milestones</div>
                         {this.renderMilestones()}
                     </div>
-                    <button className="modal-edit-button" type="submit">Edit Goal</button>
+                    <button className="modal-edit-button" type="submit">Save</button>
                 </form>
             </div>
         )

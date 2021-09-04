@@ -27,8 +27,8 @@ class NavBar extends React.Component {
         } else {
             return (
                 <div className="navbar-right">
-                    <Link to={'/signup'}>Signup</Link>
-                    <Link to={'/login'}>Login</Link>
+                    <Link to={'/signup'}><button className="session-nav">Signup</button></Link>
+                    <Link to={'/login'}><button className="session-nav">Login</button></Link>
                 </div>
             );
         }
@@ -39,7 +39,8 @@ class NavBar extends React.Component {
             <div className="navbar">
 
                 <Link to={'/'} id="logo"> 
-                    <img className="navbar-logo" src="../handshake.png" alt="Github-logo" /> Account-A-Buddy 
+                    <img className="navbar-logo" src="../handshake.png" alt="Github-logo" /> 
+                    <div className="navbar-name">Account-A-Buddy</div> 
                 </Link>
                 
                 <div className="f-dec">

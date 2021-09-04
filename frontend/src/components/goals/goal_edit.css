@@ -18,34 +18,78 @@
 .pin-edit-form-modal {
   background-color: white;
   padding: 20px;
-  height: 80vh;
-  width: 40vw;
+  height: 70vh;
+  width: 50vw;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.5)
+  box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.5);
+  overflow: scroll;
+}
+
+.pin-edit-form-modal::-webkit-scrollbar {
+    display: none;
+}
+
+.pin-edit-form-modal > div {
+  /* background-color: black; */
+  width: 100%;
 }
 
 .pin-edit-form-modal>div>*{
   text-align: center;
 }
 
+.goal-form-radio-label {
+  font-size: 18px;
+
+}
+
 .h1-edit {
   background-color: white;
   position: absolute;
+  font-family: 'Roboto';
 }
 
 .modal-title{
-  min-width: 30%;
-  max-width: initial;
+    width: 100%;
+    background: transparent;
+    border: none;
+    height: 100px;
+    font-size: 48px;
+    box-sizing: border-box;
+    outline: none;
+    color: black; 
+    text-align: center;
+    cursor: pointer;
+    text-transform: capitalize;
+  }
+
+.modal-title::placeholder {
+  font-size: 48px;
+  font-weight: 100;
 }
 
 .modal-description{
+  width: 30vw;
   height: 110px;
   resize: none;
   box-sizing: border-box;
+  border: none;
+  text-align: center;
+  font-size: 20px;
+  border-width: 0;
+  border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+
+.modal-description::placeholder {
+  font-size: 20px;
+  font-weight: 100;
 }
 
 .modal-milestone-list>label{
@@ -57,11 +101,12 @@
 }
 
 .modal-habit-buttons{
-  display:flex;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-habit-buttons>div{
-  margin-left: 30px;
+  margin-right: 5px;
 }
 
 .modal-edit-button{
@@ -69,11 +114,57 @@
   margin-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
+  transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0,0,.2,1);
+    display: inline-block;
+    --text-opacity: 1;
+    color: black;
+    font-size: 1rem;
+    --border-opacity: 1;
+    border-width: 2px;
+    font-weight: 500;
+    padding: .5rem 1.5rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    border-color: rgb(237, 236, 237);
+    background-color: white;
+    border-style: solid;
+    border-color: #7ADAB2;
+    color: #7ADAB2;
+}
+
+.modal-edit-button:hover {
+    color:white;
+    background-color: #7ADAB2;
 }
 
 .modal-tag{
-  font-size: larger;
+  font-size: 28px;
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
+}
+
+hr {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+}
+
+.hr-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title-hr {
+  height: 10px;
+  border-width: 2px;
+  color: black;
+  background-color: black;
 }

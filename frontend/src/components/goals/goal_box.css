@@ -12,11 +12,13 @@
   justify-content: space-around;
   align-items: center;
   text-align: left;
-  border: black 1px solid;
-  border-radius: 5px;
+  /* border: black 1px solid; */
+  border: none;
+  box-shadow: 5px 5px 13px -10px rgba(0,0,0,0.41);
+  border-radius: 10px;
   min-width: 100%;
   margin: 10px 20px;
-  margin-top: 5vh;
+  margin-bottom: 5vh;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -48,4 +50,60 @@
 
 .goal-box>button, a>button{
   border-radius: 5px;
+}
+
+#edit-btn {
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0,0,.2,1);
+    display: inline-block;
+    --text-opacity: 1;
+    color: black;
+    font-size: 1rem;
+    --border-opacity: 1;
+    border-width: 2px;
+    font-weight: 500;
+    padding: .5rem 1.5rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    border-color: rgb(237, 236, 237);
+    background-color: white;
+    border-style: solid;
+    border-color: #7ADAB2;
+    color: #7ADAB2;
+}
+
+#edit-btn:hover {
+    color:white;
+    background-color: #7ADAB2;
+}
+
+#buddy-btn {
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0,0,.2,1);
+    display: inline-block;
+    --text-opacity: 1;
+    color: black;
+    font-size: 1rem;
+    --border-opacity: 1;
+    border-width: 2px;
+    font-weight: 500;
+    padding: .5rem 1.5rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    border-color: rgb(237, 236, 237);
+    background-color: white;
+    border-style: solid;
+    border-color: #52A89D;
+    color: #52A89D;
+}
+
+#buddy-btn:hover {
+    color:white;
+    background-color: #52A89D;  
+}
+
+.goal-box > div {
+  text-transform: capitalize;
 }

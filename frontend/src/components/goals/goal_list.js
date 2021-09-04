@@ -22,28 +22,20 @@ class GoalList extends React.Component {
         if (this.props.goals.length === 0) {
         return (
             <div>
-            <h1 className="goal-header"> {this.props.currentUser.username}'s Goals</h1>
             <div className="no-goals">No goals have been written yet.</div>
             </div>)
         } else {
         return (
-            <div>
-                <div>
-                    <h1 className="goal-header"> {this.props.currentUser.username}'s Goals</h1>
-                    <div>
-                        <div className="all-goals">
-                            {this.props.goals.map(goal => (
-                                <GoalBoxContainer key={goal._id}
-                                    id={goal._id}
-                                    goal={goal} 
-                                    room={this.props.room}
-                                    createRoom={this.props.createRoom} 
-                                    fetchRoom={this.props.fetchRoom}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </div>
+            <div className="all-goals">
+                {this.props.goals.map(goal => (
+                    <GoalBoxContainer key={goal._id}
+                        id={goal._id}
+                        goal={goal} 
+                        room={this.props.room}
+                        createRoom={this.props.createRoom} 
+                        fetchRoom={this.props.fetchRoom}
+                    />
+                ))}
             </div>
         );
         }
@@ -54,11 +46,25 @@ class GoalList extends React.Component {
             <div>
                 <div>
                     <Link to="/goals/new">
-                        <button className="goal-btn fas fa-tasks"></button>
+                        <button className="goal-btn fas fa-edit"></button>
                     </Link>
                 </div>
 
-                <div>{this.showGoal()}</div>
+                <h1 className="goal-header">Welcome {this.props.currentUser.username}</h1>
+
+
+
+                <div>
+                    <div id="goals-table" className="goal-box">
+                        <div>Goal</div>
+                        <div>Category</div>
+                        <div>Details</div>
+                        <div>Chat</div>
+                        <div>Daily Reactions</div>
+                    </div>
+
+                    {this.showGoal()}
+                </div>
 
             </div>
         )

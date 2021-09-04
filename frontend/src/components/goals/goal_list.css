@@ -4,35 +4,71 @@
     bottom: 2vh;
     right: 2vw;
 
-    border-radius: 25%;
-    padding: 5px 10px;
-    font-size: 2vw;
-    background-color: #A4F467;
-    color: #152935;
+    border-radius: 100%;
+    padding: 15px;
+    font-size: 40px;
+    background-color: #52A89D;
+    color: white;
 
     /* padding-bottom: 5px */
 }
 
 .goal-btn:hover {
-    color:white;
-    background-color: #A4F467;
+    background-color: rgb(240, 103, 107);
+
 }
 
 .all-goals {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 40px;
+    padding: 10px 40px 20px 40px;
 }
 
 .goal-header{
     text-align: center;
-    margin-top: 2vh;
+    margin-top: 4vh;
+    margin-bottom: 5vh;
     text-transform: capitalize; 
+    font-weight: 100;
 }
 
 .no-goals{
     margin-top: 20vh;
     text-align: center;
     font-size: 24px;
+}
+
+.box-title {
+    /* font-weight: bold; */
+    font-size: 1.4em;
+}
+
+.box-category {
+
+}
+
+#goals-table {
+    display: flex;
+    justify-content: space-around;
+    align-items: left;
+    text-align: left;
+    min-width: 100%;
+    margin: 30px 20px 10px;
+    border: none;
+    box-shadow: none;
+}
+
+#goals-table > div {
+    font-size: 25px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #6C6A6A;
+    font-weight: 150;
+
+}
+
+.goal-list {
+    padding: 20px 40px;
 }
