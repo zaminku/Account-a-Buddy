@@ -24,7 +24,7 @@ const TEAM = {
         github: "https://github.com/samsongs1991", 
         linkedin: "https://www.linkedin.com/in/samuel-song-a0b64a21a/", 
         angellist: "https://angel.co/u/samsongs",
-        description: "Hey! I'm a web developer passionate about learning and creating! In my past life I had professions in education and mental health, but I carry those experiences with me into my current role as a software engineer. I believe one of the most important things in life is giving a helping hand to fellow humans. Teaching and taking care of others' mental and emotional needs taught me that sometimes helping means just putting in the effort to make a real connection with someone. I hope to continue making those connections and helping others as an enthusiastic web developer."
+        description: "Hey! I'm a web developer passionate about learning and creating! In my past life I had professions in education and mental health, but I carry those experiences with me into my current role as a software engineer. I believe one of the most important things in life is giving a helping hand to fellow humans. Teaching and taking care of others' mental and emotional needs taught me that sometimes helping means just putting in the effort to make a real connection with someone. I hope to continue making those connections and helping others. Go to my website to find out more!"
     }, 
     jenny: {
         name: "Jenny Nhan", 

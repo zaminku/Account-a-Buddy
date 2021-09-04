@@ -11,10 +11,6 @@ class GoalBox extends React.Component {
     this.findBuddy = this.findBuddy.bind(this);
     this.setAvailableToFalse = this.setAvailableToFalse.bind(this);
   }
-  
-  componentDidMount() {
-    // this.props.fetchRoom(this.props.goal._id);
-  }
 
   findBuddy() {
     const { goal, createRoom, fetchRoom } = this.props
@@ -46,7 +42,6 @@ class GoalBox extends React.Component {
       })
     } else {
       console.log("The goal's availble status is FALSE. Must be TRUE in order to find a match.");
-      // fetchRoom(goal._id);
     }
   }
 
@@ -132,12 +127,10 @@ class GoalBox extends React.Component {
       <div className="goal-box">
         <div className="box-title">{goal.title}</div>
         <div className="box-category">{goal.category}</div>
-        <button id="edit-btn" onClick={() => openModal('goal-edit', this.props.id)}>Show Details</button>
-        {/* <Link to={`/chat/${goal._id}`} ><button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : "Chat"}</button></Link> */}
-        {/* <button onClick={this.findBuddy} >{goal.available ? "Find a buddy" : <Link to={`/chat/${goal._id}`} >Chat</Link>}</button> */}
+        <button id="edit-btn" onClick={() => openModal('goal-edit', this.props.id)}>Show Details</button>        
         {goal.available ? 
-          <button onClick={this.findBuddy} >"Find a buddy"</button> : 
-          <Link to={`/chat/${goal._id}`} ><button>Chat</button></Link>}
+          <button onClick={this.findBuddy} id="buddy-btn" >Find a buddy</button> : 
+          <Link to={`/chat/${goal._id}`} ><button id="buddy-btn">Chat</button></Link>}
         <div>{this.showEmojis()}</div>
       </div>
     )
