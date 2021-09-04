@@ -53,16 +53,19 @@
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid black;
-    height: 93%;
+    height: 70vh;
     width: 100%;
-    margin-top: 20px;
-    padding-right: 30px;
+    padding: 10px 20px 0px 0px;
+    overflow: scroll;
 }
 
-.chat-messages .you, .chat-messages .partner {
+.chat-messages li {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: 0px 0px 15px 0px;
+    font-size: 18px;
+    overflow-wrap: anywhere;
 }
 
 .chat-messages .you {
@@ -71,6 +74,11 @@
 
 .chat-messages .partner {
     text-align: right;
+}
+
+.chat-messages .author {
+    font-size: 10px;
+    height: 12px;
 }
 
 /* Chat Form - Input */
@@ -110,15 +118,21 @@
 }
 
 /* info modal */
-.info {
+.info, .settings, .confirmClick {
     position: absolute;
-    top: 33%;
-    left: 33%;
+    width: 50%;
+    height: 40%;
+    top: 25%;
+    left: 25%;
     border: 1px solid black;
+    background-color: white;
     margin: 0px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-
 
 /* settings */
 #chat-form > i {
@@ -128,16 +142,26 @@
 }
 
 /* settings modal */
-.settings {
-    position: absolute;
-    top: 33%;
-    left: 33%;
+.settings button {
+    background-color: white;
     border: 1px solid black;
-    margin: 0px;
-    padding: 20px;
 }
 
+.settings button:hover {
+    background-color: black;
+    color: white;
+}
 
+/* confirm click modal */
+.confirmClick button {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.confirmClick button:hover {
+    background-color: black;
+    color: white;
+}
 
 /* ================================================= */
 /* ================================================= */

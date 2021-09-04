@@ -147,8 +147,8 @@ class ChatRoom extends React.Component{
                     }
                     return (
                         <li key={index} className={`${msgBubble}`} >
-                            <p>{message.text}</p>
-                            <p className="author">{message.username}</p> 
+                            <div>{message.text}</div>
+                            <div className="author">{message.username}</div> 
                         </li>
                     );
                 })}
@@ -185,20 +185,20 @@ class ChatRoom extends React.Component{
 
     showConfirmClick() {
         return (
-            <div>
+            <div className="confirmClick" >
                 <p>Are you sure?</p>
-
-                <button onClick={() => {
-                    this.setAvailableToTrue(this.props.goals[this.props.match.params.goalId])
-                    this.setAvailableToTrue(this.state.partnerGoal)
-                    this.props.deleteRoom(this.props.room._id)
+                <div>
+                    <button onClick={() => {
                     this.props.history.push("/goals")
-                }} >Yes</button>
-                
-                <button onClick={() => {
-                    this.openModal("confirmClick")
-                    this.openModal("settings")
-                }} >No</button>
+                        this.setAvailableToTrue(this.props.goals[this.props.match.params.goalId])
+                        this.setAvailableToTrue(this.state.partnerGoal)
+                        this.props.deleteRoom(this.props.room._id)
+                    }} >Yes</button>
+                    
+                    <button onClick={() => {
+                        this.openModal("confirmClick")
+                    }} >No</button>
+                </div>
             </div>
         );
     }
@@ -206,17 +206,13 @@ class ChatRoom extends React.Component{
     showSettings() {
         return (
             <div className="settings">
-                <p onClick={() => this.openModal("confirmClick")} >End partnership with {this.state.partner.username}?</p>
-                {this.state.confirmClick ?
-                    this.showConfirmClick(): 
-                    null
-                }
+                <button onClick={() => this.openModal("confirmClick")} >End partnership with {this.state.partner.username}?</button>
             </div>
         );
     }
 
     openModal(key) {
-        this.setState({ info: false, settings: false });
+        this.setState({ info: false, settings: false, confirmClick: false });
         if(this.state[key]) {
             this.setState({ [key]: false })
         } else {
@@ -249,7 +245,8 @@ class ChatRoom extends React.Component{
                             />
                             <button className="btn" onClick={this.sendMessage}><i className="fas fa-paper-plane"></i> Send</button>
                             <i className="fas fa-sliders-h" onClick={() => this.openModal("settings")} ></i>
-                                {this.state.settings ? this.showSettings() : null}
+                            {this.state.settings ? this.showSettings() : null}
+                            {this.state.confirmClick ? this.showConfirmClick() : null}
                         </form>
                     </div>
                 </div>
