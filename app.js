@@ -5,7 +5,6 @@ const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
 const passport = require('passport');
 const goals = require('./routes/api/goals');
-const messages = require('./routes/api/messages');
 const rooms = require('./routes/api/rooms');
 
 const bodyParser = require('body-parser');
@@ -18,7 +17,6 @@ app.use(bodyParser.json());
 // routes are made here
 app.use('/api/users', users);
 app.use('/api/goals', goals);
-app.use('/api/messages', messages);
 app.use('/api/rooms', rooms);
 
 const port = process.env.PORT || 5000

@@ -31,13 +31,11 @@ router.get('/goal/:goalId', (req, res) => {
         );
 });
 
-// TEST CODE ==========================================
 router.get('/match/:authorId/:category', (req, res) => {
     Goal.find({ author: { $ne: req.params.authorId }, category: req.params.category, available: true })
         .then(goals => res.json(goals))
         .catch(err => res.status(404).json({ nogoalfound: 'No available buddies' }));
 });
-// ====================================================
 
 router.post('/',
     passport.authenticate('jwt', { session: false }),

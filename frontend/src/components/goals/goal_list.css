@@ -51,22 +51,29 @@
 #goals-table {
     display: flex;
     justify-content: space-around;
-    align-items: left;
-    text-align: left;
+    align-items: center;
+    text-align: center;
     min-width: 100%;
-    margin: 30px 20px 10px;
+    margin: 30px 0px 10px;
     border: none;
     box-shadow: none;
 }
 
 #goals-table > div {
     font-size: 25px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
     color: #6C6A6A;
     font-weight: 150;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
 
+#goals-table .chat, #goals-table .rxn {
+    margin-right: 30px;
+}
+
+#goals-table .goal, #goals-table .category {
+    margin-left: 30px;
 }
 
 .goal-list {
