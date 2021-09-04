@@ -38,6 +38,7 @@ class ChatRoom extends React.Component{
         this.showGoalItems = this.showGoalItems.bind(this);
         this.showConfirmClick = this.showConfirmClick.bind(this);
         this.setAvailableToTrue = this.setAvailableToTrue.bind(this);
+        this.openModal = this.openModal.bind(this);
     }
 
     sendMessage(){
@@ -118,17 +119,19 @@ class ChatRoom extends React.Component{
     showGoalItems() {
         const { goals, fetchRoom } = this.props;
         return (
-            <ul>
+            <div>
                 {Object.values(goals).map((goal, index) => {
                     if(goal.available === false) {
                         return (
-                            <Link to={`/chat/${goal._id}`} >
-                                <li key={index} onClick={() => fetchRoom(goal._id)} >{goal.title}</li>
+                            <Link 
+                                to={`/chat/${goal._id}`} 
+                                onClick={() => fetchRoom(goal._id)} >
+                                    {goal.title}
                             </Link>
                         );
                     }
                 })}
-            </ul>
+            </div>
         );
     }
     
@@ -136,10 +139,16 @@ class ChatRoom extends React.Component{
         return (
             <ul>
                 {this.props.room.conversation.map((message, index) => {
+                    let msgBubble = "";
+                    if(message.username === this.props.user.username) {
+                        msgBubble = "you";
+                    } else {
+                        msgBubble = "partner";
+                    }
                     return (
-                        <li key={index}>
-                            <span className="author" >{message.username}: </span> 
-                            {message.text}
+                        <li key={index} className={`${msgBubble}`} >
+                            <p>{message.text}</p>
+                            <p className="author">{message.username}</p> 
                         </li>
                     );
                 })}
@@ -196,7 +205,7 @@ class ChatRoom extends React.Component{
 
     showSettings() {
         return (
-            <div>
+            <div className="settings">
                 <p onClick={() => this.openModal("confirmClick")} >End partnership with {this.state.partner.username}?</p>
                 {this.state.confirmClick ?
                     this.showConfirmClick(): 
@@ -207,6 +216,7 @@ class ChatRoom extends React.Component{
     }
 
     openModal(key) {
+        this.setState({ info: false, settings: false });
         if(this.state[key]) {
             this.setState({ [key]: false })
         } else {
@@ -216,7 +226,7 @@ class ChatRoom extends React.Component{
 
     render(){
         return(
-            <div className="chat-page">
+            <div className="chat-page" >
                 <div className="chat-index" >
                     {this.showGoalItems()}
                 </div>
@@ -239,7 +249,7 @@ class ChatRoom extends React.Component{
                             />
                             <button className="btn" onClick={this.sendMessage}><i className="fas fa-paper-plane"></i> Send</button>
                             <i className="fas fa-sliders-h" onClick={() => this.openModal("settings")} ></i>
-                            {this.state.settings ? this.showSettings() : null}
+                                {this.state.settings ? this.showSettings() : null}
                         </form>
                     </div>
                 </div>
