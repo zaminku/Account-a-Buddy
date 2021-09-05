@@ -21,11 +21,19 @@ router.post("/", (req, res) => {
 })
 
 router.delete('/:roomId', (req, res) => {
-    Room.deleteOne({ _id: req.params.roomId })
-    res.json(req.params.roomId)
+    Room.findOneAndDelete(req.params.roomId)
+        .then(res => console.log(res))
+    // res.json(req.params.roomId)
 })
 
 router.get("/:goalId", (req, res) => {
+    const defaultRoom = {
+        user1: "", 
+        user2: "", 
+        goal1: "", 
+        goal2: "", 
+        conversation: []
+    }
     Room.findOne({ goal1: req.params.goalId })
         .then(room => {
             if(room) {

@@ -12,7 +12,8 @@ class GoalEdit extends React.Component {
             description: goal.description,
             category: goal.category,
             milestones: goal.milestones,
-            emotions: goal.emotions
+            emotions: goal.emotions, 
+            available: goal.available
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderMilestones = this.renderMilestones.bind(this);

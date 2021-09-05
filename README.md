@@ -21,12 +21,12 @@
  
 # Background & Overview
 - Match people with accountability partners to help them achieve their goals.
-- This application will help users keep motivated and accountable to achieve goals they set for themselves. No more new years resolutions.
+- This application will help users keep motivated and accountable to achieve goals they set for themselves. No more lonely new years resolutions.
 
 ## MVP List
 - User Auth
 - Live Chat
-- Goals / Tasks CRUD
+- Goals / Milestones CRUD
 - Daily Reaction Tracker
 - Random Partner Matcher
 <!-- - Rewards (bonus feature) -->

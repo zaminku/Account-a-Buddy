@@ -1,17 +1,20 @@
 .emoji:hover {
   cursor: pointer;
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 .emoji{
     height: 25px;
     width: 25px;
+    opacity: 0.9;
 }
 
 .goal-box{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  text-align: left;
+  text-align: center;
   /* border: black 1px solid; */
   border: none;
   box-shadow: 5px 5px 13px -10px rgba(0,0,0,0.41);
