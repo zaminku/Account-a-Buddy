@@ -14,6 +14,7 @@
     align-items: center;
     width: 50%;
     margin-left: 5vw;
+    margin-top: 10px;
 }
 
 .right-cont {
@@ -30,6 +31,7 @@
     width: 75%;
     border-radius: 10px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    margin-top: 100px;
 }
 
 .getstarted-btn {
@@ -39,7 +41,7 @@
     display: inline-block;
     --text-opacity: 1;
     color: black;
-    font-size: 1rem;
+    font-size: 1.2vw;
     --border-opacity: 1;
     border-width: 2px;
     font-weight: 500;
@@ -66,13 +68,16 @@
 }
 
 .bubble {
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0,0,.2,1);
     position: relative;
     font-family: sans-serif;
     /* font-size: 18px; */
     /* line-height: 24px; */
     /* width: 300px; */
     background: rgb(113, 178, 248);
-    border-radius: 40px;
+    border-radius: 50px;
     padding: 3vw;
     text-align: center;
     color: white;
@@ -81,16 +86,19 @@
 }
 
 .bubble-bottom-right:before {
-content: "";
-width: 3vw;
-height: 0px;
-position: absolute;
-border-right: 36px solid rgb(113, 178, 248);
-border-left: 18px solid transparent;
-border-top: 18px solid rgb(113, 178, 248);
-border-bottom: 30px solid transparent;
-right: 40px;
-bottom: -24px;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0,0,.2,1);
+    content: "";
+    width: 3vw;
+    height: 0px;
+    position: absolute;
+    border-right: 80px solid rgb(113, 178, 248);
+    border-left: 18px solid transparent;
+    border-top: 18px solid rgb(113, 178, 248);
+    border-bottom: 40px solid transparent;
+    right: 40px;
+    bottom: -40px;
 }
 
 .title-one, .title-two {
