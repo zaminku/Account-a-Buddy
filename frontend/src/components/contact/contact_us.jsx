@@ -42,13 +42,13 @@ const TEAM = {
         name: "Ben Chai", 
         img: {
             src: "../ben.jpeg", 
-            alt: "Photo of Ben with the calming voice"
+            alt: "Photo of Ben"
         }, 
         personalSite: "", // for our personalSite website 
         github: "https://github.com/b-chai", 
         linkedin: "https://www.linkedin.com/in/ben-chai/", 
-        angellist: "", // for angel list profile
-        description: "I am Ben the calm voice."
+        angellist: "https://angel.co/u/ben-chai-1", // for angel list profile
+        description: "I am a NYC based coder that has been honing my programming ability since 2020. I have a background in business management and when I'm not coding I'll be either playing sports or online games. I aspire to learn as much as much as possible so I can pay that knowledge forward to other people I meet along the way."
     }
 }
 
