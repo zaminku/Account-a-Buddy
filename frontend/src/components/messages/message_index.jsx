@@ -2,7 +2,7 @@ import React from 'react'
 import "whatwg-fetch";
 import openSocket from "socket.io-client"
 import "./message_index.css"
-const socket = openSocket("http://localhost:5000")
+const socket = openSocket("https://account-a-buddies.herokuapp.com/")
 
 
 class MessageIndex extends React.Component{
