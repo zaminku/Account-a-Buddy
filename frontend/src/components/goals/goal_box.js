@@ -13,7 +13,7 @@ class GoalBox extends React.Component {
   }
 
   findBuddy() {
-    const { goal, createRoom, fetchRoom } = this.props
+    const { goal, createRoom } = this.props
     if(goal.available) {
       findGoalMatch(goal)
       .then(goals => {

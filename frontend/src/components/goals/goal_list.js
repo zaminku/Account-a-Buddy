@@ -57,7 +57,7 @@ class GoalList extends React.Component {
                 <div>
                     <div id="goals-table" className="goal-box">
                         <div className="goal" >Goal</div>
-                        <div classname="category" >Category</div>
+                        <div className="category" >Category</div>
                         <div>Details</div>
                         <div className="chat" >Chat</div>
                         <div className="rxn" >Daily Reactions</div>

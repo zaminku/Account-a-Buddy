@@ -8,7 +8,7 @@ import { fetchGoal, updateGoal } from '../../util/goal_api_util';
 // import socketIOClient from "socket.io-client"
 // const socket = socketIOClient("ws://account-a-buddies-app.herokuapp.com:14827/socket.io/?EIO=4&transport=websocket")
 const io = require('socket.io-client');
-const socket = io();
+const socket = io("/");
 // =========================================================
 
 class ChatRoom extends React.Component{
@@ -76,7 +76,7 @@ class ChatRoom extends React.Component{
 
     componentDidUpdate(){
         const { room, user } = this.props;
-        if(this.state.roomNeedJoining) {
+        if(this.state.roomNeedJoining && room.goal1) {
             socket.emit("join", room._id, user.username);
             this.setState({ roomNeedJoining: false });
         }
@@ -172,9 +172,9 @@ class ChatRoom extends React.Component{
 
         return (
             <ul className="info" >
-                <li>Chat began: {this.convertDate(room.createdAt)}</li>
-                <li>You  |  {goal.title}  |  {this.convertDate(goal.createdAt)}</li>
-                <li>{partner.username}  |  {partnerGoal.title}  |  {this.convertDate(partnerGoal.createdAt)}</li>
+                <li key="1" >Chat began: {this.convertDate(room.createdAt)}</li>
+                <li key="2" >You  |  {goal.title}  |  {this.convertDate(goal.createdAt)}</li>
+                <li key="3" >{partner.username}  |  {partnerGoal.title}  |  {this.convertDate(partnerGoal.createdAt)}</li>
             </ul>
         );
     }

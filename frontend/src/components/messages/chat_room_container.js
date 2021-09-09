@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import ChatRoom from './chat_room'
 import { addMsgToConvo, fetchRoom, clearRoom, receiveMessage, deleteRoom } from '../../actions/room_actions'
-import { fetchUserGoals, clearGoals, updateGoal } from '../../actions/goal_actions'
+import { fetchUserGoals, clearGoals } from '../../actions/goal_actions'
 
 const mSTP = (state) => {
     return({

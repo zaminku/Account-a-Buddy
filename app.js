@@ -52,8 +52,8 @@ io.on('connection', (socket) => {
 
   socket.on("join", (roomId, username) => {
     socket.join(roomId);
-    console.log(`Connection coming from room ${roomId}`);
     console.log(`${username} has been connected`);
+    console.log(`Connection coming from room ${roomId}`);
     socket.to(roomId).emit("new user", username);
   });
 
@@ -64,7 +64,7 @@ io.on('connection', (socket) => {
   })
 
   socket.on("disconnect", () => {
-    console.log("USER HAS DISCONNECTED");
+    console.log(`${socket.id} HAS DISCONNECTED`);
   });
 });
 // =================================
