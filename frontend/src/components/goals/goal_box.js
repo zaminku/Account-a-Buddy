@@ -8,8 +8,27 @@ import "./goal_box.css";
 class GoalBox extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      noMatchModal: false,
+      dailyReactionModal: false
+    }
     this.findBuddy = this.findBuddy.bind(this);
     this.setAvailableToFalse = this.setAvailableToFalse.bind(this);
+    this.showNoMatchModal = this.showNoMatchModal.bind(this);
+    this.showDailyReactionModal = this.showDailyReactionModal.bind(this);
+  }
+
+  showNoMatchModal() {
+    return (
+      <div className="error-modal" >
+        <button onClick={() => this.setState({ noMatchModal: false })} >X</button>
+        <div>
+          <div>We're sorry. Currently there are no accountability</div>
+          <div>partners available to be matched with you and your goal.</div>
+          <div>Please try again later.</div>
+        </div>
+      </div>
+    );
   }
 
   findBuddy() {
@@ -37,11 +56,11 @@ class GoalBox extends React.Component {
           };
           createRoom(newRoom);
         } else {
-          console.log("NO MATCH WAS FOUND!!!");
+          {this.setState({noMatchModal: true})}
         }
       })
     } else {
-      console.log("The goal's availble status is FALSE. Must be TRUE in order to find a match.");
+      console.log("This goal is currently not available to be matched with an accountability partner.");
     }
   }
 
@@ -53,6 +72,20 @@ class GoalBox extends React.Component {
       updateGoal(newGoal);
   }
 
+  showDailyReactionModal() {
+    return (
+      <div className="error-modal" >
+        <div>
+          <button onClick={() => this.setState({ dailyReactionModal: false })} >X</button>
+        </div>
+        <div>
+          <div>You have already reacted to this goal today.</div>
+          <div>Please try again tomorrow.</div>
+        </div>
+      </div>
+    );
+  }
+
   incrementCounter(key) {
     let newGoal = this.props.goal;
     const today = this.currentDate()
@@ -62,7 +95,7 @@ class GoalBox extends React.Component {
       newGoal.emotions[key]++;
       this.props.updateGoal(newGoal);
     }else{
-      console.log("You've pressed today, chill bruv")
+      {this.setState({dailyReactionModal: true})}
     }
   }
 
@@ -132,6 +165,8 @@ class GoalBox extends React.Component {
           <button onClick={this.findBuddy} id="buddy-btn" >Find a buddy</button> : 
           <Link to={`/chat/${goal._id}`} ><button id="buddy-btn">Chat</button></Link>}
         <div>{this.showEmojis()}</div>
+        {this.state.noMatchModal ? this.showNoMatchModal() : null}
+        {this.state.dailyReactionModal ? this.showDailyReactionModal() : null}
       </div>
     )
   }

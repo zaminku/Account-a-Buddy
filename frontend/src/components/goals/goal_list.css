@@ -9,8 +9,6 @@
     font-size: 40px;
     background-color: #52A89D;
     color: white;
-
-    /* padding-bottom: 5px */
 }
 
 .goal-btn:hover {
@@ -40,12 +38,7 @@
 }
 
 .box-title {
-    /* font-weight: bold; */
     font-size: 1.4em;
-}
-
-.box-category {
-
 }
 
 #goals-table {
