@@ -12,7 +12,6 @@
 .navbar-right a, .navbar-right {
     padding-right: 3vw;
     align-items: center;
-    /* padding-bottom: 10px; */
 }
 
 .navbar a{
@@ -65,7 +64,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* font-family: "Dancing Script"; */
     font-family: 'Karla', sans-serif;
     font-weight: 800;
     text-transform: capitalize;
@@ -81,13 +79,6 @@
 }
 
 .logout-btn {
-    /* border-radius: 15px;
-    padding: 5px 10px;
-    margin-top: 10px;
-    font-size: 1vw;
-    background-color: rgb(240, 103, 107);
-    border-color: rgb(240, 103, 107); */
-
     transition-property: all;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(0,0,.2,1);

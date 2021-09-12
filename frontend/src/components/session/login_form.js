@@ -79,39 +79,34 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className="container">
-                {/* <div></div> */}
+                <div className="inner-box">
+                    <div className="card-front">
+                        <form  onSubmit={this.handleSubmit}>
+                            <div className="session-inputs">
+                                <h1 className="session-title">Sign In</h1>
+                                <input type="text"
+                                    className="input-box"
+                                    value={this.state.username}
+                                    onChange={this.update('username')}
+                                    placeholder="Username"
+                                />
+                                <input type="password"
+                                    className="input-box"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    placeholder="Password"
+                                />
+                                {this.renderErrors()}
+                                <div className="session-buttons">
+                                    <input className="submit-btn" type="submit" value="Submit" />
+                                    <button className="submit-btn" onClick={this.handleDemoLogin}>Demo</button>
+                                </div>
 
-                {/* <div className = "card"> */}
-                    <div className="inner-box">
-                        <div className="card-front">
-                            <form  onSubmit={this.handleSubmit}>
-                                <div className="session-inputs">
-                                    <h1 className="session-title">Sign In</h1>
-                                    <input type="text"
-                                        className="input-box"
-                                        value={this.state.username}
-                                        onChange={this.update('username')}
-                                        placeholder="Username"
-                                    />
-                                    <input type="password"
-                                        className="input-box"
-                                        value={this.state.password}
-                                        onChange={this.update('password')}
-                                        placeholder="Password"
-                                    />
-                                    {this.renderErrors()}
-                                    <div className="session-buttons">
-                                        <input className="submit-btn" type="submit" value="Submit" />
-                                        <button className="submit-btn" onClick={this.handleDemoLogin}>Demo</button>
-                                    </div>
-
-                                    {this.otherForm()}
+                                {this.otherForm()}
                             </div>
-                            </form>
-                        </div>
+                        </form>
                     </div>
-                {/* </div> */}
-        
+                </div>        
             </div>
         );
     }

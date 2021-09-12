@@ -83,14 +83,12 @@
 .submit-btn:hover {
     color:white;
     background-color: rgb(240, 103, 107);
-    /* background-color: ; */
 }
 
 .error-div {
     font-size: 11px;
     color: black;
     position: absolute;
-    /* top: 1vh; */
     bottom: 5px;
     padding: 0 0 5px 0;
     display: flex;
@@ -145,7 +143,6 @@
 
 .errors-list > li {
     font-size: 10px;
-    /* color: black; */
     color: #f15459e5;
 }
 
