@@ -24,7 +24,6 @@ const roomReducer = (oldSlice=defaultRoom, action) => {
         default: 
             return oldSlice
     }
-
 }
 
 export default roomReducer;

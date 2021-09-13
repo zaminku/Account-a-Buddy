@@ -20,7 +20,7 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div className="navbar-right">
-                    <Link to={'/goals'}>Goals</Link>
+                    <Link to={'/goals'} id="goals-link" >Goals</Link>
                     <button className="logout-btn" onClick={this.logoutUser}>Logout</button>
                 </div>
             );
@@ -54,6 +54,7 @@ class NavBar extends React.Component {
                 <div className="nav-right-margin">
                     {this.getLinks()}
                 </div>
+
             </div>
         );
     }

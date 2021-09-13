@@ -4,7 +4,7 @@ import { openModal } from "../../actions/modal_actions";
 import { updateGoal } from "../../actions/goal_actions";
 
 const mSTP = (state, ownProps) => ({
-    // goals: state.goals
+    
 })
 
 const mDTP = dispatch => ({

@@ -8,7 +8,6 @@ const initialState = {
 export default function sessionReducer(state = initialState, action) {
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            // debugger
             return {
                 ...state,
                 isAuthenticated: !!action.currentUser,

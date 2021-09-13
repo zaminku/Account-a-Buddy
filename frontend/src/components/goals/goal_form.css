@@ -16,7 +16,6 @@
 .goal-form-box {
     margin-top: 7vh;
     border-radius: 10px;
-    /* box-shadow: 0 0 14px 1px rgba(0, 0, 0, 0.21); */
     box-shadow: 0 0 100px 5px rgba(0, 0, 0, 0.21);
     padding-right: 0px;
     padding-left: 0px;
@@ -24,7 +23,6 @@
 
 .goal-form > form {
     text-align: center;
-    /* background-color: rgb(250, 251 ,254); */
     padding: 5vh 30vh 5vh 30vh;
     font-family: 'Roboto', serif;
 }

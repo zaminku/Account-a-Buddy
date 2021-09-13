@@ -41,12 +41,12 @@ export const fetchGoal = goalId => dispatch => (
         .then(goal => dispatch(receiveGoal(goal)))
 )
 
-export const createGoal = goal => dispatch => {
-    return APIUtil.createGoal(goal)
+export const createGoal = goal => dispatch => (
+    APIUtil.createGoal(goal)
         .then(goal => dispatch(receiveGoal(goal)))
-}
+)
 
-export const updateGoal = goal => dispatch => {
-    return APIUtil.updateGoal(goal)
+export const updateGoal = goal => dispatch => (
+    APIUtil.updateGoal(goal)
         .then(goal => dispatch(receiveGoal(goal)))
-}
+)
