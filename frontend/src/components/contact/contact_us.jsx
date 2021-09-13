@@ -48,7 +48,7 @@ const TEAM = {
         github: "https://github.com/b-chai", 
         linkedin: "https://www.linkedin.com/in/ben-chai/", 
         angellist: "https://angel.co/u/ben-chai-1", // for angel list profile
-        description: "I am a NYC based coder that has been honing my programming ability since 2020. I have a background in business management and when I'm not coding I'll be either playing sports or online games. I aspire to learn as much as much as possible so I can pay that knowledge forward to other people I meet along the way."
+        description: "I am a NYC based coder that has been honing my programming ability since 2020. I have a background in business management and when I'm not coding I'll be either playing sports or online games. I aspire to learn as much as possible so I can pay that knowledge forward to other people I meet along the way."
     }
 }
 
