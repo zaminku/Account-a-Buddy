@@ -30,6 +30,7 @@
     text-transform: capitalize; 
     font-weight: 100;
     font-size: 32px;
+    font-family: 'Roboto';
 }
 
 .no-goals{
@@ -40,6 +41,12 @@
 
 .box-title {
     font-size: 1.4em;
+    font-family: 'Roboto';
+    /* font-weight: 100; */
+}
+
+.box-category {
+    font-family: 'Roboto';
 }
 
 #goals-table {
@@ -72,4 +79,8 @@
 
 .goal-list {
     padding: 20px 40px;
+}
+
+.goal, .category, .details, .chat, .rxn {
+    font-family: 'Roboto'
 }

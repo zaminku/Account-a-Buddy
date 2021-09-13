@@ -43,7 +43,7 @@
 
 .goal-form-radio-label {
   font-size: 18px;
-
+  font-family: 'Roboto';
 }
 
 .h1-edit {
@@ -84,6 +84,7 @@
     background-color: transparent;
     resize: none;
     outline: none;
+  font-family: 'Roboto';
 }
 
 .modal-description::placeholder {
@@ -143,6 +144,7 @@
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
+  font-family: 'Roboto';
 }
 
 hr {
