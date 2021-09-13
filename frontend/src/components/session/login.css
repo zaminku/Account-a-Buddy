@@ -83,6 +83,7 @@
 .submit-btn:hover {
     color:white;
     background-color: rgb(240, 103, 107);
+    cursor: pointer;
 }
 
 .error-div {
@@ -121,6 +122,10 @@
     text-decoration: none;
     color: black;
     font-weight: bold;
+}
+
+.signup-link:hover, .login-link:hover {
+    color: rgb(240, 103, 107);
 }
 
 .session-title {

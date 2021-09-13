@@ -78,6 +78,7 @@
 #edit-btn:hover {
     color:white;
     background-color: #7ADAB2;
+    cursor: pointer;
 }
 
 #buddy-btn {
@@ -104,6 +105,7 @@
 #buddy-btn:hover {
     color:white;
     background-color: #52A89D;  
+    cursor: pointer;
 }
 
 .goal-box > div {
