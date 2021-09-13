@@ -28,7 +28,10 @@ class ChatRoom extends React.Component{
             confirmClick: false,
             partner: "", 
             partnerGoal: "", 
+            // ==============================================
+            // Is the goalId supposed to be for the user or partner?
             goalId: this.props.match.params.goalId
+            // ==============================================
         }
 
         this.sendMessage = this.sendMessage.bind(this);
@@ -102,10 +105,13 @@ class ChatRoom extends React.Component{
                 partnerId = room.user1;
             }
 
+            // ===========================================================================
+            // figure out why the set state for partner and partner goal is buggy
             fetchUser(partnerId)
                 .then(user => this.setState({ partner: user.data, goalId: goalId }))
             fetchGoal(partnerGoalId)
                 .then(goal => this.setState({ partnerGoal: goal.data }))
+            // ===========================================================================
         }
 
         
