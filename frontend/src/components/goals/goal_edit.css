@@ -162,10 +162,3 @@ hr {
   align-items: center;
   flex-direction: column;
 }
-
-.title-hr {
-  height: 10px;
-  border-width: 2px;
-  color: black;
-  background-color: black;
-}

@@ -149,7 +149,7 @@ class GoalEdit extends React.Component {
                             placeholder="Title"
                         />
                         <br></br>
-                        <hr className="title-hr"></hr>
+                        <hr></hr>
                     </div>
                     <div>
                         <div className="modal-habit-buttons">
