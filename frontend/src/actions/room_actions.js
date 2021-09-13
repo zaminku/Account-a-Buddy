@@ -43,9 +43,14 @@ const removeRoom = () => ({
 export const clearRoom = () => dispatch => {
     dispatch(removeRoom())
 }
-export const deleteRoom = roomId => dispatch => (
-    RoomApiUtil.deleteRoom(roomId)
-        .then(res => {
-            dispatch(removeRoom())
-        })
-)
+export const deleteRoom = roomId => dispatch => {
+    console.log(roomId);
+    return (
+        RoomApiUtil.deleteRoom(roomId)
+            .then(res => {
+                dispatch(removeRoom())
+            })
+    );
+}
+// FIGURE OUT WHY THE WRONG ROOM IS GETTING DELETED!!!
+// Put console logs on the room ID and check that it's the right one.

@@ -20,11 +20,13 @@ router.post("/", (req, res) => {
         })
 })
 
+// ====================================================
 router.delete('/:roomId', (req, res) => {
-    Room.findOneAndDelete(req.params.roomId)
+    console.log("CHECK ME!!!", req.params.roomId);
+    Room.deleteOne({ _id: req.params.roomId })
         .then(res => console.log(res))
-    // res.json(req.params.roomId)
 })
+// ====================================================
 
 router.get("/:goalId", (req, res) => {
     const defaultRoom = {
