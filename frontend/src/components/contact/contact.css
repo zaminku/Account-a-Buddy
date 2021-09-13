@@ -1,7 +1,3 @@
-/* ========================================== */
-/* =============== NEW CSS ================ */
-/* ========================================== */
-
 /* HEADER: Meet the Team */
 .contact-text {
     text-align: center;
@@ -107,42 +103,3 @@
         transform 0.3s ease-in, 
         opacity 0.3s ease-in;
 }
-
-/* ========================================== */
-/* =============== PREV CSS ================ */
-/* ========================================== */
-
-/* .team{
-    display: flex;
-}
-
-.github{
-    width: 4vw;
-    height: 6vh;
-}
-
-.linkedin{
-    width:4vw;
-    height: 8vh;
-}
-
-.contact-text{
-    text-align: center;
-    font-family: 'Martel', serif;
-    font-size: 10vh;
-    margin-top: 3vh;
-    color: #698ea2;
-
-}
-
-.team>li{
-    text-align: center;
-    border: 3px solid black;
-    padding: 2vw;
-    font-family: 'Karla', sans-serif;
-    font-size: large;
-}
-
-.Zamin > img, .Sam > img, .Jenny > img, .Ben > img {
-    border-radius: 15px;
-} */

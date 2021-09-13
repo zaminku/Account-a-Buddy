@@ -22,7 +22,7 @@ class GoalList extends React.Component {
         if (this.props.goals.length === 0) {
         return (
             <div>
-            <div className="no-goals">No goals have been written yet.</div>
+            <div className="no-goals">Create a goal by clicking the button in the bottom right corner.</div>
             </div>)
         } else {
         return (
@@ -51,8 +51,6 @@ class GoalList extends React.Component {
                 </div>
 
                 <h1 className="goal-header">Welcome {this.props.currentUser.username}</h1>
-
-
 
                 <div>
                     <div id="goals-table" className="goal-box">

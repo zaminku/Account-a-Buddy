@@ -1,5 +1,5 @@
 import axios from 'axios'
 
-export const fetchUser = userId => {
-    return axios.get(`/api/users/user/${userId}`)
-}
+export const fetchUser = userId => (
+    axios.get(`/api/users/user/${userId}`)
+)

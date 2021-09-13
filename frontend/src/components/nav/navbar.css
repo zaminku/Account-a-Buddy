@@ -1,33 +1,95 @@
 @import url('//fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 .navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     font-size: 2vh;
-    padding: 3vw;
-    padding-top: 0px;
+    height: 50px;
     text-transform: capitalize;
-    background-color: rgba(255, 255, 255,0.5);
 }
 
-/* Link tag === a tag */
-.navbar-right a, .navbar-right {
-    padding-right: 3vw;
+.navbar > div, .navbar > #logo {
+    display: flex;
     align-items: center;
-    /* padding-bottom: 10px; */
+    padding-top: 25px;
 }
 
-.navbar a{
+.navbar-right {
+    padding-right: 4vw;
+    align-items: center;
+    font-weight: 500;
+}
+
+.navbar-right > a:first-child {
+    padding-right: 1vw;
+}
+
+#goals-link {
+    padding-right: 2vw;
+}
+
+.navbar a {
     text-decoration: none;
     font-family: 'Karla', sans-serif;
     color: black;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .navbar a:hover{
     text-decoration: underline #52A89D;
-    text-decoration-thickness: 5px;
-    color: black;
+    text-decoration-thickness: 4px;
 }
 
 .session-nav {
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0,0,.2,1);
+    display: inline-block;
+    --text-opacity: 1;
+    color: black;
+    font-size: 1rem;
+    --border-opacity: 1;
+    border-width: 2px;
+    padding: .5rem 1.5rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    background-color: white;
+    border-style: solid;
+    border-color: #52A89D;
+    color: #52A89D;
+}
+
+.session-nav:hover {
+    color:white;
+    background-color: #52A89D;
+    cursor: pointer;
+}
+
+#logo{
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Karla', sans-serif;
+    font-weight: 800;
+    text-transform: capitalize;
+    padding-left: 4vw;
+}
+
+#logo:hover{
+    color: #52A89D;
+}
+
+.navbar-logo{
+    width: 50px;
+    height: 50px;
+}
+
+.logout-btn {
     transition-property: all;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(0,0,.2,1);
@@ -41,66 +103,6 @@
     padding: .5rem 1.5rem;
     border-radius: 9999px;
     flex-shrink: 0;
-    background-color: white;
-    border-style: solid;
-    border-color: #52A89D;
-    color: #52A89D;
-}
-
-.session-nav:hover {
-    color:white;
-    background-color: #52A89D;
-}
-
-.navbar-logo {
-    margin: 7px;
-}
-
-
-
-#logo{
-    font-size: 1.2em;
-    text-decoration: none;
-    color: black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* font-family: "Dancing Script"; */
-    font-family: 'Karla', sans-serif;
-    font-weight: 800;
-    text-transform: capitalize;
-}
-
-#logo:hover{
-    color: #52A89D;
-}
-
-.navbar-logo{
-    width: 50px;
-    height: 50px;
-}
-
-.logout-btn {
-    /* border-radius: 15px;
-    padding: 5px 10px;
-    margin-top: 10px;
-    font-size: 1vw;
-    background-color: rgb(240, 103, 107);
-    border-color: rgb(240, 103, 107); */
-
-    transition-property: all;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(0,0,.2,1);
-    display: inline-block;
-    --text-opacity: 1;
-    color: black;
-    font-size: 1rem;
-    --border-opacity: 1;
-    border-width: 2px;
-    font-weight: 500;
-    padding: .25rem 0.75rem;
-    border-radius: 9999px;
-    flex-shrink: 0;
     border-color: rgb(237, 236, 237);
     background-color: white;
     border-style: solid;
@@ -111,8 +113,5 @@
 .logout-btn:hover {
     color:white;
     background-color: rgb(240, 103, 107);
-}
-
-.f-dec, .c-dec {
-    font-weight: bold;
+    cursor: pointer;
 }

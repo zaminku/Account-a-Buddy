@@ -9,8 +9,6 @@
     font-size: 40px;
     background-color: #52A89D;
     color: white;
-
-    /* padding-bottom: 5px */
 }
 
 .goal-btn:hover {
@@ -31,6 +29,7 @@
     margin-bottom: 5vh;
     text-transform: capitalize; 
     font-weight: 100;
+    font-size: 32px;
 }
 
 .no-goals{
@@ -40,12 +39,7 @@
 }
 
 .box-title {
-    /* font-weight: bold; */
     font-size: 1.4em;
-}
-
-.box-category {
-
 }
 
 #goals-table {

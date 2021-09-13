@@ -69,45 +69,45 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="container">
-                    <div className="inner-box" id="card">
-                        <div className="card-back">
-                            <h1 className="session-title">Sign Up</h1>
-                            <form onSubmit={this.handleSubmit}>
-                                <div className="session-inputs">
-                                    <input type="text"
-                                        className="input-box"
-                                        value={this.state.email}
-                                        onChange={this.update('email')}
-                                        placeholder="Email"
-                                    />
-                                    <input type="text"
-                                        className="input-box"
-                                        value={this.state.username}
-                                        onChange={this.update('username')}
-                                        placeholder="Username"
-                                    />
-                                    <input type="password"
-                                        className="input-box"
-                                        value={this.state.password}
-                                        onChange={this.update('password')}
-                                        placeholder="Password"
-                                    />
-                                    <input type="password"
-                                        className="input-box"
-                                        value={this.state.password2}
-                                        onChange={this.update('password2')}
-                                        placeholder="Confirm Password"
-                                    />
-                                    {this.renderErrors()} 
-                                    
-                                    <div className="session-buttons">
-                                        <input className="submit-btn" type="submit" value="Submit" /> 
-                                    </div>
-                                    {this.otherForm()}
+                <div className="inner-box" id="card">
+                    <div className="card-back">
+                        <h1 className="session-title">Sign Up</h1>
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="session-inputs">
+                                <input type="text"
+                                    className="input-box"
+                                    value={this.state.email}
+                                    onChange={this.update('email')}
+                                    placeholder="Email"
+                                />
+                                <input type="text"
+                                    className="input-box"
+                                    value={this.state.username}
+                                    onChange={this.update('username')}
+                                    placeholder="Username"
+                                />
+                                <input type="password"
+                                    className="input-box"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    placeholder="Password"
+                                />
+                                <input type="password"
+                                    className="input-box"
+                                    value={this.state.password2}
+                                    onChange={this.update('password2')}
+                                    placeholder="Confirm Password"
+                                />
+                                {this.renderErrors()} 
+                                
+                                <div className="session-buttons">
+                                    <input className="submit-btn" type="submit" value="Submit" /> 
                                 </div>
-                            </form>
-                        </div>
+                                {this.otherForm()}
+                            </div>
+                        </form>
                     </div>
+                </div>
             </div>
         );
     }
