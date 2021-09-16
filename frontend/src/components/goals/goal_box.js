@@ -160,7 +160,7 @@ class GoalBox extends React.Component {
       <div className="goal-box">
         <div className="box-title">{goal.title}</div>
         <div className="box-category">{goal.category}</div>
-        <button id="edit-btn" onClick={() => openModal('goal-edit', this.props.id)}>Show Details</button>        
+        <button title="edit" id="edit-btn" onClick={() => openModal('goal-edit', this.props.id)}>Show Details</button>        
         {goal.available ? 
           <button onClick={this.findBuddy} id="buddy-btn" >Find a buddy</button> : 
           <Link to={`/chat/${goal._id}`} ><button id="buddy-btn">Chat</button></Link>}
