@@ -1,15 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./chat_room.css"
-import { fetchUser } from '../../util/user_api_util'
-import { fetchGoal, updateGoal } from '../../util/goal_api_util';
+import { updateGoal } from '../../util/goal_api_util';
 
-// TEST CODE ===============================================
-// import socketIOClient from "socket.io-client"
-// const socket = socketIOClient("ws://account-a-buddies-app.herokuapp.com:14827/socket.io/?EIO=4&transport=websocket")
 const io = require('socket.io-client');
 const socket = io("/");
-// =========================================================
 
 class ChatRoom extends React.Component{
 
@@ -26,12 +21,7 @@ class ChatRoom extends React.Component{
             info: false,
             settings: false, 
             confirmClick: false,
-            partner: "", 
-            partnerGoal: "", 
-            // ==============================================
-            // Is the goalId supposed to be for the user or partner?
             goalId: this.props.match.params.goalId
-            // ==============================================
         }
 
         this.sendMessage = this.sendMessage.bind(this);
@@ -91,30 +81,6 @@ class ChatRoom extends React.Component{
                 this.setState({ convoLength: room.conversation.length });
             }
         }
-
-        const { goalId } = this.props.match.params;
-        if((room.goal1 && !this.state.partnerGoal) || 
-        goalId !== this.state.goalId) {
-            let partnerGoalId = "";
-            let partnerId = "";
-            if(room.goal1 === goalId) {
-                partnerGoalId = room.goal2;
-                partnerId = room.user2;
-            } else {
-                partnerGoalId = room.goal1;
-                partnerId = room.user1;
-            }
-
-            // ===========================================================================
-            // figure out why the set state for partner and partner goal is buggy
-            fetchUser(partnerId)
-                .then(user => this.setState({ partner: user.data, goalId: goalId }))
-            fetchGoal(partnerGoalId)
-                .then(goal => this.setState({ partnerGoal: goal.data }))
-            // ===========================================================================
-        }
-
-        
     }
 
     componentWillUnmount() {
@@ -130,11 +96,12 @@ class ChatRoom extends React.Component{
                     if(goal.available === false) {
                         return (
                             <Link 
+                                key={index}
                                 to={`/chat/${goal._id}`} 
                                 onClick={() => fetchRoom(goal._id)} 
                                 className={goal._id === this.props.room.goal1 || goal._id === this.props.room.goal2 ? "chosen" : ""} 
                             >
-                                    {goal.title}
+                                {goal.title}
                             </Link>
                         );
                     }
@@ -171,15 +138,14 @@ class ChatRoom extends React.Component{
     }
 
     showInfo() {
-        const { goals, room } = this.props;
+        const { goals, room, partner, partnerGoal } = this.props;
         const { goalId } = this.props.match.params;
-        const goal = goals[goalId];
-        const { partner, partnerGoal } = this.state;
+        const userGoal = goals[goalId];
 
         return (
             <ul className="info" >
                 <li key="1" >Chat began: {this.convertDate(room.createdAt)}</li>
-                <li key="2" >You  |  {goal.title}  |  {this.convertDate(goal.createdAt)}</li>
+                <li key="2" >You  |  {userGoal.title}  |  {this.convertDate(userGoal.createdAt)}</li>
                 <li key="3" >{partner.username}  |  {partnerGoal.title}  |  {this.convertDate(partnerGoal.createdAt)}</li>
             </ul>
         );
@@ -199,7 +165,7 @@ class ChatRoom extends React.Component{
                     <button onClick={() => {
                         this.props.history.push("/goals")
                         this.setAvailableToTrue(this.props.goals[this.props.match.params.goalId])
-                        this.setAvailableToTrue(this.state.partnerGoal)
+                        this.setAvailableToTrue(this.props.partnerGoal)
                         this.props.deleteRoom(this.props.room._id)
                     }} >Yes</button>
                     
@@ -214,7 +180,7 @@ class ChatRoom extends React.Component{
     showSettings() {
         return (
             <div className="settings">
-                <div>End partnership with {this.state.partner.username}?</div>
+                <div>End partnership with {this.props.partner.username}?</div>
                 <div>
                     <button onClick={() => this.openModal("confirmClick")} >Yes</button>
                     <button onClick={() => this.openModal("settings")} >No</button>

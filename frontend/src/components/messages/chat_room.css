@@ -65,7 +65,7 @@
 .chat-messages {
     display: flex;
     flex-direction: column;
-    height: 65vh;
+    height: 62vh;
     width: 100%;
     padding: 10px 20px 0px 0px;
     overflow-y: scroll;
@@ -128,8 +128,12 @@
     width: 43vw;
     border: none;
     margin: 0px 0px 0px 0.8vw;
-    padding-top: 5px;
+    padding-top: 8px;
     font-size: 18px;
+}
+
+#chat-form input::placeholder {
+    font-size: 16px;
 }
 
 #chat-form input:focus {

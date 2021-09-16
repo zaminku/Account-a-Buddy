@@ -10,7 +10,7 @@ class GoalList extends React.Component {
         this.showGoal = this.showGoal.bind(this);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchUserGoals(this.props.currentUser.id);
     }
 
