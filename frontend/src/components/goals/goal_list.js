@@ -46,7 +46,7 @@ class GoalList extends React.Component {
             <div>
                 <div>
                     <Link to="/goals/new">
-                        <button className="goal-btn fas fa-edit"></button>
+                        <button className="goal-btn fas fa-edit" title="create goal"></button>
                     </Link>
                 </div>
 
