@@ -74,7 +74,6 @@ class ContactPage extends React.Component {
                 `show ${dev.name.split(' ')[0]}` : 
                 `hide ${dev.name.split(' ')[0]}`
             } >
-                <label>About Me</label>
                 <p>{dev.description}</p>
             </div>
         );
@@ -87,7 +86,7 @@ class ContactPage extends React.Component {
     showDev(dev) {
         return (
             <li>
-                <h3>{dev.name}</h3>
+                <h3 id="name-size">{dev.name}</h3>
                 <img src={dev.img.src} alt={dev.img.alt} 
                     onMouseOver={() => this.setModal(true, dev.name)} 
                     onMouseOut={() => this.setModal(false, dev.name)} 

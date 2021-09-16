@@ -1,20 +1,22 @@
-@import url('//fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Martel&display=swap');
-
 .about-page {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Roboto', serif;
 }
 
 .about-page h2 {
-    font-family: 'Martel', sans-serif;
+    font-family: 'Roboto', serif;    
     font-weight: bold;
-    color: #698ea2;
+    color: #52A89D;
+    padding-bottom: 10px;
+    font-size: 30px;
 }
 
 .about-page p {
-    font-family: 'Karla', serif;
+    font-family: 'Roboto', serif;
     color: #152935;
+    padding: 5px;
 }
 
 img {
@@ -38,7 +40,7 @@ img {
     background-color: white;
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 0px 0px 50px 1px #698ea2;
+    box-shadow: 0px 0px 30px 1px #bdd8d4;
 }
 
 .about-lang {
@@ -46,7 +48,7 @@ img {
     flex-direction: column;
     align-items: center;
     padding: 0px 400px 0px 400px;
-    margin: 85px 0px 0px 0px;
+    margin: 50px 0px 0px 0px;
     position: static;
     z-index: 1;
 }
@@ -55,7 +57,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 85px 0px 100px 0px;
+    margin: 50px 0px 100px 0px;
     position: static;
     z-index: 1;
 }
@@ -70,8 +72,6 @@ img {
     flex-direction: column;
     margin: 0px 20px 20px 20px;
 }
-
-
 
 .custom-shape-divider-bottom-1629435411 {
     position: sticky;

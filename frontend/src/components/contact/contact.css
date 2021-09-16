@@ -1,10 +1,20 @@
 /* HEADER: Meet the Team */
+.contact-page {
+    font-family: 'Roboto', serif;
+}
+
 .contact-text {
     text-align: center;
-    font-family: 'Martel', serif;
+    font-family: 'Roboto', serif;
     font-size: 7vh;
     margin-top: 3vh;
-    color: #698ea2;
+    padding-top: 15px;
+    color: #52A89D;
+}
+
+#name-size {
+    font-size: 20px;
+    font-weight: 400;
 }
 
 /* PHOTOS: 2x2 grid */
@@ -13,6 +23,8 @@
     flex-direction: column;
     overflow: hidden;
     align-items: center;
+    width: auto;
+    height: 620px;
 }
 
 .team .top, .team .bottom {
@@ -25,6 +37,7 @@
     align-items: center;
 }
 
+
 /* PHOTOS: grid panel styling */
 .team li > img {
     height: 200px;
@@ -36,7 +49,7 @@
 }
 
 .team li > img:hover {
-    box-shadow: 0px 0px 20px 0.5px rgb(105, 105, 105);
+    box-shadow: 0px 0px 30px 1px #bdd8d4;
     height: 205px;
     width: 205px;
     opacity: 1;
@@ -44,10 +57,11 @@
 
 /* NAMES */
 .team h3 {
-    color: #698ea2;
-    font-family: 'Karla', sans-serif;
+    color: black;
+    font-family: 'Roboto', sans-serif;
     font-size: 26px;
     margin-top: 15px;
+    margin-bottom: 7px;
 }
 
 /* LINKS */
@@ -65,6 +79,7 @@
 /* DESCRIPTION: modal */
 .team li {
     position: relative;
+    margin: 10px 0px 15px 0;
 }
 
 .team .Zamin, .team .Sam, 
@@ -73,8 +88,8 @@
     background-color: white;
     border-radius: 15px;
     padding: 15px;
-    box-shadow: 0px 0px 20px 0.5px rgb(148, 148, 148);
-    height: fit-content;
+    box-shadow: 0px 0px 30px 1px #bdd8d4;
+    height: 200px;
     width: 400px;
 }
 
@@ -93,7 +108,6 @@
     transition: 
         transform 0.3s ease-out, 
         opacity 0.3s ease-out;
-    
 }
 
 .team .hide {
