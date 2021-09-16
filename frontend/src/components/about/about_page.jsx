@@ -9,19 +9,7 @@ function AboutPage() {
                 <div>
                     <h2>Account-a-Buddy</h2>
                     <div>
-                        <p>Account-a-Buddy is an application for those
-                            with aspirations of overcoming challenges in
-                            their life. When you sign up, you can create
-                            goals for breaking a bad habit or forming a 
-                            good one. You can find an accountability
-                            partner on the app based on the type of goal you 
-                            have created and we will find a like-minded individual 
-                            to keep you accountable. The match allows you to 
-                            chat online with your partner, but the relationship 
-                            is a two-way street. You will be eachother's 
-                            accountability partners, and together, you may 
-                            finally achieve the thing that has been 
-                            itching at your heart and soul for so long.
+                        <p>Account-a-Buddy is a web application for those with aspirations, but need an extra push! You can set goals for breaking bad habits or forming good ones. To keep you focused, you’ll be randomly matched with an accountability partner who has similar goals. As anonymous users, you’ll be able to express yourselves authentically without fear of judgment. Together, you may finally achieve the goals that you’ve wanted to for so long.
                         </p>
                     </div>
                 </div>

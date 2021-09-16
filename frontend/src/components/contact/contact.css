@@ -24,7 +24,7 @@
     overflow: hidden;
     align-items: center;
     width: auto;
-    height: 640px;
+    height: 620px;
 }
 
 .team .top, .team .bottom {
@@ -36,6 +36,7 @@
     flex-direction: column;
     align-items: center;
 }
+
 
 /* PHOTOS: grid panel styling */
 .team li > img {
@@ -107,7 +108,6 @@
     transition: 
         transform 0.3s ease-out, 
         opacity 0.3s ease-out;
-    
 }
 
 .team .hide {
