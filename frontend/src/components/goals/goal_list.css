@@ -27,9 +27,10 @@
     margin-top: 4vh;
     margin-bottom: 5vh;
     text-transform: capitalize; 
-    font-weight: 100;
+    font-weight: 400;
     font-size: 32px;
     font-family: 'Roboto';
+    color: rgb(240, 103, 107);
 }
 
 .no-goals{
@@ -39,7 +40,7 @@
 }
 
 .box-title {
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-family: 'Roboto';
     /* font-weight: 100; */
 }
@@ -55,15 +56,15 @@
     text-align: center;
     min-width: 100%;
     margin: 30px 0px 0px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     border: none;
     box-shadow: none;
 }
 
 #goals-table > div {
-    font-size: 25px;
+    font-size: 20px;
     color: #6C6A6A;
-    font-weight: 150;
+    font-weight: 300;
     text-align: center;
     padding: 0px;
     margin: 0px;
