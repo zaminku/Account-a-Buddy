@@ -5,7 +5,7 @@ export const createRoom = room => (
 )
 
 export const deleteRoom = roomId => (
-    axios.delete(`/api/rooms/${roomId}`)
+        axios.delete(`/api/rooms/${roomId}`)
 )
 
 export const fetchRoom = goalId => (

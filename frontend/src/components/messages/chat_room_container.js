@@ -7,7 +7,9 @@ const mSTP = (state) => {
     return({
         user: state.session.user,
         goals: state.goals,
-        room: state.room
+        room: state.room, 
+        partner: state.partner, 
+        partnerGoal: state.partnerGoal
     })
 }
 

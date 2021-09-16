@@ -1,4 +1,6 @@
 import * as RoomApiUtil from "../util/room_api_util"
+import { fetchPartnerGoal } from "./goal_actions"
+import { fetchPartner } from "./user_actions"
 
 export const RECEIVE_MESSAGE = "RECEIVE_MESSAGE"
 export const receiveMessage = message => ({
@@ -23,7 +25,16 @@ export const fetchRoom = goalId => dispatch => (
     RoomApiUtil.fetchRoom(goalId)
         .then(res => {
             let room = res.data
-            dispatch(receiveRoom(room))
+            dispatch(receiveRoom(room));
+
+            const { user1, user2, goal1, goal2 } = room;
+            if(goalId === goal1) {
+                fetchPartnerGoal(goal2, dispatch)
+                fetchPartner(user2, dispatch)
+            } else {
+                fetchPartnerGoal(goal1, dispatch)
+                fetchPartner(user1, dispatch)
+            }
         })
 )
 
@@ -48,9 +59,8 @@ export const deleteRoom = roomId => dispatch => {
     return (
         RoomApiUtil.deleteRoom(roomId)
             .then(res => {
+                console.log(res)
                 dispatch(removeRoom())
             })
     );
 }
-// FIGURE OUT WHY THE WRONG ROOM IS GETTING DELETED!!!
-// Put console logs on the room ID and check that it's the right one.
