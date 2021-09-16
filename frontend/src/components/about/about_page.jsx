@@ -9,7 +9,7 @@ function AboutPage() {
                 <div>
                     <h2>Account-a-Buddy</h2>
                     <div>
-                        <p>Account-a-Buddy is a web application for those with aspirations, but need an extra push! You can set goals for breaking bad habits or forming good ones. To keep you focused, you’ll be randomly matched with an accountability partner who has similar goals. As anonymous users, you’ll be able to express yourselves authentically without fear of judgment. Together, you may finally achieve the goals that you’ve wanted to for so long.
+                        <p>Account-a-Buddy is a web application for those with aspirations, but need an extra push! You can set goals for breaking bad habits or forming good ones. To keep you focused, you will be randomly matched with an accountability partner who has similar goals. As anonymous users, you all will be able to express yourselves authentically without fear of judgment. Together, you may finally achieve the goals that you have set for so long.
                         </p>
                     </div>
                 </div>
