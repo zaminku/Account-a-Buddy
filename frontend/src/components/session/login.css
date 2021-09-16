@@ -130,7 +130,9 @@
 
 .session-title {
     color: black;
-    font-family: 'Roboto', 'sans-serif'
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 
 .session-buttons {
@@ -147,7 +149,7 @@
 }
 
 .errors-list > li {
-    font-size: 10px;
+    font-size: 13px;
     color: #f15459e5;
 }
 
