@@ -1,27 +1,21 @@
 # Project Name
 - Account-a-Buddy
+- https://account-a-buddies.herokuapp.com
  
-# A general idea of what you are trying to build, along with the core functionalities/features of your application.
-
-- Users will be completely anonymous.
-- Live Chat with your accountability partner.
-- Create a list of goals and tasks to achieve/complete.
-- Automatically match with a partner based on the user's goals (one time goal, habit breaking, or habit forming) and desired duration of partnership.
-
-## BONUS
-- Set the duration of your goal as well as the time left with your accountability partner with the option to extend the partnership.
-- Gamify the completion of goals.
-- Streaks – (ex. 14day streak of accomplishing your goal you get a badge).
-- Incentive to pay for extending partnerships with reward points.
-- Receive reward for user engagement (daily use, etc.)
-- Map / filter for matching partners based on location for possible meetups.
-- Journal and make posts about your progress to your profile.
-- Other users can react with emojis but no comments.
-- Premium account.
+# Overview
+- This web application connects users with other users (accountability partner) to help them achieve their goals.
+- Users can keep motivated and accountable for achieving goals they set for themselves by being able to talk with an anonymous partner about their struggles and successes.
+- Being able to help a partner achieve their goal can also aid in keeping a user motivated to achieve their own goal.
  
-# Background & Overview
-- Match people with accountability partners to help them achieve their goals.
-- This application will help users keep motivated and accountable to achieve goals they set for themselves. No more lonely new years resolutions.
+# Core Functionalities / Features
+- Create an account and login.
+    - Users are anonymous and can only be identified by their username.
+- Create and edit goals to complete.
+    - Create sub-goals (milestones) for each goal to complete.
+- Keep a running total of how the user feels about their goal for that day.
+- For each goal, match with another user (accountability partner) who has a similar goal based on the goal-type (habit breaking or habit forming).
+    - Live chat with your accountability partner.
+    - End any existing accountability partnership at any time and match with another user. 
 
 ## MVP List
 - User Auth
@@ -29,11 +23,19 @@
 - Goals / Milestones CRUD
 - Daily Reaction Tracker
 - Random Partner Matcher
-<!-- - Rewards (bonus feature) -->
+
+## BONUS
+- Set the duration of a goal as well as the time left with an accountability partner with the option to extend the partnership.
+- Gamify the completion of goals.
+    - Streaks – (ex. 14day streak of accomplishing your goal you get a badge).
+    - Incentive to pay for extending partnerships with reward points.
+    - Receive reward for user engagement (daily use, etc.)
+- Map / filter for matching partners based on location for possible meetups.
+- Journal and make posts about goal progress to a user's profile.
  
 # Functionality
-- Users can create an account
-- Users create a goal
+- Users can create an account and login to their profile.
+- Users can create a goal. 
     - Type
         - Habit forming
         - Habit breaking
