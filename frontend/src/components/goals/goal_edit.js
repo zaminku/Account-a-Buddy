@@ -17,6 +17,8 @@ class GoalEdit extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderMilestones = this.renderMilestones.bind(this);
+        this.handleRemoveMilestone = this.handleRemoveMilestone.bind(this);
+        this.handleAddMilestone = this.handleAddMilestone.bind(this);
     }
 
     componentDidMount() {
@@ -56,24 +58,43 @@ class GoalEdit extends React.Component {
         this.setState({ milestones: newMilestones });
     }
 
+    handleRemoveMilestone(idx, event) {
+        event.preventDefault();
+        let newMilestones = this.state.milestones;
+        newMilestones.splice(idx, 1);
+        this.setState({ milestones: newMilestones })
+    }
+
+    handleAddMilestone() {
+        let newMilestones = this.state.milestones;
+        const defaultMilestone = {
+            milestone: "", 
+            milestoneCompleted: false
+        }
+        newMilestones.push(defaultMilestone);
+        this.setState({ milestones: newMilestones })
+    }
+
     renderMilestones() {
         return (
             <div className="modal-milestone-list">
                 {this.state.milestones.map((milestone, idx) => {
                     return (
-                        <label>
+                        <div>
                             <input 
                                 className="modal-milestone"
                                 type="checkbox"
-                                onChange = {event => this.updateMilestone(idx)}
+                                onClick = {event => this.updateMilestone(idx)}
                                 checked = {this.state.milestones[idx].milestoneCompleted}
                             />
                             <input
                                 type="text"
                                 value={milestone.milestone}
                                 onChange={event => this.updateMilestoneText(idx, event)}
+                                placeholder="add a milestone"
                             />
-                        </label>
+                            <button className="far fa-trash-alt" onClick={event => this.handleRemoveMilestone(idx, event)} />
+                        </div>
                     )
                 })}
             </div>
@@ -178,7 +199,11 @@ class GoalEdit extends React.Component {
                         <hr></hr>
                     </div>
                     <div>
-                        <div className="modal-tag">Milestones</div>
+                        <div className="modal-tag">
+                            Milestones
+                            <i className="far fa-plus-square" onClick={this.handleAddMilestone} />
+                        </div>
+                        
                         {this.renderMilestones()}
                     </div>
                     <button className="modal-edit-button" type="submit">Save</button>
