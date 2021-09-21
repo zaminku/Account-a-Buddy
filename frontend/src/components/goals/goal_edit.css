@@ -92,21 +92,47 @@
   font-weight: 100;
 }
 
+.fa-plus-square {
+  color: #7ADAB2;
+  width: 29px;
+  height: 29px;
+  padding-right: 0.5px;
+  transition: all 0.3s;
+  margin-left: 15px;
+}
+
+.fa-plus-square:hover {
+  background-color: #7ADAB2;
+  border-radius: 10%;
+  color: white;
+}
+
 .modal-milestone-list {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.modal-milestone-list>label{
+.modal-milestone-list>div{
   display: flex;
 }
 
-.modal-milestone-list > label > input {
+.modal-milestone-list > div > input {
   border: none;
   outline: none;
   font-size: 20px;
   font-family: 'Roboto';
+}
+
+.fa-trash-alt {
+  background-color: transparent;
+  border: none;
+  color: #7ADAB2;
+  transition: all 0.3s;
+}
+
+.fa-trash-alt:hover {
+  color: black;
 }
 
 .modal-milestone{
