@@ -91,6 +91,7 @@ class GoalEdit extends React.Component {
                                 type="text"
                                 value={milestone.milestone}
                                 onChange={event => this.updateMilestoneText(idx, event)}
+                                placeholder="add a milestone"
                             />
                             <button className="far fa-trash-alt" onClick={event => this.handleRemoveMilestone(idx, event)} />
                         </div>

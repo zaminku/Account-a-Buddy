@@ -124,6 +124,11 @@
   font-family: 'Roboto';
 }
 
+.modal-milestone-list > div > input::placeholder {
+  font-size: 20px;
+  font-weight: 100;
+}
+
 .fa-trash-alt {
   background-color: transparent;
   border: none;
