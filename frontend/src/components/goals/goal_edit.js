@@ -41,7 +41,6 @@ class GoalEdit extends React.Component {
     updateMilestone(idx) {
         let newMilestones = this.state.milestones;
 
-
         if (newMilestones[idx].milestoneCompleted) {
             newMilestones[idx].milestoneCompleted = false;
         } else {
@@ -51,10 +50,16 @@ class GoalEdit extends React.Component {
         this.setState({milestones: newMilestones})
     }
 
+    updateMilestoneText(idx, event) {
+        let newMilestones = this.state.milestones;
+        newMilestones[idx].milestone = event.currentTarget.value;
+        this.setState({ milestones: newMilestones });
+    }
+
     renderMilestones() {
         return (
-            <div className="modal-milstone-list">
-                {this.props.milestones.map((milestone, idx) => {
+            <div className="modal-milestone-list">
+                {this.state.milestones.map((milestone, idx) => {
                     return (
                         <label>
                             <input 
@@ -63,7 +68,11 @@ class GoalEdit extends React.Component {
                                 onChange = {event => this.updateMilestone(idx)}
                                 checked = {this.state.milestones[idx].milestoneCompleted}
                             />
-                            {milestone.milestone}
+                            <input
+                                type="text"
+                                value={milestone.milestone}
+                                onChange={event => this.updateMilestoneText(idx, event)}
+                            />
                         </label>
                     )
                 })}
