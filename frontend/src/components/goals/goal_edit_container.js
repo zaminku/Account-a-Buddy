@@ -4,8 +4,6 @@ import GoalEdit from "./goal_edit";
 import { fetchGoal, updateGoal, fetchUserGoals } from "../../actions/goal_actions"
 import { withRouter } from "react-router-dom";
 
-console.log(GoalEdit)
-
 const mSTP = (state, ownProps) => ({
     history: ownProps.history,
     userId: state.session.user.id,

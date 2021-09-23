@@ -22,9 +22,7 @@ router.post("/", (req, res) => {
 
 // ====================================================
 router.delete('/:roomId', (req, res) => {
-    console.log("CHECK ME!!!", req.params.roomId);
     Room.deleteOne({ _id: req.params.roomId })
-        .then(res => console.log(res))
 })
 // ====================================================
 

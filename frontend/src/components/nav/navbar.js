@@ -44,7 +44,7 @@ class NavBar extends React.Component {
                 </Link>
                 
                 <div className="f-dec">
-                    <Link to={'/about'}>Features</Link>
+                    <a onClick={()=> window.open("https://account-a-buddies.herokuapp.com/#/about")}>Features</a>
                 </div>
 
                 <div className="c-dec">

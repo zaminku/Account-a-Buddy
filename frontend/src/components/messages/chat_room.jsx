@@ -41,7 +41,6 @@ class ChatRoom extends React.Component{
             username: this.props.user.username, 
             text: "" 
         }})
-        console.log(`this socket id is ${socket.id}`);
     }
 
     update(e){
@@ -58,11 +57,9 @@ class ChatRoom extends React.Component{
         this.props.fetchRoom(this.state.goalId);
         
         socket.on("new user", username => {
-            console.log(`${username} was connected to the server`);
             this.setState({buddy: username});
         });
         socket.on("receive message", message => {
-            console.log(`A message by ${message.username} was received by the server: ${message.text}`);
             this.props.receiveMessage(message);
         })
     };

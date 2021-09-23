@@ -55,11 +55,9 @@ export const clearRoom = () => dispatch => {
     dispatch(removeRoom())
 }
 export const deleteRoom = roomId => dispatch => {
-    console.log(roomId);
     return (
         RoomApiUtil.deleteRoom(roomId)
             .then(res => {
-                console.log(res)
                 dispatch(removeRoom())
             })
     );
