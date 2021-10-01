@@ -28,7 +28,7 @@
 }
 
 .chat-index a {
-    color: #52A89D;
+    color: #f09491;
     background-color: #d7fffa;
     text-decoration: none;
     border-bottom: 1px solid rgb(212, 212, 212);
@@ -99,7 +99,7 @@
 }
 
 .chat-messages .you .message {
-    background-color: #52A89D;
+    background-color: #f09491;
     color: white;
 }
 
@@ -146,7 +146,7 @@
 }
 
 #chat-form .send {
-    background-color: #52A89D;
+    background-color: #f09491;
     border-radius: 5px;
     color: white;
     margin-top: 2px;
@@ -170,7 +170,7 @@
     height: 40%;
     top: 25%;
     left: 25%;
-    border: 5px solid rgb(240, 103, 107);
+    border: 5px solid #f09491;
     border-radius: 15px;
     background-color: white;
     margin: 0px;
@@ -195,8 +195,8 @@
 
 /* info modal */
 .info {
-    border-color: #52A89D;
-    color: #52A89D;
+    border-color: #f09491;
+    color: #f09491;
 }
 
 /* settings */
@@ -217,7 +217,7 @@
 }
 
 .settings button:hover, .confirmClick button:hover {
-    color: #52A89D;
+    color: #f09491;
     transform: scale(1.2);
 }
 
