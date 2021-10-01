@@ -50,7 +50,7 @@ class GoalList extends React.Component {
                     </Link>
                 </div>
 
-                <h1 className="goal-header">Welcome {this.props.currentUser.username}</h1>
+                {/* <h1 className="goal-header">Welcome {this.props.currentUser.username}</h1> */}
 
                 <div>
                     <div id="goals-table" className="goal-box">
