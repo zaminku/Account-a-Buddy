@@ -64,7 +64,7 @@ class LoginForm extends React.Component {
         return(
             <div>
                 <div className="account-info">Don't have an account?
-                    <Link className="signup-link" to={'/signup'}>  Signup</Link>
+                    <Link className="signup-link" to={'/signup'}>  Sign up</Link>
                 </div>
             </div>
         )
