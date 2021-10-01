@@ -1,12 +1,9 @@
-@import url('//fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-
 .navbar{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size: 2vh;
     height: 50px;
-    text-transform: capitalize;
 }
 
 .navbar > div, .navbar > #logo {
@@ -34,12 +31,12 @@
     font-family: 'Roboto', sans-serif;
     color: black;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .navbar a:hover{
-    text-decoration: underline #52A89D;
-    text-decoration-thickness: 4px;
+    text-decoration: none;
+    color: #DCC7AA;
 }
 
 .session-nav {
@@ -53,17 +50,17 @@
     --border-opacity: 1;
     border-width: 2px;
     padding: .5rem 1.5rem;
-    border-radius: 9999px;
+    border-radius: 10px;
     flex-shrink: 0;
     background-color: white;
     border-style: solid;
-    border-color: #52A89D;
-    color: #52A89D;
+    border-color: #f09491;
+    color: #f09491;
 }
 
 .session-nav:hover {
     color:white;
-    background-color: #52A89D;
+    background-color: #f09491;
     cursor: pointer;
 }
 
@@ -76,12 +73,11 @@
     align-items: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 800;
-    text-transform: capitalize;
     padding-left: 4vw;
 }
 
 #logo:hover{
-    color: #52A89D;
+    color: #f09491;
 }
 
 .navbar-logo{
@@ -102,17 +98,17 @@
     border-width: 2px;
     font-weight: 500;
     padding: .5rem 1.5rem;
-    border-radius: 9999px;
+    border-radius: 10px;
     flex-shrink: 0;
     border-color: rgb(237, 236, 237);
     background-color: white;
     border-style: solid;
-    border-color: rgb(240, 103, 107);
-    color: rgb(240, 103, 107);
+    border-color: #f09491;
+    color: #f09491;
 }
 
 .logout-btn:hover {
     color:white;
-    background-color: rgb(240, 103, 107);
+    background-color: #f09491;
     cursor: pointer;
 }

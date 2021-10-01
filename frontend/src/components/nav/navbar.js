@@ -20,14 +20,14 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div className="navbar-right">
-                    <Link to={'/goals'} id="goals-link" >Goals</Link>
+                    <Link to={'/goals'} id="goals-link">{this.props.currentUser.username}'s Goals</Link>
                     <button className="logout-btn" onClick={this.logoutUser}>Logout</button>
                 </div>
             );
         } else {
             return (
                 <div className="navbar-right">
-                    <Link to={'/signup'}><button className="session-nav">Signup</button></Link>
+                    <Link to={'/signup'}><button className="session-nav">Sign up</button></Link>
                     <Link to={'/login'}><button className="session-nav">Login</button></Link>
                 </div>
             );
@@ -40,15 +40,15 @@ class NavBar extends React.Component {
 
                 <Link to={'/'} id="logo"> 
                     <img className="navbar-logo" src="../handshake.png" alt="Github-logo" /> 
-                    <div className="navbar-name">Account-A-Buddy</div> 
+                    <div className="navbar-name">Account-a-Buddy</div> 
                 </Link>
                 
-                <div className="f-dec">
-                    <a onClick={()=> window.open("https://account-a-buddies.herokuapp.com/#/about")}>Features</a>
+                <div>
+                    <Link to={'/about'}>FEATURES</Link>
                 </div>
 
-                <div className="c-dec">
-                    <Link to={'/contact'}>Contact Us</Link>
+                <div>
+                    <Link to={'/contact'}>CONTACT US</Link>
                 </div>
 
                 <div className="nav-right-margin">
