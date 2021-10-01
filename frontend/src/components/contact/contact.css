@@ -13,7 +13,7 @@
 }
 
 #name-size {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 400;
 }
 
@@ -43,13 +43,13 @@
     height: 200px;
     width: 200px;
     margin: 0px 15px 0px 15px;
-    border-radius: 25px;
+    border-radius: 10px;
     transition: 0.3s;
     opacity: 0.95;
 }
 
 .team li > img:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: #f3e7d6 0px 5px 15px;
     height: 205px;
     width: 205px;
     opacity: 1;
@@ -59,9 +59,10 @@
 .team h3 {
     color: black;
     font-family: 'Roboto', sans-serif;
-    font-size: 26px;
     margin-top: 15px;
     margin-bottom: 7px;
+    color: #687A8F;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* LINKS */
@@ -86,11 +87,14 @@
 .team .Jenny, .team .Ben {
     position: absolute;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 15px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: #f3e7d6 0px 5px 15px;
     min-height: 100px;
     min-width: 350px;
+    font-size: 15px;
+    font-family: 'Cambria', 'Roboto', Georgia, Arial, Helvetica, sans-serif;
+    line-height: 1.2em;
 }
 
 .team .Zamin, .team .Jenny {
