@@ -77,8 +77,8 @@ textarea.goal-form-text-input {
     margin-top: 10px;
     font-size: 15px;
     background-color: white;
-    border-color: #7ADAB2;
-    color: #7ADAB2;
+    border-color: #f09491;
+    color: #f09491;
 
     display: inline-block;
     --text-opacity: 1;
@@ -94,7 +94,7 @@ textarea.goal-form-text-input {
 
 .goal-form-submit:hover{
     color:white;
-    background-color: #7ADAB2;
+    background-color: #f09491;
 }
 
 form.goal-form-box {
@@ -102,16 +102,16 @@ form.goal-form-box {
 }
 
 .plus-sign {
-    color:#7ADAB2;
+    color:#f09491;
     background-color: white;
-    border-color: #7ADAB2;
+    border-color: #f09491;
     border-style: solid;
 }
 
 .plus-sign:hover {
-    background-color: #7ADAB2;
+    background-color: #f09491;
     color: white;
-    border: 1px solid #7ADAB2;
+    border: 1px solid #f09491;
 }
 
 .milestone-input {
