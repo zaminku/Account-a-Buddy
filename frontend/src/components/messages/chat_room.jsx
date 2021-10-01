@@ -201,6 +201,7 @@ class ChatRoom extends React.Component{
                 <div className="chat-index" >
                     {this.showGoalItems()}
                 </div>
+
                 <div className="chat-container">
                     <i className="fas fa-info-circle" onClick={() => this.openModal("info")} ></i>
                     {this.state.info ? this.showInfo() : null}
@@ -225,6 +226,7 @@ class ChatRoom extends React.Component{
                         </form>
                     </div>
                 </div>
+
             </div>      
         )
     }
