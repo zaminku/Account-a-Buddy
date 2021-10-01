@@ -46,25 +46,25 @@
     border-width: 2px;
     font-weight: 500;
     padding: .5rem 1.5rem;
-    border-radius: 9999px;
+    border-radius: 10px;
     flex-shrink: 0;
     background-color: white;
     border-style: solid;
-    border-color: rgb(240, 103, 107);
-    color: rgb(240, 103, 107);
+    border-color: #f09491;
+    color: #f09491;
 }
 
 
 .getstarted-btn:hover {
     color:white;
-    background-color: rgb(240, 103, 107);
+    background-color: #f09491;
 }
 
 .title {
     font-size: 5vw;
     margin: 0 0 8px;
     font-weight: bold;
-    color: rgb(240, 103, 107);
+    color: #f09491;
 }
 
 .bubble {
@@ -73,7 +73,8 @@
     transition-timing-function: cubic-bezier(0,0,.2,1);
     position: relative;
     font-family: sans-serif;
-    background: rgb(113, 178, 248);
+    background: #687A8F
+;
     border-radius: 50px;
     padding: 3vw;
     text-align: center;
@@ -90,9 +91,11 @@
     width: 3vw;
     height: 0px;
     position: absolute;
-    border-right: 60px solid rgb(113, 178, 248);
+    border-right: 60px solid #687A8F
+;
     border-left: 18px solid transparent;
-    border-top: 18px solid rgb(113, 178, 248);
+    border-top: 18px solid #687A8F
+;
     border-bottom: 40px solid transparent;
     right: 40px;
     bottom: -40px;
