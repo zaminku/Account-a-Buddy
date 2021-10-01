@@ -24,7 +24,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: center;
 }
 
 .pin-edit-form-modal::-webkit-scrollbar {
@@ -40,7 +40,7 @@
 }
 
 .goal-form-radio-label {
-  font-size: 18px;
+  font-size: 15px;
   font-family: 'Roboto';
 }
 
@@ -54,61 +54,68 @@
     width: 100%;
     background: transparent;
     border: none;
-    height: 50px;
-    font-size: 25px;
+    height: 20px;
+    font-size: 20px;
     box-sizing: border-box;
     outline: none;
     color: black; 
     text-align: center;
-    cursor: pointer;
-    text-transform: capitalize;
+    cursor: text;
+    color: #687A8F;
+    text-transform: uppercase;
+    padding: 10px;
   }
 
 .modal-title::placeholder {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 100;
 }
 
 .modal-description{
-  width: 40vw;
-  min-height: 30px;
+  width: 50vw;
+  /* min-height: 16px; */
   resize: none;
   box-sizing: border-box;
   border: none;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
   font-family: 'Roboto';
   border-width: 0;
   border: none;
   background-color: transparent;
   outline: none;
+  font-style: italic;
+  margin-top: 2px;
 }
 
 .modal-description::placeholder {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 100;
 }
 
-.habit-container {
+#habit-container {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  text-align: left;
+  padding: 2px;
+  font-size: 15px;
 }
 
 .fa-plus-square {
-  color: #f09491;
+  color: #be9e71;
   width: 29px;
   height: 29px;
   padding-right: 0.5px;
   transition: all 0.3s;
-  margin-left: 15px;
+  margin-left: 20px;
+  cursor: pointer;
 }
 
 .fa-plus-square:hover {
-  background-color: #f09491;
-  border-radius: 10%;
-  color: white;
+  color: #DCC7AA;
+}
+
+.modal-milestone {
+  cursor: pointer;
 }
 
 .modal-milestone-list {
@@ -124,28 +131,30 @@
 .modal-milestone-list > div > input {
   border: none;
   outline: none;
-  font-size: 20px;
+  font-size: 15px;
   font-family: 'Roboto';
 }
 
 .modal-milestone-list > div > input::placeholder {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 100;
+}
+
+.milestone-input-box {
+  margin-left: 1px;
+  min-width: 90%;
 }
 
 .fa-trash-alt {
   background-color: transparent;
   border: none;
-  color: #f09491;
+  color: #be9e71;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 .fa-trash-alt:hover {
-  color: black;
-}
-
-.modal-milestone{
-  margin: 10px;
+  color: #DCC7AA;
 }
 
 .modal-habit-buttons>div{
@@ -154,7 +163,7 @@
 
 .modal-edit-button{
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin: 25px;
   padding-left: 10px;
   padding-right: 10px;
   transition-property: all;
@@ -168,7 +177,7 @@
     border-width: 2px;
     font-weight: 500;
     padding: .5rem 1.5rem;
-    border-radius: 9999px;
+    border-radius: 10px;
     flex-shrink: 0;
     border-color: rgb(237, 236, 237);
     background-color: white;
@@ -183,25 +192,10 @@
 }
 
 .modal-tag{
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin: 30px 0px 0px 0px;
   text-align: center;
   font-family: 'Roboto';
-}
-
-hr {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* margin: auto; */
-  text-align: center;
-}
-
-.hr-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  color: #687A8F;
+  cursor: default;
 }

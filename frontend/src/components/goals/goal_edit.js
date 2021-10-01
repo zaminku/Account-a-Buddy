@@ -92,6 +92,7 @@ class GoalEdit extends React.Component {
                                 value={milestone.milestone}
                                 onChange={event => this.updateMilestoneText(idx, event)}
                                 placeholder="add a milestone"
+                                className="milestone-input-box"
                             />
                             <button className="far fa-trash-alt" onClick={event => this.handleRemoveMilestone(idx, event)} />
                         </div>
@@ -180,15 +181,6 @@ class GoalEdit extends React.Component {
                         />
                     </div>
 
-                    <div className="habit-container">
-                        <div>
-                            {this.renderBreaking()}
-                        </div>
-                        <div>
-                            {this.renderMaking()}
-                        </div>
-                    </div>
-
                     <div className="hr-div">
                         <div>
                             <textarea
@@ -200,9 +192,18 @@ class GoalEdit extends React.Component {
                         </div>
                     </div>
 
+                    <ul id="habit-container">
+                        <li>
+                            {this.renderBreaking()}
+                        </li>
+                        <li>
+                            {this.renderMaking()}
+                        </li>
+                    </ul>
+
                     <div>
                         <div className="modal-tag">
-                            Milestones
+                            MILESTONES
                             <i className="far fa-plus-square" onClick={this.handleAddMilestone} />
                         </div>
                         
