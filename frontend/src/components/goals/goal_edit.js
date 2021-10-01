@@ -178,15 +178,17 @@ class GoalEdit extends React.Component {
                             onChange={this.update('title')}
                             placeholder="Title"
                         />
-                        <br></br>
-                        <hr></hr>
                     </div>
-                    <div>
-                        <div className="modal-habit-buttons">
+
+                    <div className="habit-container">
+                        <div>
                             {this.renderBreaking()}
+                        </div>
+                        <div>
                             {this.renderMaking()}
                         </div>
                     </div>
+
                     <div className="hr-div">
                         <div>
                             <textarea
@@ -196,8 +198,8 @@ class GoalEdit extends React.Component {
                                 onChange={this.update('description')}
                             />
                         </div>
-                        <hr></hr>
                     </div>
+
                     <div>
                         <div className="modal-tag">
                             Milestones
