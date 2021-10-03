@@ -9,10 +9,11 @@
     font-size: 25px;
     background-color: #f09491;
     color: white;
+    cursor: pointer;
 }
 
 .goal-btn:hover {
-    background-color: #f09491;
+    background-color: #DCC7AA;
 }
 
 .all-goals {
@@ -41,7 +42,7 @@
 
 .box-title {
     font-family: 'Roboto';
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .box-category {
