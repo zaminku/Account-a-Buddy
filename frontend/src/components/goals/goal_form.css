@@ -16,9 +16,13 @@
 .goal-form-box {
     margin-top: 7vh;
     border-radius: 10px;
-    box-shadow: 0 0 100px 5px rgba(0, 0, 0, 0.21);
+    box-shadow: #f3e7d6 0px 0px 16px;
     padding-right: 0px;
     padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .goal-form > form {
@@ -28,10 +32,10 @@
 }
 
 .goal-form-title {
-    font-size: 50px;
-    font-weight: bold;
+    font-size: 7vh;
     font-family: 'Roboto', sans-serif;
-    margin-bottom: 3vh;
+    margin-bottom: 2vh;
+    color: #f09491;
 }
 
 .goal-title {
@@ -45,20 +49,38 @@
     font-family: 'Roboto', serif;
 }
 
+.habits-radio{
+    display: flex;
+    flex-direction: column;
+    margin: 3px;
+    padding: 3px;
+    font-size: 15px;
+    text-align: left;
+    color: #687A8F; 
+}
+
 input[type="radio"] {
     cursor: pointer;
 }
 
 .goal-form-text-input {
-    width: 80%;
+    width: 25vw;
     cursor: pointer;
     font-family: 'Roboto', serif;
-    border: 1px solid gray;
+    border: 1px solid #c7c4c4;
+    height: 20px;
+    margin: 10px;
 }
 
 textarea.goal-form-text-input {
     height: 20vh;
-    margin-top: 25px;
+    margin: 10px;
+}
+
+.goal-form-text-input::placeholder {
+    font-size: 15px;
+    font-weight: 200;
+    padding-left: 2px;
 }
 
 .goal-form-radio-label {
@@ -87,7 +109,7 @@ textarea.goal-form-text-input {
     border-width: 2px;
     font-weight: 500;
     padding: .5rem 1.5rem;
-    border-radius: 9999px;
+    border-radius: 10px;
     flex-shrink: 0;
     border-style: solid;
 }
@@ -104,8 +126,10 @@ form.goal-form-box {
 .plus-sign {
     color:#f09491;
     background-color: white;
-    border-color: #f09491;
-    border-style: solid;
+    border: 1px solid #f09491;
+    transition: all 0.3s;
+    cursor: pointer;
+    padding: 3.5px;
 }
 
 .plus-sign:hover {
@@ -115,6 +139,14 @@ form.goal-form-box {
 }
 
 .milestone-input {
-    border: 1px solid gray;
-    width: 73%;
+    border: 1px solid #c7c4c4;
+    width: 24vw;
+    height: 20px;
+    margin: 10px 0px;
+}
+
+.milestone-input::placeholder {
+    font-size: 15px;
+    font-weight: 200;
+    padding-left: 2px;
 }
