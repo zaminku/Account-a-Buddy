@@ -116,7 +116,7 @@ class GoalForm extends React.Component {
                     <div>
                         <ul>{this.state.milestoneArray.map((milestone, idx) => {
                             return (
-                                <li key={idx}>{milestone.milestone}</li>
+                                <li className='milestone-li' key={idx}>{milestone.milestone}</li>
                                 )
                             })}
                         </ul>

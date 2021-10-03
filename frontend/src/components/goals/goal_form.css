@@ -70,11 +70,14 @@ input[type="radio"] {
     border: 1px solid #c7c4c4;
     height: 20px;
     margin: 10px;
+    font-size: 15px;
+    font-style: italic;
 }
 
 textarea.goal-form-text-input {
     height: 20vh;
     margin: 10px;
+    font-style: italic;
 }
 
 .goal-form-text-input::placeholder {
@@ -129,7 +132,7 @@ form.goal-form-box {
     border: 1px solid #f09491;
     transition: all 0.3s;
     cursor: pointer;
-    padding: 3.5px;
+    padding: 3.6px;
 }
 
 .plus-sign:hover {
@@ -143,10 +146,17 @@ form.goal-form-box {
     width: 24vw;
     height: 20px;
     margin: 10px 0px;
+    font-size: 15px;
+    font-style: italic; 
 }
 
 .milestone-input::placeholder {
     font-size: 15px;
     font-weight: 200;
     padding-left: 2px;
+}
+
+.milestone-li {
+    font-size: 15px;
+    font-style: italic;
 }
