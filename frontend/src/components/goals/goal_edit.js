@@ -114,7 +114,7 @@ class GoalEdit extends React.Component {
                     onChange={this.update('category')}
                     checked
                 />
-                <label for="goal-type-1" className="goal-form-radio-label">Breaking a Habit</label>
+                <label for="goal-type-1" className="goal-form-radio-label">BREAKING HABIT</label>
             </div>
             )}else{
                 return(
@@ -126,7 +126,7 @@ class GoalEdit extends React.Component {
                         value="breaking-habit"
                         onChange={this.update('category')}
                     />
-                    <label for="goal-type-1" className="goal-form-radio-label">Breaking a Habit</label>
+                    <label for="goal-type-1" className="goal-form-radio-label">BREAKING HABIT</label>
                 </div>
                 )
             }
@@ -144,7 +144,7 @@ class GoalEdit extends React.Component {
                         onChange={this.update('category')}
                         checked
                     />
-                    <label for="goal-type-1" className="goal-form-radio-label">Making a Habit</label>
+                    <label for="goal-type-1" className="goal-form-radio-label">MAKING HABIT</label>
                 </div>
             )
         }else{
@@ -157,7 +157,7 @@ class GoalEdit extends React.Component {
                         value="making-habit"
                         onChange={this.update('category')}
                     />
-                    <label for="goal-type-1" className="goal-form-radio-label">Making a Habit</label>
+                    <label for="goal-type-1" className="goal-form-radio-label">MAKING HABIT</label>
                 </div>
             )
         }
