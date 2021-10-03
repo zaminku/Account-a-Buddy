@@ -61,19 +61,16 @@
     color: black; 
     text-align: center;
     cursor: text;
-    color: #687A8F;
-    text-transform: uppercase;
-    padding: 10px;
+    padding: 14px;
   }
 
 .modal-title::placeholder {
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 .modal-description{
   width: 50vw;
-  /* min-height: 16px; */
   resize: none;
   box-sizing: border-box;
   border: none;
@@ -81,7 +78,6 @@
   font-size: 15px;
   font-family: 'Roboto';
   border-width: 0;
-  border: none;
   background-color: transparent;
   outline: none;
   font-style: italic;
@@ -90,7 +86,7 @@
 
 .modal-description::placeholder {
   font-size: 15px;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 #habit-container {
@@ -98,6 +94,7 @@
   flex-direction: column;
   padding: 2px;
   font-size: 15px;
+  color: #687A8F; 
 }
 
 .fa-plus-square {
@@ -126,6 +123,7 @@
 
 .modal-milestone-list>div{
   display: flex;
+  padding-bottom: 3px;
 }
 
 .modal-milestone-list > div > input {
@@ -133,11 +131,12 @@
   outline: none;
   font-size: 15px;
   font-family: 'Roboto';
+  font-style: italic;
 }
 
 .modal-milestone-list > div > input::placeholder {
   font-size: 15px;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 .milestone-input-box {
@@ -193,7 +192,7 @@
 
 .modal-tag{
   font-size: 20px;
-  margin: 30px 0px 0px 0px;
+  margin: 25px 0px 0px 0px;
   text-align: center;
   font-family: 'Roboto';
   color: #687A8F;
