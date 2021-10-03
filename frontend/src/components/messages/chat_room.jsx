@@ -219,7 +219,7 @@ class ChatRoom extends React.Component{
                                 onChange={e=>this.update(e)}
                                 value={this.state.message.text}
                             />
-                            <button onClick={this.sendMessage} ><i className="fas fa-paper-plane send">Send</i></button>
+                            <button onClick={this.sendMessage} ><i className="fas fa-paper-plane send"> Send</i></button>
                             <i className="fas fa-sliders-h" onClick={() => this.openModal("settings")} ></i>
                             {this.state.settings ? this.showSettings() : null}
                             {this.state.confirmClick ? this.showConfirmClick() : null}
