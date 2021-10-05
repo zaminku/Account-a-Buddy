@@ -7,13 +7,13 @@
     border-radius: 100%;
     padding: 15px;
     font-size: 25px;
-    background-color: #f09491;
+    background-color: #52A89D;
     color: white;
     cursor: pointer;
 }
 
 .goal-btn:hover {
-    background-color: #DCC7AA;
+    background-color: rgb(240, 103, 107);
 }
 
 .all-goals {
@@ -31,7 +31,7 @@
     font-weight: 400;
     font-size: 32px;
     font-family: 'Roboto';
-    color: #f09491;
+    color: rgb(240, 103, 107);
 }
 
 .no-goals{
