@@ -73,17 +73,17 @@
     padding: 5px 10px;
     margin-top: 10px;
     width: 150px;
-    color: #f09491;
+    color: rgb(240, 103, 107);
     background-color: white;
     border-style: solid;
     border-width: 2px;
-    border-color: #f09491;
+    border-color: rgb(240, 103, 107);
     border-radius: 10px;
 }
 
 .submit-btn:hover {
     color:white;
-    background-color: #f09491;
+    background-color: rgb(240, 103, 107);
     cursor: pointer;
 }
 
@@ -126,7 +126,7 @@
 }
 
 .signup-link:hover, .login-link:hover {
-    color: #f09491;
+    color: rgb(240, 103, 107);
 }
 
 .session-title {

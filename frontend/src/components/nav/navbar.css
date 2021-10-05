@@ -35,8 +35,8 @@
 }
 
 .navbar a:hover{
-    text-decoration: none;
-    color: #DCC7AA;
+    text-decoration: underline #52A89D;
+    text-decoration-thickness: 4px;
 }
 
 .session-nav {
@@ -54,13 +54,13 @@
     flex-shrink: 0;
     background-color: white;
     border-style: solid;
-    border-color: #f09491;
-    color: #f09491;
+    border-color: #52A89D;
+    color: #52A89D;
 }
 
 .session-nav:hover {
     color:white;
-    background-color: #f09491;
+    background-color: #52A89D;
     cursor: pointer;
 }
 
@@ -77,7 +77,7 @@
 }
 
 #logo:hover{
-    color: #f09491;
+    color: #52A89D;
 }
 
 .navbar-logo{
@@ -103,12 +103,12 @@
     border-color: rgb(237, 236, 237);
     background-color: white;
     border-style: solid;
-    border-color: #f09491;
-    color: #f09491;
+    border-color: rgb(240, 103, 107);
+    color: rgb(240, 103, 107);
 }
 
 .logout-btn:hover {
     color:white;
-    background-color: #f09491;
+    background-color: rgb(240, 103, 107);
     cursor: pointer;
 }
