@@ -98,7 +98,7 @@
 }
 
 .fa-plus-square {
-  color: #be9e71;
+  color: #7ADAB2;
   width: 29px;
   height: 29px;
   padding-right: 0.5px;
@@ -108,7 +108,7 @@
 }
 
 .fa-plus-square:hover {
-  color: #DCC7AA;
+  color: #52A89D;
 }
 
 .modal-milestone {
@@ -147,13 +147,13 @@
 .fa-trash-alt {
   background-color: transparent;
   border: none;
-  color: #be9e71;
+  color: #7ADAB2;
   transition: all 0.3s;
   cursor: pointer;
 }
 
 .fa-trash-alt:hover {
-  color: #DCC7AA;
+  color:  #52A89D;
 }
 
 .modal-habit-buttons>div{
@@ -181,13 +181,13 @@
     border-color: rgb(237, 236, 237);
     background-color: white;
     border-style: solid;
-    border-color: #f09491;
-    color: #f09491;
+    border-color: #7ADAB2;
+    color: #7ADAB2;
 }
 
 .modal-edit-button:hover {
     color:white;
-    background-color: #f09491;
+    background-color: #7ADAB2;
 }
 
 .modal-tag{
