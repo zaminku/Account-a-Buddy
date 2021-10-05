@@ -23,10 +23,13 @@
 }
 
 .background-img {
-    object-fit: contain;
+    object-fit: cover;
+    object-position: 50%;
     height: 100%;
-    width: 100%;
-    margin-top: 60px;
+    width: 75%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    margin-top: 100px;
 }
 
 .getstarted-btn {
@@ -45,22 +48,22 @@
     flex-shrink: 0;
     background-color: white;
     border-style: solid;
-    border-color: #f09491;
-    color: #f09491;
+    border-color: rgb(240, 103, 107);
+    color: rgb(240, 103, 107);
     cursor: pointer;
 }
 
 
 .getstarted-btn:hover {
     color:white;
-    background-color: #f09491;
+    background-color: rgb(240, 103, 107);
 }
 
 .title {
     font-size: 5vw;
     margin: 0 0 8px;
     font-weight: bold;
-    color: #f09491;
+    color: rgb(240, 103, 107);
 }
 
 .bubble {
@@ -69,7 +72,7 @@
     transition-timing-function: cubic-bezier(0,0,.2,1);
     position: relative;
     font-family: sans-serif;
-    background: #687A8F;
+    background: rgb(113, 178, 248);
     border-radius: 50px;
     padding: 3vw;
     text-align: center;
@@ -86,9 +89,9 @@
     width: 3vw;
     height: 0px;
     position: absolute;
-    border-right: 60px solid #687A8F;
+    border-right: 60px solid rgb(113, 178, 248);
     border-left: 18px solid transparent;
-    border-top: 18px solid #687A8F;
+    border-top: 18px solid rgb(113, 178, 248);
     border-bottom: 40px solid transparent;
     right: 40px;
     bottom: -40px;
