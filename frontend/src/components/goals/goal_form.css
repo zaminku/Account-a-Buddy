@@ -16,7 +16,7 @@
 .goal-form-box {
     margin-top: 7vh;
     border-radius: 10px;
-    box-shadow: #f3e7d6 0px 0px 16px;
+    box-shadow: rgba(0, 0, 0, 0.21) 0px 0px 16px;
     padding-right: 0px;
     padding-left: 0px;
     display: flex;
@@ -35,7 +35,6 @@
     font-size: 7vh;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 2vh;
-    color: #f09491;
 }
 
 .goal-title {
@@ -102,8 +101,8 @@ textarea.goal-form-text-input {
     margin-top: 10px;
     font-size: 15px;
     background-color: white;
-    border-color: #f09491;
-    color: #f09491;
+    border-color: #7ADAB2;
+    color: #7ADAB2;
 
     display: inline-block;
     --text-opacity: 1;
@@ -119,7 +118,7 @@ textarea.goal-form-text-input {
 
 .goal-form-submit:hover{
     color:white;
-    background-color: #f09491;
+    background-color: #7ADAB2;
 }
 
 form.goal-form-box {
@@ -127,18 +126,18 @@ form.goal-form-box {
 }
 
 .plus-sign {
-    color:#f09491;
+    color:#7ADAB2;
     background-color: white;
-    border: 1px solid #f09491;
+    border: 1px solid #7ADAB2;
     transition: all 0.3s;
     cursor: pointer;
     padding: 3.6px;
 }
 
 .plus-sign:hover {
-    background-color: #f09491;
+    background-color: #7ADAB2;
     color: white;
-    border: 1px solid #f09491;
+    border: 1px solid #7ADAB2;
 }
 
 .milestone-input {
