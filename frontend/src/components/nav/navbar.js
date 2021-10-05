@@ -44,11 +44,11 @@ class NavBar extends React.Component {
                 </Link>
                 
                 <div>
-                    <Link to={'/about'}>FEATURES</Link>
+                    <Link to={'/about'}>Features</Link>
                 </div>
 
                 <div>
-                    <Link to={'/contact'}>CONTACT US</Link>
+                    <Link to={'/contact'}>Contact Us</Link>
                 </div>
 
                 <div className="nav-right-margin">
