@@ -2,9 +2,7 @@
 
 .mainpage-cont {
     display: flex;
-    justify-content: space-between;
     height: 80vh;
-    width: 100vw;
 }
 
 .left-cont {
@@ -20,7 +18,7 @@
 .right-cont {
     display: flex;
     align-items: center;
-    margin-left: 7vw;
+    justify-content: center;
     width: 40%;
 }
 
@@ -46,12 +44,13 @@
     border-width: 2px;
     font-weight: 500;
     padding: .5rem 1.5rem;
-    border-radius: 9999px;
+    border-radius: 10px;
     flex-shrink: 0;
     background-color: white;
     border-style: solid;
     border-color: rgb(240, 103, 107);
     color: rgb(240, 103, 107);
+    cursor: pointer;
 }
 
 
@@ -105,10 +104,10 @@
 
 .subtitle {
     margin: 0 0 32px;
-    font-size: 2vw;
+    font-size: 1.3vw;
     text-align: center;
     font-family: 'Roboto';
-    font-weight: 100;
+    font-weight: 300;
     padding-top: 20px;
 }
 

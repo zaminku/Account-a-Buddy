@@ -8,9 +8,8 @@ function AboutPage() {
             <div className="about-description" >
                 <div>
                     <h2>Account-a-Buddy</h2>
-                    <div>
-                        <p>Account-a-Buddy is a web application for those with aspirations, but need an extra push! You can set goals for breaking bad habits or forming good ones. To keep you focused, you will be randomly matched with an accountability partner who has similar goals. As anonymous users, you all will be able to express yourselves authentically without fear of judgment. Together, you may finally achieve the goals that you have set for so long.
-                        </p>
+                    <div id="about-d">
+                        Account-a-Buddy is a web application for those with aspirations, but need an extra push! You can set goals for breaking bad habits or forming good ones. To keep you focused, you will be randomly matched with an accountability partner who has similar goals. As anonymous users, you all will be able to express yourselves authentically without fear of judgment. Together, you may finally achieve the goals that you have set for so long.
                     </div>
                 </div>
             </div>
@@ -30,16 +29,16 @@ function AboutPage() {
                     <h2>Technologies</h2>
                     <div className="tech-list" >
                         <div>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU1XVtjEYPj0BoSZ9nrSBJ5nr319wO73dEcfD17BSzTf-m-q-rSZ9FGDO4yzzvd_AWQqo&usqp=CAU" alt="React" />
-                            <img src="https://www.codespot.org/assets/cover/redux-landscape.png" alt="Redux" />
-                            <img src="https://logowik.com/content/uploads/images/nodejs.jpg" alt="NodeJS" />
+                            <img className="tech-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU1XVtjEYPj0BoSZ9nrSBJ5nr319wO73dEcfD17BSzTf-m-q-rSZ9FGDO4yzzvd_AWQqo&usqp=CAU" alt="React" />
+                            <img className="tech-img" src="https://www.codespot.org/assets/cover/redux-landscape.png" alt="Redux" />
+                            <img className="tech-img" src="https://logowik.com/content/uploads/images/nodejs.jpg" alt="NodeJS" />
                         </div>
                         <div>
                         </div>
                         <div>
-                            <img src="https://thecodebarbarian.com/images/mongoose5.png" alt="Mongoose" />
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVC_M97fJwNtEm9qydNVQoeV64Z6u-mlcZfStqoT4em6hxjFKHqLISBbON_E-32adeGU&usqp=CAU" alt="MongoDB" />
-                            <img src="https://www.onlogic.com/company/io-hub/wp-content/uploads/2013/07/socket-io-logo.jpg" alt="Socket.io" />
+                            <img className="tech-img" src="https://thecodebarbarian.com/images/mongoose5.png" alt="Mongoose" />
+                            <img className="tech-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVC_M97fJwNtEm9qydNVQoeV64Z6u-mlcZfStqoT4em6hxjFKHqLISBbON_E-32adeGU&usqp=CAU" alt="MongoDB" />
+                            <img className="tech-img" src="https://www.onlogic.com/company/io-hub/wp-content/uploads/2013/07/socket-io-logo.jpg" alt="Socket.io" />
                         </div>
                     </div>
                 </div>

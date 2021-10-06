@@ -70,7 +70,7 @@ class GoalForm extends React.Component {
                 <form className="goal-form-box" onSubmit={this.handleSubmit}>
                     <h1 className="goal-form-title">Create a Goal</h1>
                     <label className="goal-type">What kind of habit are you trying to work on?</label>
-                        <br />
+                    <div class='habits-radio'>
                         <div>
                             <input 
                                 type="radio" 
@@ -79,7 +79,7 @@ class GoalForm extends React.Component {
                                 value="breaking-habit"
                                 onChange={this.update('category')}
                             />
-                            <label for="goal-type-1" className="goal-form-radio-label">Breaking Habit</label>
+                            <label for="goal-type-1" className="goal-form-radio-label">BREAKING HABIT</label>
                         </div>
                         <div>
                             <input 
@@ -89,9 +89,10 @@ class GoalForm extends React.Component {
                                 value="making-habit" 
                                 onChange={this.update('category')}
                             />
-                        <label for="goal-type-1" className="goal-form-radio-label">Making Habit</label>
+                        <label for="goal-type-1" className="goal-form-radio-label">MAKING HABIT</label>
                         </div>
-                    <br />
+                    </div>
+
                     <div>
                         <input 
                             type="text"
@@ -115,7 +116,7 @@ class GoalForm extends React.Component {
                     <div>
                         <ul>{this.state.milestoneArray.map((milestone, idx) => {
                             return (
-                                <li key={idx}>{milestone.milestone}</li>
+                                <li className='milestone-li' key={idx}>{milestone.milestone}</li>
                                 )
                             })}
                         </ul>
@@ -129,7 +130,6 @@ class GoalForm extends React.Component {
                         <button className="plus-sign" onClick={this.submitMilestone}>+</button>
                     </div>
                     
-                    <br />
                     <div className="goal-form-submit-div">
                         <input className="goal-form-submit" type="submit" value="Create"/>
                     </div>

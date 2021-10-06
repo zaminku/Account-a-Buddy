@@ -92,6 +92,7 @@ class GoalEdit extends React.Component {
                                 value={milestone.milestone}
                                 onChange={event => this.updateMilestoneText(idx, event)}
                                 placeholder="add a milestone"
+                                className="milestone-input-box"
                             />
                             <button className="far fa-trash-alt" onClick={event => this.handleRemoveMilestone(idx, event)} />
                         </div>
@@ -113,7 +114,7 @@ class GoalEdit extends React.Component {
                     onChange={this.update('category')}
                     checked
                 />
-                <label for="goal-type-1" className="goal-form-radio-label">Breaking a Habit</label>
+                <label for="goal-type-1" className="goal-form-radio-label">BREAKING HABIT</label>
             </div>
             )}else{
                 return(
@@ -125,7 +126,7 @@ class GoalEdit extends React.Component {
                         value="breaking-habit"
                         onChange={this.update('category')}
                     />
-                    <label for="goal-type-1" className="goal-form-radio-label">Breaking a Habit</label>
+                    <label for="goal-type-1" className="goal-form-radio-label">BREAKING HABIT</label>
                 </div>
                 )
             }
@@ -143,7 +144,7 @@ class GoalEdit extends React.Component {
                         onChange={this.update('category')}
                         checked
                     />
-                    <label for="goal-type-1" className="goal-form-radio-label">Making a Habit</label>
+                    <label for="goal-type-1" className="goal-form-radio-label">MAKING HABIT</label>
                 </div>
             )
         }else{
@@ -156,7 +157,7 @@ class GoalEdit extends React.Component {
                         value="making-habit"
                         onChange={this.update('category')}
                     />
-                    <label for="goal-type-1" className="goal-form-radio-label">Making a Habit</label>
+                    <label for="goal-type-1" className="goal-form-radio-label">MAKING HABIT</label>
                 </div>
             )
         }
@@ -178,15 +179,8 @@ class GoalEdit extends React.Component {
                             onChange={this.update('title')}
                             placeholder="Title"
                         />
-                        <br></br>
-                        <hr></hr>
                     </div>
-                    <div>
-                        <div className="modal-habit-buttons">
-                            {this.renderBreaking()}
-                            {this.renderMaking()}
-                        </div>
-                    </div>
+
                     <div className="hr-div">
                         <div>
                             <textarea
@@ -196,11 +190,20 @@ class GoalEdit extends React.Component {
                                 onChange={this.update('description')}
                             />
                         </div>
-                        <hr></hr>
                     </div>
+
+                    <ul id="habit-container">
+                        <li>
+                            {this.renderBreaking()}
+                        </li>
+                        <li>
+                            {this.renderMaking()}
+                        </li>
+                    </ul>
+
                     <div>
                         <div className="modal-tag">
-                            Milestones
+                            MILESTONES
                             <i className="far fa-plus-square" onClick={this.handleAddMilestone} />
                         </div>
                         
