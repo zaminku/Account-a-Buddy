@@ -36,7 +36,7 @@ const TEAM = {
         github: "https://github.com/j3nhan", 
         linkedin: "https://www.linkedin.com/in/jennynhan/", 
         angellist: "https://angel.co/u/jenny-nhan",
-        description: "Three fun facts about me! Chocolate is my guilty pleasure. Brewing kombucha is one of my hobbies. Movies with Keanu Reeves are my favorite."
+        description: "Hi there! I'm a software engineer and I’m ready to take on technology's greatest challenge and make it my mission to rise to the occasion. I thrive in an environment where I could bring fresh ideas and create products that best serve the globally diverse audience. Developing large scale applications and evolving with the next-generation technologies are what I look forward to in the tech industry. Here are three fun facts about me: Chocolate is my guilty pleasure. Brewing kombucha is one of my hobbies. Movies with Keanu Reeves are my favorite."
     }, 
     ben: {
         name: "Ben Chai", 
